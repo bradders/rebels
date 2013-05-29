@@ -1,0 +1,579 @@
+/*------------------------------------*\
+    $Contents
+\*------------------------------------*/
+/**
+ * Contents
+ * Variables
+ * Mixins
+ * Reset / Base
+ * Type
+ * Links
+ * Lists
+ * Tables
+ * Helpers
+ * Buttons
+ * Forms
+ * Layout
+ 
+ */
+/*------------------------------------*\
+    $Variables
+\*------------------------------------*/
+/*------------------------------------*\
+    $Mixins
+\*------------------------------------*/
+/*------------------------------------*\
+    $Reset / Base
+\*------------------------------------*/
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/**
+ * Based on Eric Meyer's Reset 2.0 (http://meyerweb.com/eric/tools/css/reset/)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+html {
+  overflow-y: scroll; }
+
+body {
+  font-family: "Lucida Grande", Arial, serif;
+  font-weight: 100;
+  font-size: 100%;
+  line-height: 1.5;
+  color: #3D3D3D;
+  background-color: #fff; }
+
+img {
+  max-width: 100%;
+  height: auto;
+  border: 0; }
+
+.google-map img {
+  max-width: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+/*------------------------------------*\
+    $Type
+\*------------------------------------*/
+/**
+ * Baselined lifted from: http://joshnh.com/2012/10/12/how-does-line-height-actually-work/
+*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  margin: 0; }
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  text-decoration: none; }
+
+h1, .h1 {
+  font-size: 2em;
+  line-height: 1;
+  margin-bottom: .5em; }
+
+h2, .h2 {
+  font-size: 1.5em;
+  line-height: 1.333333333;
+  margin-bottom: 0.666666666em; }
+
+h3, .h3 {
+  font-size: 1.4em;
+  line-height: 1;
+  margin-bottom: 1em; }
+
+h4, .h4 {
+  font-size: 1.1em;
+  line-height: 1.142857142;
+  margin-bottom: 1.142857142em; }
+
+h5, .h5 {
+  font-size: 1.125em;
+  line-height: 1.333333333;
+  margin-bottom: 1.333333333em; }
+
+h6, .h6 {
+  font-size: 1em;
+  line-height: 1.5;
+  margin-bottom: 1.5em; }
+
+p {
+  font-size: 1em;
+  margin-bottom: 1em;
+  line-height: 1.5; }
+
+b, strong {
+  font-weight: bold; }
+
+em {
+  font-style: italic; }
+
+small {
+  font-size: 80%; }
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/*------------------------------------*\
+    $Links
+\*------------------------------------*/
+a {
+  color: #333;
+  text-decoration: underline; }
+  a:focus, a:active {
+    outline: none; }
+  a:hover {
+    text-decoration: underline; }
+
+/*------------------------------------*\
+    $Lists
+\*------------------------------------*/
+ul, ol {
+  list-style: none;
+  margin: 0 0 1em 0; }
+
+/*------------------------------------*\
+    $Tables
+\*------------------------------------*/
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/*------------------------------------*\
+    $Helpers
+\*------------------------------------*/
+/**
+ * $Clearfix
+*/
+.cf:before,
+.cf:after {
+  content: "";
+  display: table; }
+
+.cf:after {
+  clear: both; }
+
+.cf {
+  zoom: 1; }
+
+/**
+ * $Floats
+*/
+.left {
+  float: left; }
+
+.right {
+  float: right; }
+
+.hide {
+  display: none; }
+
+/**
+ * $Text Alignment
+*/
+.text-left {
+  text-align: left; }
+
+.text-center, .text-centre {
+  text-align: center; }
+
+.text-right {
+  text-align: right; }
+
+.content--show {
+  display: block !important; }
+
+/**
+ * $Nav
+ * Blatantly lifted from: http://csswizardry.com/2011/09/the-nav-abstraction/
+*/
+.nav {
+  list-style: none;
+  margin-left: 0; }
+
+.nav li {
+  display: inline; }
+
+.nav a {
+  display: inline-block; }
+
+/*------------------------------------*\
+    $Buttons
+\*------------------------------------*/
+.button {
+  display: inline-block;
+  padding: 0.3em 1em;
+  margin-bottom: 1em;
+  text-decoration: none;
+  background-color: #ebebeb; }
+  .button:hover {
+    color: #fff;
+    background-color: #626262; }
+
+.button--pink {
+  color: #fff;
+  background-color: #a41c40; }
+
+.button--arrow {
+  background-repeat: no-repeat;
+  background-position: 95% 50%;
+  background-image: url(../images/buttons/arrow.png); }
+
+/*------------------------------------*\
+    $Forms
+\*------------------------------------*/
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px; }
+
+legend {
+  border: 0;
+  padding: 0; }
+
+input,
+select,
+textarea,
+button {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0; }
+
+textarea {
+  overflow: auto;
+  vertical-align: top; }
+
+/**
+ * $Input Lengths
+*/
+.s {
+  width: 25%; }
+
+.m {
+  width: 50%; }
+
+.l {
+  width: 75%; }
+
+.xl {
+  width: 100%; }
+
+/*------------------------------------*\
+    $Layout
+\*------------------------------------*/
+.inner, .site-header, .carousel {
+  margin: 0 auto;
+  max-width: 1020px;
+  *zoom: 1; }
+  .inner:before, .site-header:before, .carousel:before, .inner:after, .site-header:after, .carousel:after {
+    display: table;
+    content: ""; }
+  .inner:after, .site-header:after, .carousel:after {
+    clear: both; }
+
+.section {
+  float: left;
+  width: 100%;
+  padding: 1em; }
+
+.full {
+  float: left;
+  width: 100%; }
+
+.half {
+  float: left;
+  width: 50%; }
+  @media (max-width: 770px) {
+    .half {
+      width: 100%; } }
+
+.two-thirds {
+  float: left;
+  width: 66.666666666%; }
+  @media (max-width: 770px) {
+    .two-thirds {
+      width: 100%; } }
+
+.third {
+  float: left;
+  width: 33.333333333%; }
+  @media (max-width: 770px) {
+    .third {
+      width: 100%; } }
+
+.three-quarters {
+  float: left;
+  width: 75%; }
+  @media (max-width: 770px) {
+    .three-quarters {
+      width: 100%; } }
+
+.quarter {
+  float: left;
+  width: 25%; }
+  @media (max-width: 770px) {
+    .quarter {
+      width: 100%; } }
+
+.three-fifths {
+  float: left;
+  width: 60%; }
+  @media (max-width: 770px) {
+    .three-fifths {
+      width: 100%; } }
+
+.two-fifths {
+  float: left;
+  width: 40%; }
+
+.fifth {
+  float: left;
+  width: 20%; }
+
+/*------------------------------------*\
+    $Intro
+\*------------------------------------*/
+.showcase {
+  position: relative;
+  height: 650px;
+  background-color: #0d1723; }
+
+/*------------------------------------*\
+    $Site Header
+\*------------------------------------*/
+.site-header {
+  position: relative;
+  height: 65px;
+  padding-left: 150px;
+  padding-right: 20px;
+  background-color: #e2e2e2; }
+
+/* $Logo */
+.header__logo {
+  position: absolute;
+  top: 0;
+  left: 25px;
+  z-index: 2;
+  margin-right: 1em; }
+  .header__logo img {
+    display: block; }
+
+.header__name {
+  float: left; }
+
+/* $Main Nav */
+.header__nav {
+  float: left;
+  margin-bottom: 0; }
+  @media (max-width: 770px) {
+    .header__nav {
+      display: none;
+      width: 100%;
+      position: absolute;
+      top: 100%;
+      left: 0; } }
+  .header__nav > ul {
+    margin-bottom: 0; }
+
+.header__link {
+  display: inline-block;
+  padding: 3em 0.5em 0.5em 0.5em;
+  color: #494949;
+  font-size: 0.750em;
+  /* 12px: 1 / (16x12) = 0.750 */
+  text-decoration: none;
+  text-transform: uppercase; }
+  @media (max-width: 770px) {
+    .header__link {
+      width: 100%; } }
+
+.toggle-menu {
+  display: none; }
+  @media (max-width: 770px) {
+    .toggle-menu {
+      display: block;
+      float: right;
+      width: 50px;
+      height: 50px;
+      margin-top: 0.5em;
+      text-indent: -9999px;
+      background-color: #000; } }
+
+.header__sponsor-link {
+  display: inline-block;
+  padding: 3em 0.5em 0.5em 0.5em;
+  color: #494949;
+  font-size: 0.750em;
+  /* 12px: 1 / (16x12) = 0.750 */
+  text-transform: uppercase;
+  text-decoration: none; }
+  @media (max-width: 770px) {
+    .header__sponsor-link {
+      display: none; } }
+
+/*------------------------------------*\
+    $Carousel
+\*------------------------------------*/
+.carousel {
+  position: relative;
+  margin-bottom: 2em; }
+  .carousel .panel {
+    width: 100%;
+    height: 585px;
+    background-color: transparent;
+    background-position: 50% 0;
+    background-repeat: no-repeat; }
+    @media (max-width: 770px) {
+      .carousel .panel {
+        height: 400px; } }
+
+/*------------------------------------*\
+    $Carousel - Next Match
+\*------------------------------------*/
+.match {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  min-height: 225px;
+  background-color: rgba(25, 40, 58, 0.8); }
+  @media (max-width: 770px) {
+    .match {
+      bottom: auto;
+      top: 100%; } }
+
+.sticker {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 100px;
+  height: 100px;
+  text-indent: -9999px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: 0 0; }
+  @media (max-width: 770px) {
+    .sticker {
+      display: none; } }
+
+.sticker.win {
+  background-color: #448b2f; }
+
+.sticker.next {
+  background-color: #a41c40; }
+
+.match__teams {
+  padding: 1.5em; }
+
+.match__lineup {
+  margin-bottom: 0;
+  text-transform: uppercase;
+  color: #fff;
+  line-height: 1;
+  letter-spacing: -5px;
+  font-size: 5em;
+  /* 85px: 1 / (16x80) = 5 */ }
+
+.vs {
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  margin-left: 0.3em;
+  background-color: transparent;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-image: url(../images/vs.png); }
+
+.match__team {
+  display: block;
+  float: left;
+  clear: left; }
+
+.match__points {
+  color: #7589ab; }
+
+.match__stats {
+  float: left;
+  width: 40%;
+  padding: 1.5em; }
+  @media (max-width: 770px) {
+    .match__stats {
+      width: 100%; } }
+  .match__stats h3 {
+    font-size: 0.750em;
+    color: #9eb3cb;
+    text-transform: uppercase; }
+  .match__stats li {
+    color: #fff; }
+
+.match__summary {
+  padding-left: 2em;
+  margin-bottom: 0;
+  line-height: 3em;
+  min-height: 3em;
+  color: #fff;
+  background-color: #69788a; }
+  @media (max-width: 770px) {
+    .match__summary {
+      display: none; } }
+
+@media (max-width: 770px) {
+  .match__actions {
+    width: 100%; } }
+.match__actions .button {
+  min-height: 3em;
+  line-height: 3em;
+  padding-top: 0;
+  padding-bottom: 0; }
+  @media (max-width: 770px) {
+    .match__actions .button {
+      width: 50%; } }
