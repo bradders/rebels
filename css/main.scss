@@ -107,7 +107,7 @@ body {
     font-size: 100%;
 	line-height: 1.5;
 	color: #3D3D3D;
-    background-color: #fff;
+    background-color: #d6d6d6;
 }
 
 img {
@@ -537,7 +537,6 @@ textarea {
 \*------------------------------------*/
 .showcase {
     position: relative;
-    height: 650px;
     background-color: #0d1723;    
 }
 
@@ -564,7 +563,7 @@ textarea {
     position: absolute;
     top: 0;
     left: 25px;
-    z-index: 2;
+    z-index: 3;
     margin-right: 1em;
 
     img {
@@ -580,17 +579,23 @@ textarea {
 /* $Main Nav */
 .header__nav {
     float: left;
+    width: 100%;
+    height: 100%;
     margin-bottom: 0;
 
     @include breakpoint(small) {
         display: none;
         width: 100%;
+        height: auto;
         position: absolute;
         top: 100%;
         left: 0;
+        z-index: 2;
+        background-color: #fff;
     }
 
     > ul {
+        height: 100%;
         margin-bottom: 0;
     }
 
@@ -598,6 +603,7 @@ textarea {
 
 .header__link {
     display: inline-block;
+    height: 100%;
     padding: 3em 0.5em 0.5em 0.5em;
     color: #494949;
     font-size: 0.750em; /* 12px: 1 / (16x12) = 0.750 */
@@ -606,10 +612,15 @@ textarea {
 
     @include breakpoint(small) {
         width: 100%;
+        padding: 2em 0.5em;
+        border-bottom: 1px solid #c7c7c7;
     }
 
     &:hover {
-        
+        text-decoration: none;
+        background-repeat: no-repeat;
+        background-position: 50% 100%;
+        background-image: url(../images/header__link--hover.gif);
     }
 
 }
@@ -620,26 +631,16 @@ textarea {
     @include breakpoint(small) {
         display: block;
         float: right;
-        width: 50px;
+        width: 65px;
         height: 50px;
         margin-top: 0.5em;
         text-indent: -9999px;
-        background-color: #000;
+        background-color: transparent;
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-image: url(http://placehold.it/65x50/ffffff);
     }
 
-}
-
-.header__sponsor-link {
-    display: inline-block;
-    padding: 3em 0.5em 0.5em 0.5em;
-    color: #494949;
-    font-size: 0.750em; /* 12px: 1 / (16x12) = 0.750 */
-    text-transform: uppercase;
-    text-decoration: none;
-
-    @include breakpoint(small) {
-        display: none;
-    }
 }
 
 
@@ -651,22 +652,23 @@ textarea {
 \*------------------------------------*/
 .carousel {
     position: relative;
-    margin-bottom: 2em;
     
     @extend .inner;
 
     .panel {
         width: 100%;
-        height: 585px;
         background-color: transparent;
         background-position: 50% 0;
         background-repeat: no-repeat;
 
         @include breakpoint(small) {
-            height: 400px;
         }
     }
 
+}
+
+.panel__image {
+    float: left;
 }
 
 
@@ -681,21 +683,24 @@ textarea {
     bottom: 0;
     left: 0;
     width: 100%;
-    min-height: 225px;
     background-color: rgba(25, 40, 58, 0.8);
 
     @include breakpoint(small) {
+        float: left;
+        width: 100%;
+        position: relative;
         bottom: auto;
-        top: 100%;
+        left: auto;
+        background-color: #002e48;
     }
 }
 
 .sticker {
     position: absolute;
-    top: -20px;
-    left: -20px;
-    width: 100px;
-    height: 100px;
+    top: -10px;
+    left: -10px;
+    width: 98px;
+    height: 98px;
     text-indent: -9999px;
     background-color: transparent;
     background-repeat: no-repeat;
@@ -708,7 +713,7 @@ textarea {
 }
 
     .sticker.win {
-        background-color: #448b2f;
+        background-image: url(../images/stickers/winners.png);
     }
 
     .sticker.next {
@@ -717,6 +722,10 @@ textarea {
 
 .match__teams {
     padding: 1.5em;
+
+    @include breakpoint(small) {
+        padding: 0.5em;
+    }
 }
 
     .match__lineup {
@@ -726,6 +735,11 @@ textarea {
         line-height: 1;
         letter-spacing: -5px;
         font-size: 5em; /* 85px: 1 / (16x80) = 5 */
+
+        @include breakpoint(small) {
+            font-size: 3.5em;
+        }
+
     }
 
         .vs {
@@ -756,24 +770,45 @@ textarea {
 
     @include breakpoint(small) {
         width: 100%;
+        padding: 0 0.5em;
     }
 
-    h3 {
-        font-size: 0.750em;
-        color: #9eb3cb;
-        text-transform: uppercase;
+    ul {
+        @include breakpoint(small) {
+            float: left;
+        }
     }
 
     li {
         color: #fff;
+
+        @include breakpoint(small) {
+            display: inline;
+        }
+
     }
 
 }
 
+    .stat__title {
+        font-size: 0.750em;
+        line-height: 1.5;
+        color: #9eb3cb;
+        text-transform: uppercase;
+
+        @include breakpoint(small) {
+            float: left;
+            clear: left;
+            margin-right: 0.5em;
+            font-size: 1em;
+        }
+
+    }
+
 .match__summary {
+    padding-top: 0.8em;
     padding-left: 2em;
     margin-bottom: 0;
-    line-height: 3em;
     min-height: 3em;
     color: #fff;
     background-color: #69788a;
@@ -788,6 +823,8 @@ textarea {
 
     @include breakpoint(small) {
         width: 100%;
+        padding-left: 5%;
+        padding-right: 5%;
     }
 
     .button {
@@ -796,9 +833,161 @@ textarea {
         padding-top: 0;
         padding-bottom: 0;
 
+        &:first-of-type {
+            width: 49%;
+            margin-right: 1%;
+        }
+
         @include breakpoint(small) {
             width: 50%;
         }
     }
 
 }
+
+
+
+
+
+/*------------------------------------*\
+    $News
+\*------------------------------------*/
+.news {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-image: url(../images/news-bg.gif);
+
+    @include breakpoint(small) {
+        background-image: none;
+    }
+
+    .inner {
+        padding: 1.5em;
+    }
+
+}
+
+.news-item {
+    position: relative;
+    padding: 0.5em;
+    height: 260px;
+    border-right: 1px solid #d6d6d6;
+    border-top: 1px solid #d6d6d6;
+    background-color: #fff;
+
+    p {
+        float: left;
+        font-size: 0.750em;
+        color: #363636;
+
+        @include breakpoint(small) {
+            width: 60%;
+            padding-left: 0.5em;
+        }
+
+    }
+
+}
+
+.news__title {
+    margin-bottom: 0;
+    color: #8b8d90;
+    font-size: 2.125em; /* 34px: 1 / (16x34) = 0.750 */
+    text-transform: uppercase;
+
+    @include breakpoint(small) {
+        height: auto;
+        color: #fff;
+        font-size: 1.5em; /* 20px: 1 / (16x24) = 1.5em */
+        background-color: transparent;
+    }
+
+}
+
+.news-item__image {
+    width: 100%;
+    margin-bottom: 0.5em;
+
+    @include breakpoint(small) {
+        float: left;
+        width: 40%;
+        margin: 0;
+    }
+
+}
+
+.news-item__info {
+    position: absolute;
+    top: 0.5em;
+    left: 0.5em;
+
+    @include breakpoint(small) {
+        position: relative;
+        top: auto;
+        left: auto;
+        float: left;
+        width: 60%;
+        padding-left: 0.5em;
+    }
+
+}
+
+.news-item__date {
+    display: block;
+    width: 45px;
+    height: 45px;
+    padding: 0.2em;
+    color: #fff;
+    line-height: 1.2;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #677986;
+
+    @include breakpoint(small) {
+        display: inline;
+        width: auto;
+        height: auto;
+        padding: 0;
+        color: #8b8b8b;
+        font-size: 0.750em; /* 12px: 1 / (16x12) = 0.750 */
+        background-color: transparent;
+    }
+}
+
+.news-item__icon {
+    position: absolute;
+    top: 45px;
+    left: 0;
+
+    @include breakpoint(small) {
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+}
+
+.icon {
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    background-color: #cf1344;
+    background-repeat: no-repeat;
+    background-position: 50%;
+
+    @include breakpoint(small) {
+        width: 30px;
+        height: 20px;
+    }
+
+}
+
+.icon.video {
+    background-image: url(../images/icons/video.gif);
+
+    @include breakpoint(small) {
+        background-image: url(../images/icons/video-small.gif);
+    }
+
+}
+
