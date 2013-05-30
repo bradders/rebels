@@ -532,7 +532,7 @@ textarea {
   /* 85px: 1 / (16x80) = 5 */ }
   @media (max-width: 770px) {
     .match__lineup {
-      font-size: 3.5em; } }
+      font-size: 2.5em; } }
 
 .vs {
   display: inline-block;
@@ -622,6 +622,9 @@ textarea {
       background-image: none; } }
   .news .inner, .news .site-header, .news .carousel {
     padding: 1.5em; }
+    @media (max-width: 770px) {
+      .news .inner, .news .site-header, .news .carousel {
+        padding: 0.5em; } }
 
 .news-item {
   position: relative;
