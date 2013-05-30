@@ -876,6 +876,10 @@ textarea {
     border-top: 1px solid #d6d6d6;
     background-color: #fff;
 
+    @include breakpoint(small) {
+        height: auto;
+    }
+
     p {
         float: left;
         font-size: 0.750em;
@@ -883,7 +887,6 @@ textarea {
 
         @include breakpoint(small) {
             width: 60%;
-            height: auto;
             padding-left: 0.5em;
         }
 
