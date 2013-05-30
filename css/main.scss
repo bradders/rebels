@@ -883,6 +883,7 @@ textarea {
 
         @include breakpoint(small) {
             width: 60%;
+            height: auto;
             padding-left: 0.5em;
         }
 

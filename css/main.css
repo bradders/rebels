@@ -637,6 +637,7 @@ textarea {
     @media (max-width: 770px) {
       .news-item p {
         width: 60%;
+        height: auto;
         padding-left: 0.5em; } }
 
 .news__title {
