@@ -878,11 +878,16 @@ textarea {
     padding: 0.5em;
     height: 260px;
     border-right: 1px solid #d6d6d6;
-    border-top: 1px solid #d6d6d6;
+    border-bottom: 1px solid #d6d6d6;
     background-color: #fff;
 
     @include breakpoint(small) {
         height: auto;
+        border-right: 0;
+    }
+
+    &:nth-child(4n+4) {
+        border-right: 0;
     }
 
     p {
@@ -902,7 +907,7 @@ textarea {
 .news__title {
     margin-bottom: 0;
     color: #8b8d90;
-    font-size: 2.125em; /* 34px: 1 / (16x34) = 0.750 */
+    font-size: 2.125em; /* 34px: 1 / (16x34) = 2.215 */
     text-transform: uppercase;
 
     @include breakpoint(small) {
@@ -991,12 +996,68 @@ textarea {
 
 }
 
-.icon.video {
-    background-image: url(../images/icons/video.gif);
+    .icon.video {
+        background-image: url(../images/icons/video.gif);
+
+        @include breakpoint(small) {
+            background-image: url(../images/icons/video-small.gif);
+        }
+
+    }
+
+.news__more {
+    display: block;
+    float: left;
+    clear: left;
+    width: 100%;
+    padding: 0.5em;
+    color: #D6D6D6;
+    font-weight: bold;
+    font-size: 2.125em; /* 34px: 1 / (16x34) = 2.215 */
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: 98% 50%;
+    background-image: url(../images/plus.gif);
 
     @include breakpoint(small) {
-        background-image: url(../images/icons/video-small.gif);
+        font-size: 1.5em; /* 20px: 1 / (16x24) = 1.5em */
+    }
+
+
+    &:hover {
+        text-decoration: none;
     }
 
 }
+
+
+
+
+
+/*------------------------------------*\
+    $Advert
+\*------------------------------------*/
+.team {
+    height: 1000px;
+    border-left: 10px solid #D6D6D6;
+    border-right: 10px solid #D6D6D6;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-image: url(../images/team-bg.gif);
+}
+
+.advert {
+    padding: 1em;
+}
+
+.advert__image {
+    display: block;
+    margin: 0 auto;
+}
+
+
+
 
