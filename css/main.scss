@@ -656,12 +656,16 @@ textarea {
     @extend .inner;
 
     .panel {
+        @include clearfix;
+        display: none;
+        position: relative;
         width: 100%;
         background-color: transparent;
         background-position: 50% 0;
         background-repeat: no-repeat;
 
-        @include breakpoint(small) {
+        &:first-of-type {
+            display: block;
         }
     }
 
@@ -678,7 +682,7 @@ textarea {
 /*------------------------------------*\
     $Carousel - Next Match
 \*------------------------------------*/
-.match {
+.panel-overlay {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -727,8 +731,12 @@ textarea {
         padding: 0.5em;
     }
 }
+    
+    .player-profile__name {
+        padding: 1.5em;
+    }
 
-    .match__lineup {
+    .panel-overlay__title {
         margin-bottom: 0;
         text-transform: uppercase;
         color: #fff;
@@ -763,9 +771,8 @@ textarea {
             color: #7589ab;
         }
 
-.match__stats {
+.stats {
     float: left;
-    width: 40%;
     padding: 1.5em;
 
     @include breakpoint(small) {
@@ -863,7 +870,7 @@ textarea {
     }
 
     .inner {
-        padding: 1.5em;
+        padding: 2.5em;
 
         @include breakpoint(small) {
             padding: 0.5em;
@@ -1061,3 +1068,21 @@ textarea {
 
 
 
+
+
+/*------------------------------------*\
+    $Player Profile
+\*------------------------------------*/
+.player-profile {
+    margin: 0 auto;
+    max-width: 940px;
+    border: 5px solid #fff;
+}
+
+ .player-profile__image {
+    display: block;
+ }
+
+ .player__stats {
+    padding: 1.5em;
+ }

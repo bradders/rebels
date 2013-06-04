@@ -470,10 +470,20 @@ textarea {
 .carousel {
   position: relative; }
   .carousel .panel {
+    *zoom: 1;
+    display: none;
+    position: relative;
     width: 100%;
     background-color: transparent;
     background-position: 50% 0;
     background-repeat: no-repeat; }
+    .carousel .panel:before, .carousel .panel:after {
+      display: table;
+      content: ""; }
+    .carousel .panel:after {
+      clear: both; }
+    .carousel .panel:first-of-type {
+      display: block; }
 
 .panel__image {
   float: left; }
@@ -481,14 +491,14 @@ textarea {
 /*------------------------------------*\
     $Carousel - Next Match
 \*------------------------------------*/
-.match {
+.panel-overlay {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   background-color: rgba(25, 40, 58, 0.8); }
   @media (max-width: 770px) {
-    .match {
+    .panel-overlay {
       float: left;
       width: 100%;
       position: relative;
@@ -522,7 +532,10 @@ textarea {
     .match__teams {
       padding: 0.5em; } }
 
-.match__lineup {
+.player-profile__name {
+  padding: 1.5em; }
+
+.panel-overlay__title {
   margin-bottom: 0;
   text-transform: uppercase;
   color: #fff;
@@ -531,7 +544,7 @@ textarea {
   font-size: 5em;
   /* 85px: 1 / (16x80) = 5 */ }
   @media (max-width: 770px) {
-    .match__lineup {
+    .panel-overlay__title {
       font-size: 2.5em; } }
 
 .vs {
@@ -552,21 +565,20 @@ textarea {
 .match__points {
   color: #7589ab; }
 
-.match__stats {
+.stats {
   float: left;
-  width: 40%;
   padding: 1.5em; }
   @media (max-width: 770px) {
-    .match__stats {
+    .stats {
       width: 100%;
       padding: 0 0.5em; } }
   @media (max-width: 770px) {
-    .match__stats ul {
+    .stats ul {
       float: left; } }
-  .match__stats li {
+  .stats li {
     color: #fff; }
     @media (max-width: 770px) {
-      .match__stats li {
+      .stats li {
         display: inline; } }
 
 .stat__title {
@@ -621,7 +633,7 @@ textarea {
     .news {
       background-image: none; } }
   .news .inner, .news .site-header, .news .carousel {
-    padding: 1.5em; }
+    padding: 2.5em; }
     @media (max-width: 770px) {
       .news .inner, .news .site-header, .news .carousel {
         padding: 0.5em; } }
@@ -774,3 +786,17 @@ textarea {
 .advert__image {
   display: block;
   margin: 0 auto; }
+
+/*------------------------------------*\
+    $Player Profile
+\*------------------------------------*/
+.player-profile {
+  margin: 0 auto;
+  max-width: 940px;
+  border: 5px solid #fff; }
+
+.player-profile__image {
+  display: block; }
+
+.player__stats {
+  padding: 1.5em; }
