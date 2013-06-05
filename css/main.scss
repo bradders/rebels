@@ -652,7 +652,9 @@ textarea {
 \*------------------------------------*/
 .carousel {
     position: relative;
-    
+    width: 100%;
+    max-width: 1045px;
+
     @extend .inner;
 
     .panel {
@@ -869,11 +871,11 @@ textarea {
 /*------------------------------------*\
     $News
 \*------------------------------------*/
-.news {
+.main {
     background-color: transparent;
     background-repeat: no-repeat;
     background-position: 50% 0;
-    background-image: url(../images/news-bg.gif);
+    background-image: url(../images/main-bg.gif);
 
     @include breakpoint(small) {
         background-image: none;
@@ -1229,6 +1231,125 @@ textarea {
 
 }
 
+
+
+
+
+/*------------------------------------*\
+    $Content
+\*------------------------------------*/
+.content {
+    float: left;
+    width: 74%;
+    padding: 0.5em 0.5em 2em 0.5em;
+    margin-right: 1%;
+    background-color: #fff;
+
+    @include breakpoint(small) {
+        width: 100%;
+    }
+
+    p {
+        width: 75%;
+        color: #424242;
+    }
+
+    img {
+        margin-bottom: 1em;
+    }
+
+    blockquote {
+        width: 75%;
+        margin-bottom: 0.5em;
+        color: #a31c3f;
+        font-weight: bold;
+        line-height: 1;
+        text-transform: uppercase;
+        font-size: 2.125em; /* 34px: 1 / (16x34) = 2.215 */
+    }
+
+    h3 {
+        color: #777;
+        font-size: 1.625em; /* 26px: 1 / (16x26) = 1.625 */
+    }
+
+    h4 {
+        color: #3c3c3c;
+    }
+
+    ul {
+        width: 75%;
+        margin-left: 1em;
+        list-style: disc inside;
+        color: #424242;
+    }
+
+}
+
+@include breakpoint(small) {
+    .content p, .content blockquote, .content ul {
+        width: 100%;
+    }
+}
+
+.content__title {
+    color: #8e8e8e;
+    text-transform: uppercase;
+    font-size: 2.125em; /* 34px: 1 / (16x34) = 2.215 */
+}
+
+
+
+
+
+/*------------------------------------*\
+    $Content
+\*------------------------------------*/
+.sidebar {
+    @extend .quarter;
+
+    .news-item {
+        width: 100%;
+        @extend .cf;
+    }
+
+}
+
+.sidebar__title {
+    padding: 0.2em;
+    margin-bottom: 0;
+    border-bottom: 1px solid #c8c8c8;
+    font-size: 2.125em; /* 34px: 1 / (16x34) = 2.215 */
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.sidebar-nav {
+    border-bottom: 3px solid #d6d6d6;
+    padding: 0;
+    padding-bottom: 3em;
+    background-color: #a9a9a9;
+
+    ul {
+        margin-bottom: 0;
+    }
+
+}
+
+ .sidebar__link {
+    display: block;
+    padding: 0.5em;
+    border-bottom: 1px solid #c8c8c8;
+    color: #343434;
+    text-decoration: none;
+
+    &:hover {
+        color: #6e6e6e;
+        background-color: #fff;
+        text-decoration: none;
+    }
+
+ }
 
 
 
