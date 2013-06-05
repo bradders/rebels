@@ -729,7 +729,7 @@ textarea {
         background-color: $pink;
     }
 
-.match__teams {
+.panel__title {
     padding: 1.5em;
 
     @include breakpoint(small) {
@@ -741,7 +741,7 @@ textarea {
         padding: 1.5em;
     }
 
-    .panel-overlay__title {
+    h1 {
         margin-bottom: 0;
         text-transform: uppercase;
         color: #fff;
@@ -1092,6 +1092,13 @@ textarea {
         position: relative;
     }
 
+    .button {
+        @include breakpoint(small) {
+            float: left;
+            width: 50%;
+        }
+    }
+
 }
 
  .player-profile__image {
@@ -1102,6 +1109,12 @@ textarea {
     padding: 0;
     padding-top: 1em;
 
+
+    .stat {
+        @include breakpoint(small) {
+            display: none;
+        }
+    }
 
     ul {
         float: left;
@@ -1116,6 +1129,8 @@ textarea {
 
  .view-squad {
     display: block;
+    float: left;
+    width: 100%;
     color: #626262;
     padding: 0.2em;
     line-height: 1;
@@ -1129,6 +1144,10 @@ textarea {
         text-decoration: none;
     }
 
+    @include breakpoint(small) {
+        display: none;
+    }
+
  }
 
 
@@ -1140,12 +1159,19 @@ textarea {
 \*------------------------------------*/
 .features {
     height: 500px;
+    border-left: 10px solid #D6D6D6;
+    border-right: 10px solid #D6D6D6;
     background-repeat: no-repeat;
     background-position: 0 0;
     background-image: url(../images/features-bg.gif);
 
     .inner {
         padding: 2.5em;
+
+        @include breakpoint(small) {
+            padding: 0;
+        }
+
     }
 
 }
@@ -1163,6 +1189,12 @@ textarea {
     margin-right: 1.3%;
     border: 8px solid #fff;
 
+    @include breakpoint(small) {
+        width: 100%;
+        margin-bottom: 1%;
+        margin-right: 0;
+    }
+
     &:nth-child(4n+4) {
         margin-right: 0;
     }
@@ -1171,6 +1203,8 @@ textarea {
 
 .tile__image {
     display: block;
+    width: 100%;
+    max-height: 250px;
 }
 
 .tile__title {
@@ -1187,7 +1221,7 @@ textarea {
     text-transform: uppercase;
     background-color: #8b8c8e;
     cursor: pointer;
-    
+
     &:hover {
         text-decoration: none;
         background-color: #686868;

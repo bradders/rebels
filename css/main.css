@@ -528,16 +528,16 @@ textarea {
 .sticker.next {
   background-color: #a41c40; }
 
-.match__teams {
+.panel__title {
   padding: 1.5em; }
   @media (max-width: 770px) {
-    .match__teams {
+    .panel__title {
       padding: 0.5em; } }
 
 .player-profile__name {
   padding: 1.5em; }
 
-.panel-overlay__title {
+h1 {
   margin-bottom: 0;
   text-transform: uppercase;
   color: #fff;
@@ -546,7 +546,7 @@ textarea {
   font-size: 4.375em;
   /* 70px: 1 / (16x70) = 4.375 */ }
   @media (max-width: 770px) {
-    .panel-overlay__title {
+    h1 {
       font-size: 2.5em; } }
 
 .vs {
@@ -802,6 +802,10 @@ textarea {
   border: 8px solid #fff; }
   .player-profile .quarter {
     position: relative; }
+  @media (max-width: 770px) {
+    .player-profile .button {
+      float: left;
+      width: 50%; } }
 
 .player-profile__image {
   display: block; }
@@ -809,6 +813,9 @@ textarea {
 .player__stats {
   padding: 0;
   padding-top: 1em; }
+  @media (max-width: 770px) {
+    .player__stats .stat {
+      display: none; } }
   .player__stats ul {
     float: left;
     width: 50%; }
@@ -817,6 +824,8 @@ textarea {
 
 .view-squad {
   display: block;
+  float: left;
+  width: 100%;
   color: #626262;
   padding: 0.2em;
   line-height: 1;
@@ -828,17 +837,25 @@ textarea {
   background-color: #e2e3e4; }
   .view-squad:hover {
     text-decoration: none; }
+  @media (max-width: 770px) {
+    .view-squad {
+      display: none; } }
 
 /*------------------------------------*\
     $Features
 \*------------------------------------*/
 .features {
   height: 500px;
+  border-left: 10px solid #D6D6D6;
+  border-right: 10px solid #D6D6D6;
   background-repeat: no-repeat;
   background-position: 0 0;
   background-image: url(../images/features-bg.gif); }
   .features .inner, .features .site-header, .features .carousel {
     padding: 2.5em; }
+    @media (max-width: 770px) {
+      .features .inner, .features .site-header, .features .carousel {
+        padding: 0; } }
 
 /*------------------------------------*\
     $Tiles
@@ -848,11 +865,18 @@ textarea {
   width: 24%;
   margin-right: 1.3%;
   border: 8px solid #fff; }
+  @media (max-width: 770px) {
+    .tile {
+      width: 100%;
+      margin-bottom: 1%;
+      margin-right: 0; } }
   .tile:nth-child(4n+4) {
     margin-right: 0; }
 
 .tile__image {
-  display: block; }
+  display: block;
+  width: 100%;
+  max-height: 250px; }
 
 .tile__title {
   position: absolute;

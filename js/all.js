@@ -1,4 +1,4 @@
-$.domReady(function() {
+$(document).ready(function() {
 	UI.init();
 });
 
@@ -28,8 +28,23 @@ var UI = {
         */
 		$(".js-toggle-menu").bind("click", function(e) {
 			$(".js-header__nav").toggleClass("content--show");
-			e.stop();
+			return false;
 		});
+
+        /**
+        * Tile mouseover functionality
+        */
+        $(".js-tile__title").bind("mouseover", function(e) {
+            var title = $(this);
+            //title.animate({ height: "100%" });
+            return false;
+        });
+
+        $(".js-tile__title").bind("mouseout", function(e) {
+            var title = $(this);
+            //title.animate({ height: "auto", minHeight: "auto" });
+            return false;
+        });
 
         /**
         * Initialize any slideshows and/or tabs
@@ -118,13 +133,13 @@ var UI = {
             slideshow.find(".slideshow__control--previous").bind("click", function(e) {
                 UI.slideshow.freezeUI(this);
                 UI.slideshow.move(slideshow, this, "previous");
-                e.stop();
+                return false;
             });
             
             slideshow.find(".slideshow__control--next").bind("click", function(e) {
                 UI.slideshow.freezeUI(this);
                 UI.slideshow.move(slideshow, this, "next");
-                e.stop();
+                return false;
             });
             
         }, 
@@ -176,7 +191,7 @@ var UI = {
             var link = $(l);
             link.off("click");
             link.on("click", function(e) {
-                e.stop();
+                return false;
             });
         }
         
@@ -219,7 +234,7 @@ var UI = {
 					sections.hide();
 					div.find("section[data-tab='" + tabName + "']").show();
 					
-					e.stop();
+					return false;
 				});
 				
 			});
