@@ -697,6 +697,11 @@ textarea {
         left: auto;
         background-color: #002e48;
     }
+
+    .button {
+        margin-bottom: 0;
+    }
+
 }
 
 .sticker {
@@ -742,7 +747,7 @@ textarea {
         color: #fff;
         line-height: 1;
         letter-spacing: -5px;
-        font-size: 5em; /* 85px: 1 / (16x80) = 5 */
+        font-size: 4.375em; /* 70px: 1 / (16x70) = 4.375 */
 
         @include breakpoint(small) {
             font-size: 2.5em;
@@ -786,7 +791,7 @@ textarea {
         }
     }
 
-    li {
+    li, p {
         color: #fff;
 
         @include breakpoint(small) {
@@ -795,6 +800,11 @@ textarea {
 
     }
 
+}
+
+.stat {
+    float: left;
+    width: 50%;
 }
 
     .stat__title {
@@ -1047,7 +1057,7 @@ textarea {
     $Advert
 \*------------------------------------*/
 .team {
-    height: 1000px;
+    padding-bottom: 1.5em;
     border-left: 10px solid #D6D6D6;
     border-right: 10px solid #D6D6D6;
     background-color: transparent;
@@ -1076,7 +1086,12 @@ textarea {
 .player-profile {
     margin: 0 auto;
     max-width: 940px;
-    border: 5px solid #fff;
+    border: 10px solid #fff;
+
+    .quarter {
+        position: relative;
+    }
+
 }
 
  .player-profile__image {
@@ -1084,5 +1099,64 @@ textarea {
  }
 
  .player__stats {
-    padding: 1.5em;
+    padding: 0;
+    padding-top: 1em;
+
+
+    ul {
+        float: left;
+        width: 50%;
+    }
+
+    .button {
+        margin-bottom: 0;
+    }
+
  }
+
+ .view-squad {
+    display: block;
+    color: #626262;
+    padding: 0.2em;
+    line-height: 1;
+    font-weight: bold;
+    font-size: 2.125em; /* 34px: 1 / (16x34) = 2.125em */
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: #e2e3e4;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+ }
+
+
+
+
+
+/*------------------------------------*\
+    $Features
+\*------------------------------------*/
+.features {
+    height: 500px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-image: url(../images/features-bg.gif);
+
+    .inner {
+        padding: 2.5em;
+    }
+
+}
+
+
+
+
+
+/*------------------------------------*\
+    $Tiles
+\*------------------------------------*/
+.tile {
+    
+}

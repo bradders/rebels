@@ -505,6 +505,8 @@ textarea {
       bottom: auto;
       left: auto;
       background-color: #002e48; } }
+  .panel-overlay .button {
+    margin-bottom: 0; }
 
 .sticker {
   position: absolute;
@@ -541,8 +543,8 @@ textarea {
   color: #fff;
   line-height: 1;
   letter-spacing: -5px;
-  font-size: 5em;
-  /* 85px: 1 / (16x80) = 5 */ }
+  font-size: 4.375em;
+  /* 70px: 1 / (16x70) = 4.375 */ }
   @media (max-width: 770px) {
     .panel-overlay__title {
       font-size: 2.5em; } }
@@ -575,11 +577,15 @@ textarea {
   @media (max-width: 770px) {
     .stats ul {
       float: left; } }
-  .stats li {
+  .stats li, .stats p {
     color: #fff; }
     @media (max-width: 770px) {
-      .stats li {
+      .stats li, .stats p {
         display: inline; } }
+
+.stat {
+  float: left;
+  width: 50%; }
 
 .stat__title {
   font-size: 0.750em;
@@ -772,7 +778,7 @@ textarea {
     $Advert
 \*------------------------------------*/
 .team {
-  height: 1000px;
+  padding-bottom: 1.5em;
   border-left: 10px solid #D6D6D6;
   border-right: 10px solid #D6D6D6;
   background-color: transparent;
@@ -793,10 +799,47 @@ textarea {
 .player-profile {
   margin: 0 auto;
   max-width: 940px;
-  border: 5px solid #fff; }
+  border: 10px solid #fff; }
+  .player-profile .quarter {
+    position: relative; }
 
 .player-profile__image {
   display: block; }
 
 .player__stats {
-  padding: 1.5em; }
+  padding: 0;
+  padding-top: 1em; }
+  .player__stats ul {
+    float: left;
+    width: 50%; }
+  .player__stats .button {
+    margin-bottom: 0; }
+
+.view-squad {
+  display: block;
+  color: #626262;
+  padding: 0.2em;
+  line-height: 1;
+  font-weight: bold;
+  font-size: 2.125em;
+  /* 34px: 1 / (16x34) = 2.125em */
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: #e2e3e4; }
+  .view-squad:hover {
+    text-decoration: none; }
+
+/*------------------------------------*\
+    $Features
+\*------------------------------------*/
+.features {
+  height: 500px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-image: url(../images/features-bg.gif); }
+  .features .inner, .features .site-header, .features .carousel {
+    padding: 2.5em; }
+
+/*------------------------------------*\
+    $Tiles
+\*------------------------------------*/
