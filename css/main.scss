@@ -25,13 +25,16 @@
     $Variables
 \*------------------------------------*/
 $pink: #a41c40;
+$blue: #646c7a;
 
 
 $sixteen: 1em;              /* 16px */
 $twelve: 0.750em;           /* 12px: 1 / (16x12) = 0.750 */
-$twenty: 1.5em;             /* 20px: 1 / (16x24) = 1.5em */
+$fourteen: 0.875em;         /* 14px: 1 / (16x14) = 0.875 */
+$twenty: 1.5em;             /* 20px: 1 / (16x24) = 1.500 */
 $twenty-six: 1.625em;       /* 26px: 1 / (16x26) = 1.625 */
 $thirty-four: 2.125em;      /* 34px: 1 / (16x34) = 2.215 */
+$fifty-seven: 3.375em;      /* 57px: 1 / (16x57) = 3.375 */
 $seventy: 4.375em;          /* 70px: 1 / (16x70) = 4.375 */
 
 
@@ -371,6 +374,7 @@ table {
 
     &:hover {
         color: #fff;
+        text-decoration: none;
         background-color: #626262;
     }
 
@@ -381,10 +385,32 @@ table {
     background-color: $pink;
 }
 
+.button--blue {
+    color: #fff;
+    background-color: $blue;
+}
+
 .button--arrow {
     background-repeat: no-repeat;
     background-position: 95% 50%;
     background-image: url(../images/buttons/arrow.png);
+}
+
+.pink-arrow {
+    color: $pink;
+    font-size: $twelve;
+    padding-right: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: transparent;
+    background-position: 100% 50%;
+    background-repeat: no-repeat;
+    background-image: url(../images/buttons/pink-arrow-small.png);
+
+    &:hover {
+        text-decoration: none;        
+    }
+
 }
 
 
@@ -561,9 +587,13 @@ textarea {
     height: 65px;
     padding-left: 150px;
     padding-right: 20px;
-    background-color: #e2e2e2;
+    background-color: #c7c7c7;
 
     @extend .inner;
+
+    @include breakpoint(small) {
+        height: 115px;
+    }
 
 }
 
@@ -594,13 +624,13 @@ textarea {
 
     @include breakpoint(small) {
         display: none;
-        width: 100%;
+        width: 40%;
         height: auto;
-        position: absolute;
-        top: 100%;
-        left: 0;
+        position: fixed;
+        top: 0;
+        right: 0;
         z-index: 2;
-        background-color: #fff;
+        background-color: #000;
     }
 
     > ul {
@@ -620,12 +650,12 @@ textarea {
     text-transform: uppercase;
 
     @include breakpoint(small) {
-        width: 100%;
+        /*width: 100%;
         padding: 2em 0.5em;
-        border-bottom: 1px solid #c7c7c7;
+        border-bottom: 1px solid #c7c7c7;*/
     }
 
-    &:hover {
+    &.active, &:hover {
         text-decoration: none;
         background-repeat: no-repeat;
         background-position: 50% 100%;
@@ -640,19 +670,149 @@ textarea {
     @include breakpoint(small) {
         display: block;
         float: right;
-        width: 65px;
-        height: 50px;
-        margin-top: 0.5em;
+        width: 85px;
+        height: 65px;
+        margin-top: 20px;
         text-indent: -9999px;
         background-color: transparent;
         background-position: 0 0;
         background-repeat: no-repeat;
-        background-image: url(http://placehold.it/65x50/ffffff);
+        background-image: url(../images/toggle-menu.gif);
     }
 
 }
 
 
+
+
+
+
+/*------------------------------------*\
+    $Extra Nav
+\*------------------------------------*/
+.extra-nav {
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    @include breakpoint(small) {
+        display: none;
+    }
+
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 1020px;
+    height: 430px;
+    margin: 0 auto;
+    padding: 2em;
+    background-color: transparent;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-image: url(../images/carousel/dropdown-bg.png);
+
+    p {
+        margin-bottom: 0.5em;
+        padding-right: 1em;
+        font-size: $fourteen;
+    }
+
+}
+
+.dropdown--news {
+    padding-left: 155px;
+}
+
+.dropdown__title {
+    display: block;
+    padding-bottom: 0.5em;
+    margin-right: 0.5em;
+    margin-bottom: 0.5em;
+    font-size: $fourteen;
+    border-bottom: 1px solid #d4d5d6;
+}
+
+.news-summary {
+    @extend .third;
+}
+
+    .news-summary__image {
+        display: block;
+        border: 5px solid #d6d6d6;
+        margin-left: 1em;
+        margin-bottom: 2em;
+        -webkit-box-shadow: 0px 10px 20px rgba(51, 51, 51, 0.75);
+        -moz-box-shadow:    0px 10px 20px rgba(51, 51, 51, 0.75);
+        box-shadow:         0px 10px 20px rgba(51, 51, 51, 0.75);
+    }
+
+.also-news {
+
+    .dropdown__title {
+        padding-bottom: 0.5em;
+        margin-bottom: 0;
+        font-size: $fourteen;
+        color: #121212;
+    }
+
+    .button {
+        @extend .full;
+        padding: 1em;
+        font-size: $twelve;
+        text-transform: uppercase;
+    }
+
+}
+
+.arrow-list {
+
+    a {
+        display: block;
+        padding: 0.2em 2em 0.2em 0;
+        text-decoration: none;
+        font-size: $fourteen;
+        border-bottom: 1px solid #d4d5d6;
+        background-color: transparent;
+        background-repeat: no-repeat;
+        background-position: 97% 50%;
+        background-image: url(../images/buttons/pink-arrow-small.png);
+    }
+
+}
+
+.arrow-list--plain {
+    
+    li {
+        float: left;
+        width: 33.333333333%;
+        margin-bottom: 0.2em;
+    }
+
+    a {
+        padding: 0 0 0 1.5em;
+        border-bottom: 0;
+        background-position: 0.1em 50%;
+    }
+}
+
+.team-kit {
+    margin-top: 3em;
+}
+
+.dropdown--club {
+
+    .button {
+        width: 75%;
+    }
+
+}
 
 
 
@@ -1015,11 +1175,12 @@ textarea {
 
     @include breakpoint(small) {
         display: inline;
+        float: left;
         width: auto;
         height: auto;
+        margin-right: 0.5em;
         padding: 0;
         color: #8b8b8b;
-        font-size: $twelve;
         background-color: transparent;
     }
 }

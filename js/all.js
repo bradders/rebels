@@ -27,7 +27,17 @@ var UI = {
         * Click functionality to deal with small screen nav
         */
 		$(".js-toggle-menu").bind("click", function(e) {
-			$(".js-header__nav").toggleClass("content--show");
+            var menu = $(".js-header__nav");
+
+            if(menu.hasClass("active")) {
+                /* Hide Menu */
+                UI.hideMenu(menu);
+            } else {
+                /* Show Menu */
+                UI.showMenu(menu);
+            }
+
+			$(".js-header__nav").toggle();
 			return false;
 		});
 
@@ -46,13 +56,37 @@ var UI = {
             return false;
         });
 
+
         /**
-        * Initialize any slideshows and/or tabs
+        * Click handler for main nav
         */
-		UI.slideshow.init();
-		UI.tabs.init();
+        $(".header__link").bind("click", function() {
+            var link = $(this), 
+                name = link.attr("data-name"), 
+                div = $(".dropdown[data-name='" + name + "']");
+
+            $(".header__link").removeClass("active");
+            link.addClass("active");
+
+            $(".dropdown").hide();
+            div.slideToggle();
+            return false;
+        });
+		
 
 	}, 
+
+    showMenu: function(menu){
+        var container = $(".container"), 
+            menu_width = (container.width() / 100) * 40;
+
+    }, 
+
+    hideMenu: function(menu){
+        var container = $(".container"), 
+            menu_width = (container.width() / 100) * 40;
+
+    }, 
 
     slideshow: {
     
