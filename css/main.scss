@@ -38,6 +38,7 @@ $seventy: 4.375em;          /* 70px: 1 / (16x70) = 4.375 */
 
 
 
+
 /*------------------------------------*\
     $Mixins
 \*------------------------------------*/
@@ -917,7 +918,7 @@ textarea {
     }
 
     .inner {
-        padding: 2.5em;
+        padding: 2.5em 2.5em 0 2.5em;
 
         @include breakpoint(small) {
             padding: 0.5em;
@@ -1212,12 +1213,44 @@ textarea {
 
 .player-switcher {
     position: absolute;
-    top: 1em;
-    right: 1em;
+    top: 2em;
+    right: 4em;
     color: #c6d2e6;
     font-size: $twelve;
     text-transform: uppercase;
     background-color: #61779f;
+
+    a {
+        display: inline-block;
+        float: left;
+        height: 40px;
+        color: #c7d2e6;
+        text-decoration: none;
+        background-color: transparent;
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-image: url(../images/buttons/blue-arrows.gif);
+    }
+
+    .switch {
+        padding: 0.9em 1em 0.5em 40px;
+        background-position: 0 0;
+    }
+
+    .previous {
+        width: 40px;
+        border-left: 1px solid #8a99b5;
+        text-indent: -9999px;
+        background-position: 0 -40px;
+    }
+
+    .next {
+        width: 40px;
+        border-left: 1px solid #8a99b5;
+        text-indent: -9999px;
+        background-position: 0 -80px;
+    }
+
 }
 
 
@@ -1252,6 +1285,14 @@ textarea {
 /*------------------------------------*\
     $Tiles
 \*------------------------------------*/
+.tiles {
+
+    .inner {
+        padding: 2.5em;
+    }
+
+}
+
 .tile {
     position: relative;
     width: 24%;
@@ -1306,6 +1347,7 @@ textarea {
     $Content
 \*------------------------------------*/
 .content {
+    position: relative;
     float: left;
     width: 74%;
     padding: 0.5em 0.5em 2em 0.5em;
@@ -1316,8 +1358,11 @@ textarea {
         width: 100%;
     }
 
-    p {
+    .text {
         width: 75%;
+    }
+
+    p {
         color: #424242;
     }
 
@@ -1326,7 +1371,6 @@ textarea {
     }
 
     blockquote {
-        width: 75%;
         margin-bottom: 0.5em;
         color: #a31c3f;
         font-weight: bold;
@@ -1345,7 +1389,6 @@ textarea {
     }
 
     ul {
-        width: 75%;
         margin-left: 1em;
         list-style: disc inside;
         color: #424242;
@@ -1363,6 +1406,19 @@ textarea {
     color: #8e8e8e;
     text-transform: uppercase;
     font-size: $thirty-four;
+}
+
+.content-images {
+    position: absolute;
+    top: 0.5em;
+    right: 0.5em;
+    width: 24%;
+
+    img {
+        display: block;
+        margin-bottom: 0.1em;
+    }
+
 }
 
 
@@ -1421,3 +1477,14 @@ textarea {
 
 
 
+
+/*------------------------------------*\
+    $Pods
+\*------------------------------------*/
+.pod {
+    padding: 0.5em;
+    margin-bottom: 1px;
+    color: #fff;
+    text-transform: uppercase;
+    background-color: #a9a9a9;
+}

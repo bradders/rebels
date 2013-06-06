@@ -666,7 +666,7 @@ h1 {
     .main {
       background-image: none; } }
   .main .inner, .main .site-header, .main .carousel {
-    padding: 2.5em; }
+    padding: 2.5em 2.5em 0 2.5em; }
     @media (max-width: 770px) {
       .main .inner, .main .site-header, .main .carousel {
         padding: 0.5em; } }
@@ -881,12 +881,35 @@ h1 {
 
 .player-switcher {
   position: absolute;
-  top: 1em;
-  right: 1em;
+  top: 2em;
+  right: 4em;
   color: #c6d2e6;
   font-size: 0.75em;
   text-transform: uppercase;
   background-color: #61779f; }
+  .player-switcher a {
+    display: inline-block;
+    float: left;
+    height: 40px;
+    color: #c7d2e6;
+    text-decoration: none;
+    background-color: transparent;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-image: url(../images/buttons/blue-arrows.gif); }
+  .player-switcher .switch {
+    padding: 0.9em 1em 0.5em 40px;
+    background-position: 0 0; }
+  .player-switcher .previous {
+    width: 40px;
+    border-left: 1px solid #8a99b5;
+    text-indent: -9999px;
+    background-position: 0 -40px; }
+  .player-switcher .next {
+    width: 40px;
+    border-left: 1px solid #8a99b5;
+    text-indent: -9999px;
+    background-position: 0 -80px; }
 
 /*------------------------------------*\
     $Features
@@ -907,6 +930,9 @@ h1 {
 /*------------------------------------*\
     $Tiles
 \*------------------------------------*/
+.tiles .inner, .tiles .site-header, .tiles .carousel {
+  padding: 2.5em; }
+
 .tile {
   position: relative;
   width: 24%;
@@ -947,6 +973,7 @@ h1 {
     $Content
 \*------------------------------------*/
 .content {
+  position: relative;
   float: left;
   width: 74%;
   padding: 0.5em 0.5em 2em 0.5em;
@@ -955,13 +982,13 @@ h1 {
   @media (max-width: 770px) {
     .content {
       width: 100%; } }
+  .content .text {
+    width: 75%; }
   .content p {
-    width: 75%;
     color: #424242; }
   .content img {
     margin-bottom: 1em; }
   .content blockquote {
-    width: 75%;
     margin-bottom: 0.5em;
     color: #a31c3f;
     font-weight: bold;
@@ -974,7 +1001,6 @@ h1 {
   .content h4 {
     color: #3c3c3c; }
   .content ul {
-    width: 75%;
     margin-left: 1em;
     list-style: disc inside;
     color: #424242; }
@@ -986,6 +1012,15 @@ h1 {
   color: #8e8e8e;
   text-transform: uppercase;
   font-size: 2.125em; }
+
+.content-images {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  width: 24%; }
+  .content-images img {
+    display: block;
+    margin-bottom: 0.1em; }
 
 /*------------------------------------*\
     $Content
@@ -1019,3 +1054,13 @@ h1 {
     color: #6e6e6e;
     background-color: #fff;
     text-decoration: none; }
+
+/*------------------------------------*\
+    $Pods
+\*------------------------------------*/
+.pod {
+  padding: 0.5em;
+  margin-bottom: 1px;
+  color: #fff;
+  text-transform: uppercase;
+  background-color: #a9a9a9; }
