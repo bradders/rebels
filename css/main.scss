@@ -14,7 +14,22 @@
  * Buttons
  * Forms
  * Layout
- 
+
+ * Intro
+ * Site Header
+ * Extra Nav
+ * Carousel
+ * Carousel Panel
+ * News
+ * Advert
+ * Player Profile
+ * Features
+ * Tiles
+ * Content
+ * Sidebar
+ * Pods
+ * Footer
+
  */
 
 
@@ -851,7 +866,7 @@ textarea {
 
 
 /*------------------------------------*\
-    $Carousel - Next Match
+    $Carousel Panel
 \*------------------------------------*/
 .panel-overlay {
     position: absolute;
@@ -1421,7 +1436,6 @@ textarea {
     $Features
 \*------------------------------------*/
 .features {
-    height: 500px;
     border-left: 10px solid #D6D6D6;
     border-right: 10px solid #D6D6D6;
     background-repeat: no-repeat;
@@ -1587,7 +1601,7 @@ textarea {
 
 
 /*------------------------------------*\
-    $Content
+    $Sidebar
 \*------------------------------------*/
 .sidebar {
     @extend .quarter;
@@ -1649,3 +1663,117 @@ textarea {
     text-transform: uppercase;
     background-color: #a9a9a9;
 }
+
+
+
+
+
+
+/*------------------------------------*\
+    $Footer
+\*------------------------------------*/
+.footer {
+    float: left;
+    width: 100%;
+    background-color: #bebebe;
+    background-position: 0 0;
+    background-repeat: repeat-x;
+    background-image: url(../images/footer-bg.gif);
+
+    .inner {
+        padding: 2.5em;
+    }
+
+    h3 {
+        color: #666;
+        font-size: $twelve;
+        text-transform: uppercase;
+    }
+
+    h4 {
+        font-size: 1em;
+        margin-bottom: 0.5em;
+        font-weight: normal;
+        color: #272727;
+    }
+
+    hr {
+        float: left;
+        clear: left;
+        width: 100%;
+        height: 1px;
+        border: 0;
+        padding: 0;
+        margin: 1em 0;
+        background-color: #a5a5a5;
+    }
+
+    a {
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+    }
+
+}
+
+.footer-links {
+    @include breakpoint(small) {
+        width: 100%;
+    }
+}
+
+.corporate-links {
+    @include breakpoint(small) {
+        width: 100%;
+    }
+
+    ul {
+        float: left;
+        width: 100%;
+        margin-bottom: 1em;
+    }
+
+    a {
+        float: left;
+        width: 50%;
+        display: block;
+        padding: 0.5em;
+        float: left;
+        border-right: 1px solid #bebebe;
+        border-bottom: 1px solid #bebebe;
+        font-size: $twelve;
+        color: #272727;
+        text-transform: uppercase;
+        background-color: #fff;
+
+        @include breakpoint(small) {
+            width: 50%;
+            padding: 1em;
+        }
+
+    }
+
+}
+
+ .sponsor-logo {
+    float: left;
+    display: block;
+ }
+
+.made-by-eastwood {
+    float: right;
+}
+
+.made-by {
+    float: left;
+    margin-bottom: 0;
+    line-height: 55px;
+    height: 55px;
+}
+
+ .eastwood-logo {
+    float: left;
+ }
