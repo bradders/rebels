@@ -602,7 +602,7 @@ textarea {
     height: 65px;
     padding-left: 150px;
     padding-right: 20px;
-    background-color: #c7c7c7;
+    background-color: #e3e3e3;
 
     @extend .inner;
 
@@ -639,8 +639,8 @@ textarea {
 
     @include breakpoint(small) {
         display: none;
-        width: 40%;
-        height: auto;
+        width: 90%;
+        height: 100%;
         position: fixed;
         top: 0;
         right: 0;
@@ -665,9 +665,19 @@ textarea {
     text-transform: uppercase;
 
     @include breakpoint(small) {
+        display: block !important;
+        height: auto;
+        color: #61779f;
+        text-transform: none;
+        font-size: 1.6em;
+        background-color: #11232e;
         /*width: 100%;
         padding: 2em 0.5em;
         border-bottom: 1px solid #c7c7c7;*/
+
+        &:hover {
+            background-image: none;
+        }
     }
 
     &.active, &:hover {
@@ -858,9 +868,21 @@ textarea {
 }
 
 .panel__image {
-    float: left;
+    display: block;
+    margin: 0 auto;
 }
 
+.image-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-image: url(../images/carousel-image-effect.png);
+}
 
 
 
@@ -872,6 +894,7 @@ textarea {
     position: absolute;
     bottom: 0;
     left: 0;
+    z-index: 2;
     width: 100%;
     background-color: rgba(25, 40, 58, 0.8);
 
@@ -1320,6 +1343,8 @@ textarea {
  }
 
  .player__stats {
+    height: 190px;
+    min-height: 190px;
     padding: 0;
     padding-top: 1em;
 
@@ -1331,6 +1356,23 @@ textarea {
     }
 
     .button {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        margin-bottom: 0;
+        width: 99%;
+    }
+
+ }
+
+ .player__squad {
+    height: 190px;
+    min-height: 190px;
+
+    .button {
+        position: absolute;
+        left: 0;
+        bottom: 0;
         margin-bottom: 0;
     }
 
@@ -1340,6 +1382,7 @@ textarea {
     display: block;
     float: left;
     width: 100%;
+    height: 100%;
     color: #626262;
     padding: 0.2em;
     line-height: 1;
@@ -1682,12 +1725,19 @@ textarea {
 
     .inner {
         padding: 2.5em;
+        @include breakpoint(small) {
+            padding: 1em 0.5em;
+        }
     }
 
     h3 {
         color: #666;
         font-size: $twelve;
         text-transform: uppercase;
+
+        @include breakpoint(small) {
+            text-align: center;
+        }
     }
 
     h4 {
@@ -1750,7 +1800,7 @@ textarea {
         background-color: #fff;
 
         @include breakpoint(small) {
-            width: 50%;
+            width: 100%;
             padding: 1em;
         }
 
@@ -1761,6 +1811,12 @@ textarea {
  .sponsor-logo {
     float: left;
     display: block;
+
+    @include breakpoint(small) {
+        float: none;
+        margin: 0 auto;
+    }
+
  }
 
 .made-by-eastwood {

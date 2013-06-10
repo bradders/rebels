@@ -29,7 +29,7 @@ var UI = {
 		$(".js-toggle-menu").bind("click", function(e) {
             var menu = $(".js-header__nav");
 
-            if(menu.hasClass("active")) {
+            if(menu.attr("data-showing")) {
                 /* Hide Menu */
                 UI.hideMenu(menu);
             } else {
@@ -79,12 +79,20 @@ var UI = {
     showMenu: function(menu){
         var container = $(".container"), 
             menu_width = (container.width() / 100) * 40;
+        
+        console.log("show");
+        menu.attr("data-showing", true);
+        container.css({ width: UI.site.width, marginLeft: "-90%"});
 
     }, 
 
     hideMenu: function(menu){
         var container = $(".container"), 
             menu_width = (container.width() / 100) * 40;
+
+        console.log("hide");
+        menu.removeAttr("data-showing");
+        container.css({ width: "auto", marginLeft: "0"});
 
     }, 
 
