@@ -41,6 +41,12 @@ var UI = {
 			return false;
 		});
 
+        $(".js-close-menu").bind("click", function(e){
+            var menu = $(".js-header__nav");
+            UI.hideMenu(menu);
+            return false;
+        });
+
         /**
         * Tile mouseover functionality
         */
@@ -80,8 +86,7 @@ var UI = {
         var container = $(".container"), 
             menu_width = (container.width() / 100) * 40;
         
-        console.log("show");
-        menu.attr("data-showing", true);
+        menu.attr("data-showing", true).show();
         container.css({ width: UI.site.width, marginLeft: "-90%"});
 
     }, 
@@ -90,8 +95,7 @@ var UI = {
         var container = $(".container"), 
             menu_width = (container.width() / 100) * 40;
 
-        console.log("hide");
-        menu.removeAttr("data-showing");
+        menu.removeAttr("data-showing").hide();
         container.css({ width: "auto", marginLeft: "0"});
 
     }, 

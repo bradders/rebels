@@ -645,7 +645,10 @@ textarea {
         top: 0;
         right: 0;
         z-index: 2;
-        background-color: #000;
+        background-color: #11232e;
+        background-position: 0 0;
+        background-repeat: repeat;
+        background-image: url(../images/mobile-menu-bg.gif);
     }
 
     > ul {
@@ -670,7 +673,6 @@ textarea {
         color: #61779f;
         text-transform: none;
         font-size: 1.6em;
-        background-color: #11232e;
         /*width: 100%;
         padding: 2em 0.5em;
         border-bottom: 1px solid #c7c7c7;*/
@@ -703,6 +705,30 @@ textarea {
         background-position: 0 0;
         background-repeat: no-repeat;
         background-image: url(../images/toggle-menu.gif);
+    }
+
+}
+
+.close-menu {
+    display: none !important;
+    width: 100%;
+    min-height: 45px;
+    padding: 1em;
+    border-bottom: 1px solid #61779f;
+    color: #7e9daf;
+    font-size: 2em;
+    text-decoration: none;
+    background-color: transparent;
+    background-position: 98% 50%;
+    background-repeat: no-repeat;
+    background-image: url(../images/close-menu.png);
+
+    @include breakpoint(small) {
+        display: block;
+    }
+
+    &:hover {
+        text-decoration: none;
     }
 
 }
@@ -1327,6 +1353,11 @@ textarea {
 
     .quarter {
         position: relative;
+
+        @include breakpoint(small) {
+            height: 50px;
+            min-height: auto;
+        }
     }
 
     .button {
@@ -1347,6 +1378,10 @@ textarea {
     min-height: 190px;
     padding: 0;
     padding-top: 1em;
+
+    @include breakpoint(small) {
+        width: 50%;
+    }
 
 
     .stat {
@@ -1369,11 +1404,19 @@ textarea {
     height: 190px;
     min-height: 190px;
 
+    @include breakpoint(small) {
+        width: 50%;
+    }
+
     .button {
         position: absolute;
         left: 0;
         bottom: 0;
         margin-bottom: 0;
+
+        @include breakpoint(small) {
+            width: 100%;
+        }
     }
 
  }

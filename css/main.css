@@ -469,7 +469,10 @@ textarea {
       top: 0;
       right: 0;
       z-index: 2;
-      background-color: #000; } }
+      background-color: #11232e;
+      background-position: 0 0;
+      background-repeat: repeat;
+      background-image: url(../images/mobile-menu-bg.gif); } }
   .header__nav > ul {
     height: 100%;
     margin-bottom: 0; }
@@ -489,7 +492,6 @@ textarea {
       color: #61779f;
       text-transform: none;
       font-size: 1.6em;
-      background-color: #11232e;
       /*width: 100%;
       padding: 2em 0.5em;
       border-bottom: 1px solid #c7c7c7;*/ }
@@ -515,6 +517,25 @@ textarea {
       background-position: 0 0;
       background-repeat: no-repeat;
       background-image: url(../images/toggle-menu.gif); } }
+
+.close-menu {
+  display: none !important;
+  width: 100%;
+  min-height: 45px;
+  padding: 1em;
+  border-bottom: 1px solid #61779f;
+  color: #7e9daf;
+  font-size: 2em;
+  text-decoration: none;
+  background-color: transparent;
+  background-position: 98% 50%;
+  background-repeat: no-repeat;
+  background-image: url(../images/close-menu.png); }
+  @media (max-width: 770px) {
+    .close-menu {
+      display: block; } }
+  .close-menu:hover {
+    text-decoration: none; }
 
 /*------------------------------------*\
     $Extra Nav
@@ -972,6 +993,10 @@ h1 {
   border: 8px solid #fff; }
   .player-profile .quarter, .player-profile .sidebar {
     position: relative; }
+    @media (max-width: 770px) {
+      .player-profile .quarter, .player-profile .sidebar {
+        height: 50px;
+        min-height: auto; } }
   @media (max-width: 770px) {
     .player-profile .button {
       float: left;
@@ -986,6 +1011,9 @@ h1 {
   padding: 0;
   padding-top: 1em; }
   @media (max-width: 770px) {
+    .player__stats {
+      width: 50%; } }
+  @media (max-width: 770px) {
     .player__stats .stat {
       display: none; } }
   .player__stats .button {
@@ -998,11 +1026,17 @@ h1 {
 .player__squad {
   height: 190px;
   min-height: 190px; }
+  @media (max-width: 770px) {
+    .player__squad {
+      width: 50%; } }
   .player__squad .button {
     position: absolute;
     left: 0;
     bottom: 0;
     margin-bottom: 0; }
+    @media (max-width: 770px) {
+      .player__squad .button {
+        width: 100%; } }
 
 .view-squad {
   display: block;
