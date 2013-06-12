@@ -28,6 +28,8 @@
  * Content
  * Sidebar
  * Pods
+ * Section
+ * Social
  * Footer
 
  */
@@ -491,8 +493,13 @@ textarea {
 .inner {
     margin: 0 auto;
     max-width: 1020px;
+    padding: 2.5em;
 
     @include clearfix;
+
+    @include breakpoint(small) {
+        padding: 0;
+    }
 
 }
 
@@ -598,13 +605,14 @@ textarea {
     $Site Header
 \*------------------------------------*/
 .site-header {
+    margin: 0 auto;
+    max-width: 1020px;
     position: relative;
     height: 65px;
     padding-left: 150px;
     padding-right: 20px;
     background-color: #e3e3e3;
-
-    @extend .inner;
+    @include clearfix;
 
     @include breakpoint(small) {
         height: 115px;
@@ -1142,7 +1150,8 @@ textarea {
     }
 
     .inner {
-        padding: 2.5em 2.5em 0 2.5em;
+        padding-top: 2.5em;
+        padding-bottom: 0;
 
         @include breakpoint(small) {
             padding: 0.5em;
@@ -1327,6 +1336,11 @@ textarea {
     background-repeat: no-repeat;
     background-position: 50% 0;
     background-image: url(../images/team-bg.gif);
+
+    .inner {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
 }
 
 .advert {
@@ -1527,16 +1541,6 @@ textarea {
     background-repeat: no-repeat;
     background-position: 0 0;
     background-image: url(../images/features-bg.gif);
-
-    .inner {
-        padding: 2.5em;
-
-        @include breakpoint(small) {
-            padding: 0;
-        }
-
-    }
-
 }
 
 
@@ -1546,14 +1550,6 @@ textarea {
 /*------------------------------------*\
     $Tiles
 \*------------------------------------*/
-.tiles {
-
-    .inner {
-        padding: 2.5em;
-    }
-
-}
-
 .tile {
     position: relative;
     width: 24%;
@@ -1756,6 +1752,115 @@ textarea {
 
 
 /*------------------------------------*\
+    $Sections
+\*------------------------------------*/
+.section {
+
+    .inner {
+
+    }
+
+}
+
+.section--blue {
+    background-color: #293243;
+}
+
+.section--red {
+    background-color: #a0a0a0;
+}
+
+.section--grey {
+    background-color: #451b26;
+}
+
+
+
+
+
+
+/*------------------------------------*\
+    $Social
+\*------------------------------------*/
+.social {
+    background-color: #283241;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-image: url(../images/social-bg.png);
+}
+
+.social__channel {
+    @extend .full;
+    margin-bottom: 1em;
+}
+
+.social__text {
+    float: left;
+    width: 240px;
+    position: relative;
+    padding: 1em;
+    text-transform: uppercase;
+    color: #becae0;
+    background-color: #61779f;
+
+    @include breakpoint(small) {
+        width: 100%;
+        margin-bottom: 1em;
+    }
+
+    span {
+        color: #fff;
+    }
+
+    .social__actions {
+        position: absolute;
+        left: 1em;
+        bottom: 1em;
+    }
+
+}
+
+.social__facebook {
+
+    .social__text {
+        min-height: 300px;
+        height: 300px;
+    }
+
+}
+
+.facebook-profiles {
+    float: left;
+
+    @include breakpoint(small) {
+        display: none;
+    }
+
+    img {
+        float: left;
+    }
+
+}
+
+.social__instagram {
+
+    .social__text {
+        min-height: 240px;
+        height: 240px;
+    }
+
+}
+
+.social__icon {
+
+}
+
+
+
+
+
+
+/*------------------------------------*\
     $Footer
 \*------------------------------------*/
 .footer {
@@ -1767,7 +1872,6 @@ textarea {
     background-image: url(../images/footer-bg.gif);
 
     .inner {
-        padding: 2.5em;
         @include breakpoint(small) {
             padding: 1em 0.5em;
         }

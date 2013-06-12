@@ -28,6 +28,8 @@
  * Content
  * Sidebar
  * Pods
+ * Section
+ * Social
  * Footer
 
  */
@@ -352,22 +354,26 @@ textarea {
 /*------------------------------------*\
     $Layout
 \*------------------------------------*/
-.inner, .site-header, .carousel {
+.inner, .carousel {
   margin: 0 auto;
   max-width: 1020px;
+  padding: 2.5em;
   *zoom: 1; }
-  .inner:before, .site-header:before, .carousel:before, .inner:after, .site-header:after, .carousel:after {
+  .inner:before, .carousel:before, .inner:after, .carousel:after {
     display: table;
     content: ""; }
-  .inner:after, .site-header:after, .carousel:after {
+  .inner:after, .carousel:after {
     clear: both; }
+  @media (max-width: 770px) {
+    .inner, .carousel {
+      padding: 0; } }
 
 .section {
   float: left;
   width: 100%;
   padding: 1em; }
 
-.full, .also-news .button {
+.full, .also-news .button, .social__channel {
   float: left;
   width: 100%; }
 
@@ -432,11 +438,19 @@ textarea {
     $Site Header
 \*------------------------------------*/
 .site-header {
+  margin: 0 auto;
+  max-width: 1020px;
   position: relative;
   height: 65px;
   padding-left: 150px;
   padding-right: 20px;
-  background-color: #e3e3e3; }
+  background-color: #e3e3e3;
+  *zoom: 1; }
+  .site-header:before, .site-header:after {
+    display: table;
+    content: ""; }
+  .site-header:after {
+    clear: both; }
   @media (max-width: 770px) {
     .site-header {
       height: 115px; } }
@@ -833,10 +847,11 @@ h1 {
   @media (max-width: 770px) {
     .main {
       background-image: none; } }
-  .main .inner, .main .site-header, .main .carousel {
-    padding: 2.5em 2.5em 0 2.5em; }
+  .main .inner, .main .carousel {
+    padding-top: 2.5em;
+    padding-bottom: 0; }
     @media (max-width: 770px) {
-      .main .inner, .main .site-header, .main .carousel {
+      .main .inner, .main .carousel {
         padding: 0.5em; } }
 
 .news-item {
@@ -976,6 +991,9 @@ h1 {
   background-repeat: no-repeat;
   background-position: 50% 0;
   background-image: url(../images/team-bg.gif); }
+  .team .inner, .team .carousel {
+    padding-top: 0;
+    padding-bottom: 0; }
 
 .advert {
   padding: 1em; }
@@ -1118,18 +1136,10 @@ h1 {
   background-repeat: no-repeat;
   background-position: 0 0;
   background-image: url(../images/features-bg.gif); }
-  .features .inner, .features .site-header, .features .carousel {
-    padding: 2.5em; }
-    @media (max-width: 770px) {
-      .features .inner, .features .site-header, .features .carousel {
-        padding: 0; } }
 
 /*------------------------------------*\
     $Tiles
 \*------------------------------------*/
-.tiles .inner, .tiles .site-header, .tiles .carousel {
-  padding: 2.5em; }
-
 .tile {
   position: relative;
   width: 24%;
@@ -1263,6 +1273,65 @@ h1 {
   background-color: #a9a9a9; }
 
 /*------------------------------------*\
+    $Sections
+\*------------------------------------*/
+.section--blue {
+  background-color: #293243; }
+
+.section--red {
+  background-color: #a0a0a0; }
+
+.section--grey {
+  background-color: #451b26; }
+
+/*------------------------------------*\
+    $Social
+\*------------------------------------*/
+.social {
+  background-color: #283241;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-image: url(../images/social-bg.png); }
+
+.social__channel {
+  margin-bottom: 1em; }
+
+.social__text {
+  float: left;
+  width: 240px;
+  position: relative;
+  padding: 1em;
+  text-transform: uppercase;
+  color: #becae0;
+  background-color: #61779f; }
+  @media (max-width: 770px) {
+    .social__text {
+      width: 100%;
+      margin-bottom: 1em; } }
+  .social__text span {
+    color: #fff; }
+  .social__text .social__actions {
+    position: absolute;
+    left: 1em;
+    bottom: 1em; }
+
+.social__facebook .social__text {
+  min-height: 300px;
+  height: 300px; }
+
+.facebook-profiles {
+  float: left; }
+  @media (max-width: 770px) {
+    .facebook-profiles {
+      display: none; } }
+  .facebook-profiles img {
+    float: left; }
+
+.social__instagram .social__text {
+  min-height: 240px;
+  height: 240px; }
+
+/*------------------------------------*\
     $Footer
 \*------------------------------------*/
 .footer {
@@ -1272,11 +1341,9 @@ h1 {
   background-position: 0 0;
   background-repeat: repeat-x;
   background-image: url(../images/footer-bg.gif); }
-  .footer .inner, .footer .site-header, .footer .carousel {
-    padding: 2.5em; }
-    @media (max-width: 770px) {
-      .footer .inner, .footer .site-header, .footer .carousel {
-        padding: 1em 0.5em; } }
+  @media (max-width: 770px) {
+    .footer .inner, .footer .carousel {
+      padding: 1em 0.5em; } }
   .footer h3 {
     color: #666;
     font-size: 0.75em;
