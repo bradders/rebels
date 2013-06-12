@@ -91,7 +91,7 @@ var UI = {
             menu_width = (container.width() / 100) * 40;
         
         menu.attr("data-showing", true).show();
-        container.css({ marginLeft: "-90%"});
+        container.animate({ marginLeft: "-90%"});
 
     }, 
 
@@ -99,8 +99,8 @@ var UI = {
         var container = $(".container"), 
             menu_width = (container.width() / 100) * 40;
 
-        menu.removeAttr("data-showing").hide();
-        container.css({ width: "100%", marginLeft: "0"});
+        menu.removeAttr("data-showing");
+        container.animate({ width: "100%", marginLeft: "0"});
 
     }, 
 
