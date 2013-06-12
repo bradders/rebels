@@ -15,13 +15,12 @@ var UI = {
             UI.getSiteMode();
 
             if(UI.site.mode == "small") {
-            	UI.tabs.unload();
-            } else {
-            	UI.tabs.init();
+                $(".header__nav").height(UI.site.height);
             }
 
         });
         UI.getSiteMode();
+        $(".header__nav").height(UI.site.height);
 
         /**
         * Click functionality to deal with small screen nav
@@ -37,7 +36,6 @@ var UI = {
                 UI.showMenu(menu);
             }
 
-			$(".js-header__nav").toggle();
 			return false;
 		});
 
@@ -93,7 +91,7 @@ var UI = {
             menu_width = (container.width() / 100) * 40;
         
         menu.attr("data-showing", true).show();
-        container.css({ width: UI.site.width, marginLeft: "-90%"});
+        container.css({ marginLeft: "-90%"});
 
     }, 
 
@@ -102,7 +100,7 @@ var UI = {
             menu_width = (container.width() / 100) * 40;
 
         menu.removeAttr("data-showing").hide();
-        container.css({ width: "auto", marginLeft: "0"});
+        container.css({ width: "100%", marginLeft: "0"});
 
     }, 
 
@@ -249,68 +247,9 @@ var UI = {
         
     },
 
-	tabs: {
-		
-		init: function() {
-			
-			$(".tabs").each(function() {
-				
-				var div = $(this), 
-						nav = div.find(".tab__nav"), 
-						links = nav.find(".tab__link"), 
-						sections = div.find(".tab__section"), 
-						defaultTab = div.attr("data-default"), 
-						defaultSection = div.find("section[data-tab='" + div.attr("data-default") + "']");
-						
-				if(defaultSection.length == 0) defaultSection = sections.first();
-				
-				if(defaultTab != undefined && defaultSection.length > 0) {
-					sections.hide();
-					defaultTab = div.attr("data-default");
-					div.find("a[data-tab='" + defaultTab + "']").addClass("tab__link--active");
-					div.find("section[data-tab='" + defaultTab + "']").show();
-				} else {
-					links.first().addClass("tab__link--active");
-					sections.hide();
-					sections.first().show();
-				}
-				
-				nav.show();
-				links.bind("click", function(e) {
-					var link = $(this), 
-						tabName = link.attr("data-tab");
-					
-					links.removeClass("tab__link--active");
-					link.addClass("tab__link--active");
-					
-					sections.hide();
-					div.find("section[data-tab='" + tabName + "']").show();
-					
-					return false;
-				});
-				
-			});
-			
-		}, 
-		
-		unload: function() {
-			
-			$(".tabs").each(function() {
-				
-				var div = $(this);
-				
-				div.find(".tab__nav").hide();
-				div.find(".tab__link").removeClass("tab__link--active");
-				div.find(".tab__section").show();
-				
-			});
-			
-		}
-		
-	}, 
-
 	"site": {
 		"width": document.documentElement.clientWidth, 
+        "height": $(".container").height(), 
 		"breakpoints": [
 			{ "name": "medium", "min": 615 }, 
 			{ "name": "small", "min": 0 }
