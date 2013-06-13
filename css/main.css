@@ -15,7 +15,6 @@
  * Forms
  * Layout
 
- * Intro
  * Site Header
  * Extra Nav
  * Carousel
@@ -93,6 +92,12 @@ body {
   line-height: 1.5;
   color: #3D3D3D;
   background-color: #d6d6d6; }
+  @media (max-width: 770px) {
+    body {
+      background-color: #11232e;
+      background-position: 0 0;
+      background-repeat: repeat;
+      background-image: url(../images/mobile-menu-bg.gif); } }
 
 img {
   max-width: 100%;
@@ -255,20 +260,6 @@ table {
 .content--show {
   display: block !important; }
 
-/**
- * $Nav
- * Blatantly lifted from: http://csswizardry.com/2011/09/the-nav-abstraction/
-*/
-.nav {
-  list-style: none;
-  margin-left: 0; }
-
-.nav li {
-  display: inline; }
-
-.nav a {
-  display: inline-block; }
-
 /*------------------------------------*\
     $Buttons
 \*------------------------------------*/
@@ -290,6 +281,14 @@ table {
 .button--blue {
   color: #fff;
   background-color: #646c7a; }
+
+.button--grey {
+  color: #ffffff;
+  background-color: #424242; }
+
+.button--red {
+  color: #ffffff;
+  background-color: #611529; }
 
 .button--arrow {
   background-repeat: no-repeat;
@@ -354,18 +353,18 @@ textarea {
 /*------------------------------------*\
     $Layout
 \*------------------------------------*/
-.inner, .carousel {
+.inner {
   margin: 0 auto;
   max-width: 1040px;
   padding: 2.5em;
   *zoom: 1; }
-  .inner:before, .carousel:before, .inner:after, .carousel:after {
+  .inner:before, .inner:after {
     display: table;
     content: ""; }
-  .inner:after, .carousel:after {
+  .inner:after {
     clear: both; }
   @media (max-width: 770px) {
-    .inner, .carousel {
+    .inner {
       padding: 0; } }
 
 .section {
@@ -428,13 +427,6 @@ textarea {
   width: 20%; }
 
 /*------------------------------------*\
-    $Intro
-\*------------------------------------*/
-.showcase {
-  position: relative;
-  background-color: #0d1723; }
-
-/*------------------------------------*\
     $Site Header
 \*------------------------------------*/
 .site-header {
@@ -473,7 +465,9 @@ textarea {
   float: left;
   width: 100%;
   height: 100%;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  margin-left: 0;
+  list-style: none; }
   @media (max-width: 770px) {
     .header__nav {
       display: none;
@@ -482,14 +476,12 @@ textarea {
       position: absolute;
       top: 0;
       left: 100%;
-      z-index: 1;
-      background-color: #11232e;
-      background-position: 0 0;
-      background-repeat: repeat;
-      background-image: url(../images/mobile-menu-bg.gif); } }
+      z-index: 1; } }
   .header__nav > ul {
     height: 100%;
     margin-bottom: 0; }
+    .header__nav > ul li {
+      display: inline; }
 
 .header__link {
   display: inline-block;
@@ -542,7 +534,7 @@ textarea {
       background-image: url(../images/toggle-menu.gif); } }
 
 .close-menu {
-  display: none;
+  display: none !important;
   width: 100%;
   min-height: 45px;
   padding: 1em;
@@ -561,35 +553,18 @@ textarea {
   .close-menu:hover {
     text-decoration: none; }
 
-.shadow-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  background-color: transparent;
-  background-position: 0 0;
-  background-repeat: repeat-y;
-  background-image: url(../images/shadow-overlay.png); }
-
 /*------------------------------------*\
     $Extra Nav
 \*------------------------------------*/
-.extra-nav {
-  width: 100%;
-  position: absolute;
-  top: 100%;
-  left: 0; }
-  @media (max-width: 770px) {
-    .extra-nav {
-      display: none; } }
+@media (max-width: 770px) {
+  .extra-nav {
+    display: none; } }
 
 .dropdown {
   display: none;
   position: absolute;
   z-index: 3;
-  top: 0;
+  top: 100%;
   left: 0;
   width: 100%;
   max-width: 1020px;
@@ -667,7 +642,8 @@ textarea {
 .carousel {
   position: relative;
   width: 100%;
-  max-width: 1045px; }
+  max-width: 1045px;
+  margin: 0 auto; }
   .carousel .panel {
     *zoom: 1;
     display: none;
@@ -720,6 +696,17 @@ textarea {
   .panel-overlay .button {
     margin-bottom: 0; }
 
+.panel-overlay--short {
+  width: 50%;
+  padding-bottom: 1em; }
+  .panel-overlay--short .button {
+    position: absolute;
+    bottom: 0; }
+
+.panel-overlay--right {
+  left: auto;
+  right: 0; }
+
 .sticker {
   position: absolute;
   top: -10px;
@@ -741,6 +728,7 @@ textarea {
   background-color: #a41c40; }
 
 .panel__title {
+  color: #fff;
   padding: 1.5em; }
   @media (max-width: 770px) {
     .panel__title {
@@ -869,11 +857,11 @@ h1 {
   @media (max-width: 770px) {
     .main {
       background-image: none; } }
-  .main .inner, .main .carousel {
+  .main .inner {
     padding-top: 2.5em;
     padding-bottom: 0; }
     @media (max-width: 770px) {
-      .main .inner, .main .carousel {
+      .main .inner {
         padding: 0.5em; } }
 
 .news-item {
@@ -1013,7 +1001,7 @@ h1 {
   background-repeat: no-repeat;
   background-position: 50% 0;
   background-image: url(../images/team-bg.gif); }
-  .team .inner, .team .carousel {
+  .team .inner {
     padding-top: 0;
     padding-bottom: 0; }
 
@@ -1300,14 +1288,24 @@ h1 {
 /*------------------------------------*\
     $Sections
 \*------------------------------------*/
+.section {
+  position: relative; }
+
+.section--showcase {
+  background-color: #0d1723; }
+
 .section--blue {
   background-color: #293243; }
 
-.section--red {
-  background-color: #a0a0a0; }
-
 .section--grey {
+  background-color: #a0a0a0; }
+  .section--grey .panel-overlay {
+    background-color: rgba(160, 160, 160, 0.7); }
+
+.section--red {
   background-color: #451b26; }
+  .section--red .panel-overlay {
+    background-color: rgba(69, 27, 38, 0.7); }
 
 /*------------------------------------*\
     $Social
@@ -1386,7 +1384,7 @@ h1 {
   background-repeat: repeat-x;
   background-image: url(../images/footer-bg.gif); }
   @media (max-width: 770px) {
-    .footer .inner, .footer .carousel {
+    .footer .inner {
       padding: 1em 0.5em; } }
   .footer h3 {
     color: #666;

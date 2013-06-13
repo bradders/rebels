@@ -10,17 +10,10 @@ var UI = {
         * Collate browser details
         */
         $(window).on("resize", function() {
-            
             UI.site.width = document.documentElement.clientWidth;
             UI.getSiteMode();
-
-            if(UI.site.mode == "small") {
-                $(".header__nav").height(UI.site.height);
-            }
-
         });
         UI.getSiteMode();
-        $(".header__nav").height(UI.site.height);
 
         /**
         * Click functionality to deal with small screen nav
@@ -264,6 +257,12 @@ var UI = {
                 UI.site.mode = breakpoint.name;
                 break;
             }
+        }
+    }, 
+
+    setupMenu: function() {
+        if(UI.site.mode == "small") {
+            $(".header__nav").height(UI.site.height);
         }
     }
 

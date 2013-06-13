@@ -15,7 +15,6 @@
  * Forms
  * Layout
 
- * Intro
  * Site Header
  * Extra Nav
  * Carousel
@@ -43,6 +42,8 @@
 \*------------------------------------*/
 $pink: #a41c40;
 $blue: #646c7a;
+$grey: #424242;
+$burgandy: #611529;
 
 
 $sixteen: 1em;              /* 16px */
@@ -137,6 +138,14 @@ body {
 	line-height: 1.5;
 	color: #3D3D3D;
     background-color: #d6d6d6;
+
+    @include breakpoint(small) {
+        background-color: #11232e;
+        background-position: 0 0;
+        background-repeat: repeat;
+        background-image: url(../images/mobile-menu-bg.gif);
+    }
+
 }
 
 img {
@@ -358,24 +367,6 @@ table {
 }
 
 
-/**
- * $Nav
- * Blatantly lifted from: http://csswizardry.com/2011/09/the-nav-abstraction/
-*/
-.nav {
-    list-style: none;
-    margin-left: 0;
-}
-
-    .nav li {
-        display: inline;
-    }
-
-    .nav a {
-        display: inline-block;
-    }
-
-
 
 
 
@@ -405,6 +396,16 @@ table {
 .button--blue {
     color: #fff;
     background-color: $blue;
+}
+
+.button--grey {
+    color: #ffffff;
+    background-color: $grey;
+}
+
+.button--red {
+    color: #ffffff;
+    background-color: $burgandy;
 }
 
 .button--arrow {
@@ -588,19 +589,6 @@ textarea {
 
 
 
-
-/*------------------------------------*\
-    $Intro
-\*------------------------------------*/
-.showcase {
-    position: relative;
-    background-color: #0d1723;    
-}
-
-
-
-
-
 /*------------------------------------*\
     $Site Header
 \*------------------------------------*/
@@ -644,6 +632,8 @@ textarea {
     width: 100%;
     height: 100%;
     margin-bottom: 0;
+    margin-left: 0;
+    list-style: none;
 
     @include breakpoint(small) {
         display: none;
@@ -653,15 +643,16 @@ textarea {
         top: 0;
         left: 100%;
         z-index: 1;
-        background-color: #11232e;
-        background-position: 0 0;
-        background-repeat: repeat;
-        background-image: url(../images/mobile-menu-bg.gif);
     }
 
     > ul {
         height: 100%;
         margin-bottom: 0;
+
+        li {
+            display: inline;
+        }
+
     }
 
 }
@@ -730,7 +721,7 @@ textarea {
 }
 
 .close-menu {
-    display: none;
+    display: none !important;
     width: 100%;
     min-height: 45px;
     padding: 1em;
@@ -754,19 +745,6 @@ textarea {
 
 }
 
-.shadow-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
-    background-position: 0 0;
-    background-repeat: repeat-y;
-    background-image: url(../images/shadow-overlay.png);
-}
-
 
 
 
@@ -776,10 +754,7 @@ textarea {
     $Extra Nav
 \*------------------------------------*/
 .extra-nav {
-    width: 100%;
-    position: absolute;
-    top: 100%;
-    left: 0;
+
 
     @include breakpoint(small) {
         display: none;
@@ -791,7 +766,7 @@ textarea {
     display: none;
     position: absolute;
     z-index: 3;
-    top: 0;
+    top: 100%;
     left: 0;
     width: 100%;
     max-width: 1020px;
@@ -908,8 +883,7 @@ textarea {
     position: relative;
     width: 100%;
     max-width: 1045px;
-
-    @extend .inner;
+    margin: 0 auto;
 
     .panel {
         @include clearfix;
@@ -973,6 +947,21 @@ textarea {
 
 }
 
+.panel-overlay--short {
+    width: 50%;
+    padding-bottom: 1em;
+
+    .button {
+        position: absolute;
+        bottom: 0;
+    }
+}
+
+.panel-overlay--right {
+    left: auto;
+    right: 0;
+}
+
 .sticker {
     position: absolute;
     top: -10px;
@@ -999,6 +988,7 @@ textarea {
     }
 
 .panel__title {
+    color: #fff;
     padding: 1.5em;
 
     @include breakpoint(small) {
@@ -1785,6 +1775,7 @@ textarea {
     $Sections
 \*------------------------------------*/
 .section {
+    position: relative;
 
     .inner {
 
@@ -1792,16 +1783,31 @@ textarea {
 
 }
 
+.section--showcase {
+    background-color: #0d1723;
+}
+
 .section--blue {
     background-color: #293243;
 }
 
-.section--red {
+.section--grey {
     background-color: #a0a0a0;
+
+    .panel-overlay {
+        background-color: rgba(160, 160, 160, 0.7);
+    }
+
+
 }
 
-.section--grey {
+.section--red {
     background-color: #451b26;
+
+    .panel-overlay {
+        background-color: rgba(69, 27, 38, 0.7);
+    }
+
 }
 
 
