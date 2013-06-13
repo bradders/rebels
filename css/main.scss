@@ -951,9 +951,16 @@ textarea {
     width: 50%;
     padding-bottom: 1em;
 
+    @include breakpoint(small) {
+        width: 100%;
+    }
+
     .button {
         position: absolute;
         bottom: 0;
+        @include breakpoint(small) {
+            left: 0;
+        }
     }
 }
 

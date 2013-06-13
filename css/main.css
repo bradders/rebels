@@ -699,9 +699,15 @@ textarea {
 .panel-overlay--short {
   width: 50%;
   padding-bottom: 1em; }
+  @media (max-width: 770px) {
+    .panel-overlay--short {
+      width: 100%; } }
   .panel-overlay--short .button {
     position: absolute;
     bottom: 0; }
+    @media (max-width: 770px) {
+      .panel-overlay--short .button {
+        left: 0; } }
 
 .panel-overlay--right {
   left: auto;
