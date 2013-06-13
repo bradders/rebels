@@ -48,6 +48,7 @@ $burgandy: #611529;
 
 $sixteen: 1em;              /* 16px */
 $twelve: 0.750em;           /* 12px: 1 / (16x12) = 0.750 */
+$thirteen: 0.8125em;        /* 13px: 1 / (16x13) = 0.8125em */
 $fourteen: 0.875em;         /* 14px: 1 / (16x14) = 0.875 */
 $twenty: 1.5em;             /* 20px: 1 / (16x24) = 1.500 */
 $twenty-six: 1.625em;       /* 26px: 1 / (16x26) = 1.625 */
@@ -832,7 +833,8 @@ textarea {
 }
 
 .arrow-list {
-
+    margin-left: 0 !important;
+    list-style: none !important;
     a {
         display: block;
         padding: 0.2em 2em 0.2em 0;
@@ -860,6 +862,26 @@ textarea {
         border-bottom: 0;
         background-position: 0.1em 50%;
     }
+
+}
+
+.squad-list {
+
+    li {
+        float: left;
+        width: 25%;
+    }
+
+    a {
+        background-position: 95% 50%;
+    }
+
+    span {
+        display: block;
+        color: #363636;
+        font-size: $thirteen;
+    }
+
 }
 
 .team-kit {
@@ -1678,6 +1700,11 @@ textarea {
         color: #424242;
     }
 
+}
+
+.content--wide {
+    width: 100%;
+    margin-right: 0;
 }
 
 @include breakpoint(small) {

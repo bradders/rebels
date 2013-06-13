@@ -37,6 +37,7 @@
 \*------------------------------------*/
 /* 16px */
 /* 12px: 1 / (16x12) = 0.750 */
+/* 13px: 1 / (16x13) = 0.8125em */
 /* 14px: 1 / (16x14) = 0.875 */
 /* 20px: 1 / (16x24) = 1.500 */
 /* 26px: 1 / (16x26) = 1.625 */
@@ -610,16 +611,19 @@ textarea {
   font-size: 0.75em;
   text-transform: uppercase; }
 
-.arrow-list a {
-  display: block;
-  padding: 0.2em 2em 0.2em 0;
-  text-decoration: none;
-  font-size: 0.875em;
-  border-bottom: 1px solid #d4d5d6;
-  background-color: transparent;
-  background-repeat: no-repeat;
-  background-position: 97% 50%;
-  background-image: url(../images/buttons/pink-arrow-small.png); }
+.arrow-list {
+  margin-left: 0 !important;
+  list-style: none !important; }
+  .arrow-list a {
+    display: block;
+    padding: 0.2em 2em 0.2em 0;
+    text-decoration: none;
+    font-size: 0.875em;
+    border-bottom: 1px solid #d4d5d6;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: 97% 50%;
+    background-image: url(../images/buttons/pink-arrow-small.png); }
 
 .arrow-list--plain li {
   float: left;
@@ -629,6 +633,16 @@ textarea {
   padding: 0 0 0 1.5em;
   border-bottom: 0;
   background-position: 0.1em 50%; }
+
+.squad-list li {
+  float: left;
+  width: 25%; }
+.squad-list a {
+  background-position: 95% 50%; }
+.squad-list span {
+  display: block;
+  color: #363636;
+  font-size: 0.8125em; }
 
 .team-kit {
   margin-top: 3em; }
@@ -1230,6 +1244,10 @@ h1 {
     margin-left: 1em;
     list-style: disc inside;
     color: #424242; }
+
+.content--wide {
+  width: 100%;
+  margin-right: 0; }
 
 @media (max-width: 770px) {
   .content p, .content blockquote, .content ul {
