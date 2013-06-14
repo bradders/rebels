@@ -57,7 +57,7 @@ var UI = {
         /**
         * Click handler for main nav
         */
-        $(".header__link").bind("mouseover", function() {
+        /*$(".header__link").bind("mouseover", function() {
             var link = $(this), 
                 name = link.attr("data-name"), 
                 div = $(".dropdown[data-name='" + name + "']");
@@ -70,11 +70,11 @@ var UI = {
             return false;
         });
 
-        $(".header__link").bind("mouseout", function() {
+        $(".header__link").bind("click", function() {
             var link = $(this);
             link.removeClass("active");
             $(".dropdown").slideUp();
-        });
+        });*/
 		
 
 	}, 

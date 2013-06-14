@@ -60,6 +60,28 @@ $seventy: 4.375em;          /* 70px: 1 / (16x70) = 4.375 */
 
 
 
+/*------------------------------------*\
+    $Fonts
+\*------------------------------------*/
+@font-face {
+    font-family: GothamBold;
+    src: url("../fonts/gotham-bold-webfont.ttf");
+}
+
+@font-face {
+    font-family: GothamMedium;
+    src: url("../fonts/gotham-medium-webfont.ttf");
+}
+
+@font-face {
+    font-family: GothamLight;
+    src: url("../fonts/gotham-light-webfont.ttf");
+}
+
+
+
+
+
 
 /*------------------------------------*\
     $Mixins
@@ -133,7 +155,7 @@ html {
 }
 
 body {
-    font-family: "Lucida Grande", Arial, serif;
+    font-family: GothamMedium, Arial, serif;
     font-weight: 100;
     font-size: 100%;
 	line-height: 1.5;
@@ -185,7 +207,8 @@ h3,
 h4,
 h5,
 h6 {
-    font-weight: bold;
+    font-family: GothamBold, Arial, serif;
+    font-weight: normal;
     margin: 0;
 }
 
@@ -661,7 +684,7 @@ textarea {
 .header__link {
     display: inline-block;
     height: 100%;
-    padding: 3em 0.5em 0.5em 0.5em;
+    padding: 3em 0.75em 0.5em 0.75em;
     color: #494949;
     font-size: $twelve;
     text-decoration: none;
@@ -1892,7 +1915,8 @@ textarea {
 }
 
 .social__quote {
-    font-size: $twenty;
+    line-height: 1;
+    font-size: $twenty-six;
     font-weight: bold;
 }
 
