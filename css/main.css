@@ -49,15 +49,17 @@
 \*------------------------------------*/
 @font-face {
   font-family: GothamBold;
-  src: url("../fonts/gotham-bold-webfont.ttf"); }
+  src: url("../fonts/gotham-bold-webfont.eot");
+  src: local("?"), url("../fonts/gotham-bold-webfont.woff") format("woff"), url("../fonts/gotham-bold-webfont.ttf") format("truetype"), url("../fonts/gotham-bold-webfont.svg#webfont") format("svg");
+  font-weight: normal;
+  font-style: normal; }
 
 @font-face {
   font-family: GothamMedium;
-  src: url("../fonts/gotham-medium-webfont.ttf"); }
-
-@font-face {
-  font-family: GothamLight;
-  src: url("../fonts/gotham-light-webfont.ttf"); }
+  src: url("../fonts/gotham-medium-webfont.eot");
+  src: local("?"), url("../fonts/gotham-medium-webfont.woff") format("woff"), url("../fonts/gotham-medium-webfont.ttf") format("truetype"), url("../fonts/gotham-medium-webfont.svg#webfont") format("svg");
+  font-weight: normal;
+  font-style: normal; }
 
 /*------------------------------------*\
     $Mixins
@@ -183,7 +185,8 @@ h6, .h6 {
 p {
   font-size: 1em;
   margin-bottom: 1em;
-  line-height: 1.5; }
+  line-height: 1.5;
+  font-family: "Nunito", Arial, sans-serif; }
 
 b, strong {
   font-weight: bold; }
@@ -926,6 +929,7 @@ h1 {
   margin-bottom: 0;
   color: #8b8d90;
   font-size: 2.125em;
+  letter-spacing: -3px;
   text-transform: uppercase; }
   @media (max-width: 770px) {
     .news__title {
@@ -962,6 +966,8 @@ h1 {
   height: 45px;
   padding: 0.2em;
   color: #fff;
+  font-family: GothamBold, Arial, serif;
+  font-weight: normal;
   line-height: 1.2;
   text-align: center;
   text-transform: uppercase;
@@ -1012,8 +1018,8 @@ h1 {
   width: 100%;
   padding: 0.5em;
   color: #D6D6D6;
-  font-weight: bold;
   font-size: 2.125em;
+  font-family: GothamBold, Arial, serif;
   text-transform: uppercase;
   text-decoration: none;
   background-color: #fff;
@@ -1110,7 +1116,7 @@ h1 {
   color: #626262;
   padding: 0.2em;
   line-height: 1;
-  font-weight: bold;
+  font-family: GothamBold, Arial, serif;
   font-size: 2.125em;
   text-transform: uppercase;
   text-decoration: none;
@@ -1204,7 +1210,7 @@ h1 {
   width: 100%;
   max-height: 250px; }
 
-.tile__title {
+.tile__overlay {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -1212,15 +1218,31 @@ h1 {
   min-height: 4.5em;
   margin-bottom: 0;
   padding: 0.5em;
-  color: #fff;
-  font-weight: bold;
-  text-decoration: none;
-  text-transform: uppercase;
   background-color: #8b8c8e;
   cursor: pointer; }
+  .tile__overlay:hover {
+    text-decoration: none;
+    background-color: #686868; }
+
+.tile__title {
+  color: #fff;
+  font-size: 1.625em;
+  font-family: GothamMedium, Arial, serif;
+  font-weight: normal;
+  text-decoration: none;
+  text-transform: uppercase; }
   .tile__title:hover {
     text-decoration: none;
     background-color: #686868; }
+
+.tile__content {
+  display: none;
+  color: #b2b2b2; }
+  .tile__content span {
+    display: block;
+    color: #fff;
+    font-size: 0.75em;
+    text-transform: uppercase; }
 
 /*------------------------------------*\
     $Content
@@ -1381,8 +1403,8 @@ h1 {
 
 .social__quote {
   line-height: 1;
-  font-size: 1.625em;
-  font-weight: bold; }
+  font-family: GothamMedium, Arial, serif;
+  font-size: 1.625em; }
 
 .social__facebook-twitter {
   position: relative;

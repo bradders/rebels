@@ -41,17 +41,39 @@ var UI = {
         /**
         * Tile mouseover functionality
         */
-        $(".js-tile__title").bind("mouseover", function(e) {
-            var title = $(this);
-            //title.animate({ height: "100%" });
-            return false;
+        $(".js-tile-hover").bind("mouseover", function(e) {
+            var overlay = $(this), 
+                tile = overlay.parents(".tile");
+
+            overlay.animate({ height: "100%" }, function() {
+                tile.find(".tile__content").show();
+            });
+
+            tile.bind("click", function(event) {
+                event.stopPropagation();
+                alert("!");
+                return false;
+            });
         });
 
-        $(".js-tile__title").bind("mouseout", function(e) {
-            var title = $(this);
-            //title.animate({ height: "auto", minHeight: "auto" });
-            return false;
+        $(".js-tile-hover").bind("mouseleave", function(e) {
+            var overlay = $(this), 
+                tile = overlay.parents(".tile");
+
+            overlay.animate({ height: "4.5em", minHeight: "4.5em" }, function(){
+                tile.find(".tile__content").hide();
+            });
         });
+
+        /*$(".js-tile").bind("mouseout", function(e) {
+            var tile = $(this), 
+                overlay = tile.find(".tile__overlay");
+            
+            tile.animate({ height: "4.5em", minHeight: "4.5em" }, function(){
+                tile.find(".tile__content").show();
+            });
+            return false;
+        });*/
 
 
         /**

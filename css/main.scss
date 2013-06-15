@@ -45,6 +45,9 @@ $blue: #646c7a;
 $grey: #424242;
 $burgandy: #611529;
 
+$GothamBoldStack: GothamBold, Arial, serif;
+$GothamMediumStack: GothamMedium, Arial, serif;
+$NunitoStack: "Nunito", Arial, sans-serif;
 
 $sixteen: 1em;              /* 16px */
 $twelve: 0.750em;           /* 12px: 1 / (16x12) = 0.750 */
@@ -65,17 +68,24 @@ $seventy: 4.375em;          /* 70px: 1 / (16x70) = 4.375 */
 \*------------------------------------*/
 @font-face {
     font-family: GothamBold;
-    src: url("../fonts/gotham-bold-webfont.ttf");
+    src: url("../fonts/gotham-bold-webfont.eot");
+    src: local("?"),
+        url("../fonts/gotham-bold-webfont.woff") format("woff"),
+        url("../fonts/gotham-bold-webfont.ttf") format("truetype"),
+        url("../fonts/gotham-bold-webfont.svg#webfont") format("svg");
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
     font-family: GothamMedium;
-    src: url("../fonts/gotham-medium-webfont.ttf");
-}
-
-@font-face {
-    font-family: GothamLight;
-    src: url("../fonts/gotham-light-webfont.ttf");
+    src: url("../fonts/gotham-medium-webfont.eot");
+    src: local("?"),
+        url("../fonts/gotham-medium-webfont.woff") format("woff"),
+        url("../fonts/gotham-medium-webfont.ttf") format("truetype"),
+        url("../fonts/gotham-medium-webfont.svg#webfont") format("svg");
+    font-weight: normal;
+    font-style: normal;
 }
 
 
@@ -155,7 +165,7 @@ html {
 }
 
 body {
-    font-family: GothamMedium, Arial, serif;
+    font-family: $GothamMediumStack;
     font-weight: 100;
     font-size: 100%;
 	line-height: 1.5;
@@ -207,7 +217,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: GothamBold, Arial, serif;
+    font-family: $GothamBoldStack;
     font-weight: normal;
     margin: 0;
 }
@@ -256,6 +266,7 @@ p {
     font-size: 1em;
     margin-bottom: 1em;
     line-height: 1.5;
+    font-family: $NunitoStack;
 }
 
 b, strong {
@@ -1264,6 +1275,7 @@ textarea {
     margin-bottom: 0;
     color: #8b8d90;
     font-size: $thirty-four;
+    letter-spacing: -3px;
     text-transform: uppercase;
 
     @include breakpoint(small) {
@@ -1309,6 +1321,8 @@ textarea {
     height: 45px;
     padding: 0.2em;
     color: #fff;
+    font-family: $GothamBoldStack;
+    font-weight: normal;
     line-height: 1.2;
     text-align: center;
     text-transform: uppercase;
@@ -1369,8 +1383,8 @@ textarea {
     width: 100%;
     padding: 0.5em;
     color: #D6D6D6;
-    font-weight: bold;
     font-size: $thirty-four;
+    font-family: $GothamBoldStack;
     text-transform: uppercase;
     text-decoration: none;
     background-color: #fff;
@@ -1511,7 +1525,7 @@ textarea {
     color: #626262;
     padding: 0.2em;
     line-height: 1;
-    font-weight: bold;
+    font-family: $GothamBoldStack;
     font-size: $thirty-four;
     text-transform: uppercase;
     text-decoration: none;
@@ -1642,7 +1656,7 @@ textarea {
     max-height: 250px;
 }
 
-.tile__title {
+.tile__overlay {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -1650,10 +1664,6 @@ textarea {
     min-height: 4.5em;
     margin-bottom: 0;
     padding: 0.5em;
-    color: #fff;
-    font-weight: bold;
-    text-decoration: none;
-    text-transform: uppercase;
     background-color: #8b8c8e;
     cursor: pointer;
 
@@ -1661,7 +1671,32 @@ textarea {
         text-decoration: none;
         background-color: #686868;
     }
+}
 
+.tile__title {
+    color: #fff;
+    font-size: $twenty-six;
+    font-family: $GothamMediumStack;
+    font-weight: normal;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:hover {
+        text-decoration: none;
+        background-color: #686868;
+    }
+}
+
+.tile__content {
+    display: none;
+    color: #b2b2b2;
+
+    span {
+        display: block;
+        color: #fff;
+        font-size: $twelve;
+        text-transform: uppercase;
+    }
 }
 
 
@@ -1916,8 +1951,8 @@ textarea {
 
 .social__quote {
     line-height: 1;
+    font-family: $GothamMediumStack;
     font-size: $twenty-six;
-    font-weight: bold;
 }
 
 .social__facebook-twitter {
