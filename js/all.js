@@ -51,7 +51,7 @@ var UI = {
 
             tile.bind("click", function(event) {
                 event.stopPropagation();
-                alert("!");
+                
                 return false;
             });
         });
@@ -65,21 +65,10 @@ var UI = {
             });
         });
 
-        /*$(".js-tile").bind("mouseout", function(e) {
-            var tile = $(this), 
-                overlay = tile.find(".tile__overlay");
-            
-            tile.animate({ height: "4.5em", minHeight: "4.5em" }, function(){
-                tile.find(".tile__content").show();
-            });
-            return false;
-        });*/
-
-
         /**
         * Click handler for main nav
         */
-        /*$(".header__link").bind("mouseover", function() {
+        $(".header__link").bind("mouseover", function() {
             var link = $(this), 
                 name = link.attr("data-name"), 
                 div = $(".dropdown[data-name='" + name + "']");
@@ -96,9 +85,23 @@ var UI = {
             var link = $(this);
             link.removeClass("active");
             $(".dropdown").slideUp();
-        });*/
-		
+        });
 
+        $(".js-carousel__control").bind("click", function() {
+
+            var li = $(this), 
+                next_panel = li.attr("data-panel-name");
+
+            $(".js-carousel__control").removeClass("carousel__thumbnail--active");
+            li.addClass("carousel__thumbnail--active");
+
+            $(".panel").fadeOut(function() {
+                $(".panel[data-panel-name='" + next_panel + "']").fadeIn();
+            });
+
+            return false;
+        });
+		
 	}, 
 
     showMenu: function(menu){
@@ -114,153 +117,10 @@ var UI = {
         var container = $(".container"), 
             menu_width = (container.width() / 100) * 40;
 
-        menu.removeAttr("data-showing");
+        menu.removeAttr("data-showing").hide();
         container.animate({ width: "100%", marginLeft: "0"});
 
     }, 
-
-    slideshow: {
-    
-        init: function() {
-        
-            var slideshows = $(".slideshow");
-            for(var i=0, length=slideshows.length;i<length;i++) {
-            	
-                var slideshow = $(slideshows[i]), 
-                    panels_container = slideshow.find(".slideshow__panels"), 
-                    content = slideshow.find(".slideshow__panel"),
-                    window_width = slideshow.width(), 
-                    slideshow_width = window_width * content.length;
-
-                slideshow.height(content.height());
-                slideshow.find(".slideshow__panel").width(window_width);
-            
-                panels_container.addClass("js-slideshow__panels");
-                panels_container.width(slideshow_width);
-                
-                $(content[0]).attr("data-current", "true");
-                this.addControls(slideshow);
-            
-            }
-            
-            $(window).on("resize", function() {
-                UI.slideshow.resize();
-            });
-            
-        }, 
-        
-        resize: function() {
-            var slideshows = $(".slideshow");
-            for(var i=0, length=slideshows.length;i<length;i++) {
-            
-                var slideshow = $(slideshows[i]), 
-                    panels_container = slideshow.find(".slideshow__panels"), 
-                    content = slideshow.find(".slideshow__panel"),
-                    window_width = slideshow.width(), 
-                    slideshow_width = window_width * content.length;
-                
-                slideshow.find(".slideshow__panel").width(window_width);
-                slideshow.height(content.height());
-                panels_container.width(slideshow_width).css({ left: 0 });
-                content.removeAttr("data-current");
-                $(content[0]).attr("data-current", "true");
-            
-            }
-        }, 
-        
-        addControls: function(slideshow) {
-            
-            var html = "<div class='slideshow__controls'>";
-                html += "<a href='./' class='slideshow__control slideshow__control--previous'><span>Previous</span></a>";
-                html+= "<a href='./' class='slideshow__control slideshow__control--next'><span>Next</span></a>";
-                html += "</div>";
-            
-            slideshow.append(html);
-            this.updateUI(slideshow);
-            
-        }, 
-        
-        updateUI: function(slideshow) {
-            
-            var current_panel = UI.slideshow.currentPanel(slideshow), 
-                next_panel = UI.slideshow.nextPanel(slideshow), 
-                previous_panel = UI.slideshow.previousPanel(slideshow);
-                
-            slideshow.find(".slideshow__control").show().removeClass("slideshow__control--disabled");
-            if(previous_panel.length == 0) {
-                slideshow.find(".slideshow__control--previous").addClass("slideshow__control--disabled");
-            }
-            
-            if(next_panel.length == 0) {
-                slideshow.find(".slideshow__control--next").addClass("slideshow__control--disabled");
-            }
-            
-            slideshow.find(".slideshow__control--previous").bind("click", function(e) {
-                UI.slideshow.freezeUI(this);
-                UI.slideshow.move(slideshow, this, "previous");
-                return false;
-            });
-            
-            slideshow.find(".slideshow__control--next").bind("click", function(e) {
-                UI.slideshow.freezeUI(this);
-                UI.slideshow.move(slideshow, this, "next");
-                return false;
-            });
-            
-        }, 
-        
-        move: function(slideshow, link, action) {
-            
-            if(!$(link).hasClass("slideshow__control--disabled")) {
-                
-                var window_width = slideshow.width(), 
-                    current_position = parseInt(slideshow.find(".slideshow__panels").css("left")), 
-                    new_position = 0, 
-                    current_panel = UI.slideshow.currentPanel(slideshow), 
-                    next_panel = UI.slideshow.nextPanel(slideshow), 
-                    previous_panel = UI.slideshow.previousPanel(slideshow);
-
-                if(action == "next") {
-                    new_position = current_position - window_width;
-                    next_panel.attr("data-current", "true");
-                } else if(action == "previous") {
-                    new_position = current_position + window_width;
-                    previous_panel.attr("data-current", "true");
-                }
-                current_panel.removeAttr("data-current");
-                
-                slideshow.find(".slideshow__panels").animate({
-                  left: new_position, 
-                  complete: function() {
-                      UI.slideshow.updateUI(slideshow);
-                  }
-                });
-                
-            }
-            
-        },
-
-        currentPanel: function(slideshow) {
-            return slideshow.find(".slideshow__panel[data-current='true']");
-        }, 
-        
-        nextPanel: function(slideshow) {
-            return UI.slideshow.currentPanel(slideshow).next();
-        }, 
-        
-        previousPanel: function(slideshow) {
-            return UI.slideshow.currentPanel(slideshow).previous();
-        }, 
-        
-        freezeUI: function(l) {
-            var link = $(l);
-            link.off("click");
-            link.on("click", function(e) {
-                return false;
-            });
-        }
-        
-    },
 
 	"site": {
 		"width": document.documentElement.clientWidth, 

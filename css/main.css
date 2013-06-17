@@ -703,10 +703,60 @@ textarea {
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 1;
   background-color: transparent;
   background-repeat: no-repeat;
   background-position: 50% 0;
   background-image: url(../images/carousel-image-effect.png); }
+
+/*------------------------------------*\
+    $Carousel Controls
+\*------------------------------------*/
+.carousel__controls {
+  position: absolute;
+  top: 2em;
+  right: 2em;
+  z-index: 4;
+  list-style: none; }
+  @media (max-width: 770px) {
+    .carousel__controls {
+      top: auto;
+      right: auto;
+      bottom: -0.5em;
+      left: 45%; } }
+
+.carousel__thumbnail {
+  float: left;
+  margin: 0 0.2em 0.2em 0;
+  border: 4px solid #8391a1; }
+  @media (max-width: 770px) {
+    .carousel__thumbnail {
+      border: none; } }
+  .carousel__thumbnail img {
+    display: block;
+    opacity: 0.7; }
+    @media (max-width: 770px) {
+      .carousel__thumbnail img {
+        display: none; } }
+    .carousel__thumbnail img:hover {
+      opacity: 1; }
+  .carousel__thumbnail:nth-child(odd) {
+    clear: left; }
+
+@media (max-width: 770px) {
+  .carousel__thumbnail a {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: 4px solid #335d73;
+    border-radius: 20px;
+    background-color: #335d73; }
+
+  .carousel__thumbnail--active a {
+    border: 4px solid #8391a1;
+    background-color: #8391a1; } }
+.carousel__thumbnail--active img {
+  opacity: 1; }
 
 /*------------------------------------*\
     $Carousel Panel
@@ -729,6 +779,9 @@ textarea {
   .panel-overlay .button {
     margin-bottom: 0; }
 
+@media (max-width: 770px) {
+  .panel-overlay--has-controls {
+    padding-bottom: 3em; } }
 .panel-overlay--short {
   width: 50%;
   padding-bottom: 1em; }
