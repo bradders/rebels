@@ -16,6 +16,7 @@
  * Layout
 
  * Site Header
+ * Page Header
  * Extra Nav
  * Carousel
  * Carousel Panel
@@ -574,6 +575,21 @@ textarea {
     text-decoration: none; }
 
 /*------------------------------------*\
+    $Page Header
+\*------------------------------------*/
+.page-header {
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-image: url(../images/page-header-bg.png); }
+  .page-header .inner {
+    position: relative;
+    height: 225px;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em; }
+  .page-header h1 {
+    padding-top: 110px; }
+
+/*------------------------------------*\
     $Extra Nav
 \*------------------------------------*/
 @media (max-width: 770px) {
@@ -956,6 +972,10 @@ h1 {
       .main .inner {
         padding: 0.5em; } }
 
+.article__date {
+  color: #8E8E8E;
+  text-transform: uppercase; }
+
 .news-item {
   position: relative;
   padding: 0.5em;
@@ -1200,7 +1220,7 @@ h1 {
   font-weight: bold;
   font-size: 8.5em; }
 
-.player-switcher {
+.content-switcher {
   position: absolute;
   top: 2em;
   right: 4em;
@@ -1208,7 +1228,7 @@ h1 {
   font-size: 0.75em;
   text-transform: uppercase;
   background-color: #61779f; }
-  .player-switcher a {
+  .content-switcher a {
     display: inline-block;
     float: left;
     height: 40px;
@@ -1218,19 +1238,22 @@ h1 {
     background-position: 0 0;
     background-repeat: no-repeat;
     background-image: url(../images/buttons/blue-arrows.gif); }
-  .player-switcher .switch {
+  .content-switcher .switch {
     padding: 0.9em 1em 0.5em 40px;
     background-position: 0 0; }
-  .player-switcher .previous {
+  .content-switcher .previous {
     width: 40px;
     border-left: 1px solid #8a99b5;
     text-indent: -9999px;
     background-position: 0 -40px; }
-  .player-switcher .next {
+  .content-switcher .next {
     width: 40px;
     border-left: 1px solid #8a99b5;
     text-indent: -9999px;
     background-position: 0 -80px; }
+
+.content-switcher--news .switch {
+  background-image: url(../images/buttons/blue-menu.gif); }
 
 /*------------------------------------*\
     $Features
@@ -1345,6 +1368,7 @@ h1 {
     width: 100%; } }
 .content__title {
   color: #8e8e8e;
+  line-height: 1;
   text-transform: uppercase;
   font-size: 2.125em; }
 
@@ -1361,7 +1385,13 @@ h1 {
     $Sidebar
 \*------------------------------------*/
 .sidebar .news-item {
-  width: 100%; }
+  width: 100%;
+  border-right: 0; }
+
+.sidebar--white {
+  background-color: #fff; }
+  .sidebar--white .sidebar__title {
+    color: #8E8E8E; }
 
 .sidebar__title {
   padding: 0.2em;

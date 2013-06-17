@@ -16,6 +16,7 @@
  * Layout
 
  * Site Header
+ * Page Header
  * Extra Nav
  * Carousel
  * Carousel Panel
@@ -786,6 +787,30 @@ textarea {
 
 
 /*------------------------------------*\
+    $Page Header
+\*------------------------------------*/
+.page-header {
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-image: url(../images/page-header-bg.png);
+
+    .inner {
+        position: relative;
+        height: 225px;
+        padding-top: 1.5em;
+        padding-bottom: 1.5em;
+    }
+
+    h1 {
+        padding-top: 110px;
+    }
+
+}
+
+
+
+
+/*------------------------------------*\
     $Extra Nav
 \*------------------------------------*/
 .extra-nav {
@@ -1321,6 +1346,11 @@ textarea {
 
 }
 
+.article__date {
+    color: #8E8E8E;
+    text-transform: uppercase;
+}
+
 .news-item {
     position: relative;
     padding: 0.5em;
@@ -1650,7 +1680,7 @@ textarea {
     font-size: 8.5em;
 }
 
-.player-switcher {
+.content-switcher {
     position: absolute;
     top: 2em;
     right: 4em;
@@ -1690,6 +1720,10 @@ textarea {
         background-position: 0 -80px;
     }
 
+}
+
+.content-switcher--news .switch {
+    background-image: url(../images/buttons/blue-menu.gif);
 }
 
 
@@ -1854,6 +1888,7 @@ textarea {
 
 .content__title {
     color: #8e8e8e;
+    line-height: 1;
     text-transform: uppercase;
     font-size: $thirty-four;
 }
@@ -1883,7 +1918,17 @@ textarea {
 
     .news-item {
         width: 100%;
+        border-right: 0;
         @extend .cf;
+    }
+
+}
+
+.sidebar--white {
+    background-color: #fff;
+
+    .sidebar__title {
+        color: #8E8E8E;
     }
 
 }
