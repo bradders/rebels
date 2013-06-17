@@ -81,10 +81,11 @@ var UI = {
             return false;
         });
 
-        $(".header__link").bind("click", function() {
-            var link = $(this);
-            link.removeClass("active");
+        $(".dropdown").bind("mouseleave", function() {
+            var links = $(".header__link");
+            links.removeClass("active");
             $(".dropdown").slideUp();
+            return false;
         });
 
         $(".js-carousel__control").bind("click", function() {
