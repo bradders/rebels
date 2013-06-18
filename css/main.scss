@@ -1365,6 +1365,7 @@ textarea {
     border-right: 1px solid #d6d6d6;
     border-bottom: 1px solid #d6d6d6;
     background-color: #fff;
+    text-decoration: none;
 
     @include breakpoint(small) {
         height: auto;
@@ -1379,6 +1380,7 @@ textarea {
         float: left;
         font-size: $twelve;
         color: #363636;
+        text-decoration: none;
 
         @include breakpoint(small) {
             width: 60%;
@@ -1443,6 +1445,7 @@ textarea {
     font-weight: normal;
     line-height: 1.2;
     text-align: center;
+    text-decoration: none;
     text-transform: uppercase;
     background-color: #677986;
 
@@ -1786,6 +1789,10 @@ textarea {
         margin-right: 0;
     }
 
+}
+
+.tile.last {
+    margin-right: 0;
 }
 
 .tile__image {
