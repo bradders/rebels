@@ -640,6 +640,7 @@ textarea {
 
     @include breakpoint(small) {
         height: 115px;
+        background-color: #c7c7c7;
     }
 
 }
@@ -735,6 +736,13 @@ textarea {
     .header__link.right {
         float: none;
     }
+
+    .header__link.active {
+        background-color: transparent;
+        background-position: 98% 50%;
+        background-repeat: no-repeat;
+        background-image: url(../images/pink-arrow-mobile.png);
+    }
 }
 
 .toggle-menu {
@@ -756,7 +764,7 @@ textarea {
 }
 
 .close-menu {
-    display: none !important;
+    display: none;
     width: 100%;
     min-height: 45px;
     padding: 1em;
@@ -798,10 +806,21 @@ textarea {
         height: 225px;
         padding-top: 1.5em;
         padding-bottom: 1.5em;
+
+        @include breakpoint(small) {
+            padding: 1.5em;
+            height: auto;
+        }
+
     }
 
     h1 {
         padding-top: 110px;
+
+         @include breakpoint(small) {
+            padding-top: 0;
+         }
+
     }
 
 }
@@ -1553,6 +1572,10 @@ textarea {
     background-repeat: no-repeat;
     background-position: 98% 50%;
     background-image: url(../images/grey-arrow.gif);
+
+        @include breakpoint(small) {
+            font-size: $sixteen;
+        }
 
     &:first-of-type {
         border-right: 1px solid #d6d6d6;

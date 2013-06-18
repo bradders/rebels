@@ -466,7 +466,8 @@ textarea {
     clear: both; }
   @media (max-width: 770px) {
     .site-header {
-      height: 115px; } }
+      height: 115px;
+      background-color: #c7c7c7; } }
 
 /* $Logo */
 .header__logo {
@@ -538,7 +539,13 @@ textarea {
 
 @media (max-width: 770px) {
   .header__link.right {
-    float: none; } }
+    float: none; }
+
+  .header__link.active {
+    background-color: transparent;
+    background-position: 98% 50%;
+    background-repeat: no-repeat;
+    background-image: url(../images/pink-arrow-mobile.png); } }
 .toggle-menu {
   display: none; }
   @media (max-width: 770px) {
@@ -555,7 +562,7 @@ textarea {
       background-image: url(../images/toggle-menu.gif); } }
 
 .close-menu {
-  display: none !important;
+  display: none;
   width: 100%;
   min-height: 45px;
   padding: 1em;
@@ -586,8 +593,15 @@ textarea {
     height: 225px;
     padding-top: 1.5em;
     padding-bottom: 1.5em; }
+    @media (max-width: 770px) {
+      .page-header .inner {
+        padding: 1.5em;
+        height: auto; } }
   .page-header h1 {
     padding-top: 110px; }
+    @media (max-width: 770px) {
+      .page-header h1 {
+        padding-top: 0; } }
 
 /*------------------------------------*\
     $Extra Nav
@@ -1142,6 +1156,9 @@ h1 {
   background-repeat: no-repeat;
   background-position: 98% 50%;
   background-image: url(../images/grey-arrow.gif); }
+  @media (max-width: 770px) {
+    .sort-by {
+      font-size: 1em; } }
   .sort-by:first-of-type {
     border-right: 1px solid #d6d6d6; }
   .sort-by:hover {
