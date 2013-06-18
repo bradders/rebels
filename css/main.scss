@@ -639,7 +639,7 @@ textarea {
     @include clearfix;
 
     @include breakpoint(small) {
-        height: 115px;
+        height: 100px;
         background-color: #c7c7c7;
     }
 

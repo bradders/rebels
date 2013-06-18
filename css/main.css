@@ -466,7 +466,7 @@ textarea {
     clear: both; }
   @media (max-width: 770px) {
     .site-header {
-      height: 115px;
+      height: 100px;
       background-color: #c7c7c7; } }
 
 /* $Logo */
