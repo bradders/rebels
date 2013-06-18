@@ -693,11 +693,7 @@ textarea {
   position: relative;
   width: 100%;
   max-width: 1045px;
-  min-height: 585px;
   margin: 0 auto; }
-  @media (max-width: 770px) {
-    .carousel {
-      min-height: auto; } }
   .carousel .panel {
     *zoom: 1;
     display: none;

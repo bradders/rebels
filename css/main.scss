@@ -966,12 +966,7 @@ textarea {
     position: relative;
     width: 100%;
     max-width: 1045px;
-    min-height: 585px;
     margin: 0 auto;
-
-    @include breakpoint(small) {
-        min-height: auto;
-    }
 
     .panel {
         @include clearfix;

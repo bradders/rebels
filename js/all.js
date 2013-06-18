@@ -102,6 +102,8 @@ var UI = {
 
             return false;
         });
+
+        $(".panel").first().show();
 		
 	}, 
 
