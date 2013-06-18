@@ -498,11 +498,11 @@ textarea {
       top: 0;
       left: 100%;
       z-index: 1; } }
-  .header__nav > ul {
+  .header__nav ul {
     height: 100%;
     margin-bottom: 0; }
-    .header__nav > ul li {
-      display: inline; }
+  .header__nav li {
+    display: inline; }
 
 .header__link {
   display: inline-block;
@@ -615,6 +615,9 @@ textarea {
     margin-bottom: 0.5em;
     padding-right: 1em;
     font-size: 0.875em; }
+  .dropdown .button {
+    font-size: 0.75em;
+    text-transform: uppercase; }
 
 .dropdown--news {
   padding-left: 155px; }
@@ -642,9 +645,7 @@ textarea {
   font-size: 0.875em;
   color: #121212; }
 .also-news .button {
-  padding: 1em;
-  font-size: 0.75em;
-  text-transform: uppercase; }
+  padding: 1em; }
 
 .arrow-list {
   margin-left: 0 !important;
@@ -693,11 +694,15 @@ textarea {
   width: 100%;
   max-width: 1045px;
   margin: 0 auto; }
+  @media (max-width: 770px) {
+    .carousel {
+      min-height: auto; } }
   .carousel .panel {
     *zoom: 1;
     display: none;
     position: relative;
     width: 100%;
+    height: 100%;
     background-color: transparent;
     background-position: 50% 0;
     background-repeat: no-repeat; }
@@ -1204,10 +1209,14 @@ h1 {
       display: none; } }
 
 .jersey {
+  position: relative;
   color: #fff;
   font-size: 0.75em; }
   .jersey .label {
-    display: inline-block;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 1em;
     /* Safari */
     -webkit-transform: rotate(-90deg);
     /* Firefox */
@@ -1220,6 +1229,9 @@ h1 {
     filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3); }
 
 .jersey__number {
+  float: right;
+  margin-right: 0.1em;
+  font-family: GothamBold, Arial, serif;
   font-weight: bold;
   font-size: 8.5em; }
 
@@ -1400,6 +1412,7 @@ h1 {
   padding: 0.2em;
   margin-bottom: 0;
   border-bottom: 1px solid #c8c8c8;
+  font-family: GothamMedium, Arial, serif;
   font-size: 2.125em;
   color: #fff;
   text-transform: uppercase; }

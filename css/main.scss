@@ -681,14 +681,13 @@ textarea {
         z-index: 1;
     }
 
-    > ul {
+    ul {
         height: 100%;
         margin-bottom: 0;
+    }
 
-        li {
-            display: inline;
-        }
-
+    li {
+        display: inline;
     }
 
 }
@@ -844,6 +843,11 @@ textarea {
         font-size: $fourteen;
     }
 
+    .button {
+        font-size: $twelve;
+        text-transform: uppercase;
+    }
+
 }
 
 .dropdown--news {
@@ -885,8 +889,6 @@ textarea {
     .button {
         @extend .full;
         padding: 1em;
-        font-size: $twelve;
-        text-transform: uppercase;
     }
 
 }
@@ -966,11 +968,16 @@ textarea {
     max-width: 1045px;
     margin: 0 auto;
 
+    @include breakpoint(small) {
+        min-height: auto;
+    }
+
     .panel {
         @include clearfix;
         display: none;
         position: relative;
         width: 100%;
+        height: 100%;
         background-color: transparent;
         background-position: 50% 0;
         background-repeat: no-repeat;
@@ -1661,11 +1668,16 @@ textarea {
  }
 
 .jersey {
+    position: relative;
     color: #fff;
     font-size: $twelve;
 
     .label {
-        display: inline-block;
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 1em;
+
         /* Safari */
         -webkit-transform: rotate(-90deg);
 
@@ -1684,6 +1696,9 @@ textarea {
 }
 
 .jersey__number {
+    float: right;
+    margin-right: 0.1em;
+    font-family: $GothamBoldStack;
     font-weight: bold;
     font-size: 8.5em;
 }
@@ -1945,6 +1960,7 @@ textarea {
     padding: 0.2em;
     margin-bottom: 0;
     border-bottom: 1px solid #c8c8c8;
+    font-family: $GothamMediumStack;
     font-size: $thirty-four;
     color: #fff;
     text-transform: uppercase;
