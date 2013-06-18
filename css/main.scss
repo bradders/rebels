@@ -1487,7 +1487,7 @@ textarea {
 
     }
 
-.news__more {
+.load-more {
     display: block;
     float: left;
     clear: left;
@@ -1500,8 +1500,6 @@ textarea {
     text-decoration: none;
     background-color: #fff;
     background-repeat: no-repeat;
-    background-position: 98% 50%;
-    background-image: url(../images/plus.gif);
 
     @include breakpoint(small) {
         font-size: $twenty;
@@ -1511,6 +1509,16 @@ textarea {
     &:hover {
         text-decoration: none;
     }
+
+}
+
+.load-more--plus {
+    padding-right: 2em;
+    background-position: 98% 50%;
+    background-image: url(../images/plus.gif);
+}
+
+.load-more--list {
 
 }
 

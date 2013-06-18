@@ -1084,7 +1084,7 @@ h1 {
     .icon.video {
       background-image: url(../images/icons/video-small.gif); } }
 
-.news__more {
+.load-more {
   display: block;
   float: left;
   clear: left;
@@ -1096,14 +1096,17 @@ h1 {
   text-transform: uppercase;
   text-decoration: none;
   background-color: #fff;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; }
+  @media (max-width: 770px) {
+    .load-more {
+      font-size: 1.5em; } }
+  .load-more:hover {
+    text-decoration: none; }
+
+.load-more--plus {
+  padding-right: 2em;
   background-position: 98% 50%;
   background-image: url(../images/plus.gif); }
-  @media (max-width: 770px) {
-    .news__more {
-      font-size: 1.5em; } }
-  .news__more:hover {
-    text-decoration: none; }
 
 /*------------------------------------*\
     $Advert

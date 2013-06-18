@@ -42,8 +42,8 @@ var UI = {
         * Tile mouseover functionality
         */
         $(".js-tile-hover").bind("mouseover", function(e) {
-            var overlay = $(this), 
-                tile = overlay.parents(".tile");
+            var tile = $(this), 
+                overlay = $(this).find(".tile__overlay");
 
             overlay.animate({ height: "100%" }, function() {
                 tile.find(".tile__content").show();
@@ -57,8 +57,8 @@ var UI = {
         });
 
         $(".js-tile-hover").bind("mouseleave", function(e) {
-            var overlay = $(this), 
-                tile = overlay.parents(".tile");
+            var tile = $(this), 
+                overlay = tile.find(".tile__overlay");
 
             overlay.animate({ height: "4.5em", minHeight: "4.5em" }, function(){
                 tile.find(".tile__content").hide();
