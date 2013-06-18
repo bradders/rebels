@@ -973,6 +973,9 @@ h1 {
     @media (max-width: 770px) {
       .main .inner {
         padding: 0.5em; } }
+  .main .load-more {
+    margin-top: 1px;
+    width: 74%; }
 
 .article__date {
   color: #8E8E8E;
@@ -1112,6 +1115,11 @@ h1 {
   padding-right: 2em;
   background-position: 98% 50%;
   background-image: url(../images/plus.gif); }
+
+.load-more--list {
+  padding-left: 2em;
+  background-position: 2% 50%;
+  background-image: url(../images/list.gif); }
 
 /*------------------------------------*\
     $Advert

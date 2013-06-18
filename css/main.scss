@@ -1347,6 +1347,11 @@ textarea {
 
     }
 
+    .load-more {
+        margin-top: 1px;
+        width: 74%;
+    }
+
 }
 
 .article__date {
@@ -1522,6 +1527,12 @@ textarea {
     padding-right: 2em;
     background-position: 98% 50%;
     background-image: url(../images/plus.gif);
+}
+
+.load-more--list {
+    padding-left: 2em;
+    background-position: 2% 50%;
+    background-image: url(../images/list.gif);
 }
 
 .load-more--list {
