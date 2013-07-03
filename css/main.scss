@@ -786,7 +786,7 @@ textarea {
 .toggle-menu {
     display: none;
     background: url("../images/toggle-menu.png") no-repeat;
-    @include image-2x("../images/toggle-menu@3.png", 43px, 33px);
+    @include image-2x("../images/toggle-menu@2.png", 43px, 33px);
 
     @include breakpoint(small) {
         display: block;
