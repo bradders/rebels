@@ -311,7 +311,7 @@ table {
 
 .button--pink {
   color: #fff;
-  background-color: #a41c40; }
+  background-color: #b00533; }
 
 .button--blue {
   color: #fff;
@@ -331,7 +331,7 @@ table {
   background-image: url(../images/buttons/arrow.png); }
 
 .pink-arrow {
-  color: #a41c40;
+  color: #b00533;
   font-size: 0.75em;
   padding-right: 20px;
   text-transform: uppercase;
@@ -661,7 +661,7 @@ textarea {
   max-width: 1020px;
   height: 430px;
   margin: 0 auto;
-  padding: 2em;
+  padding: 2em 2em 2em 155px;
   background-color: transparent;
   background-position: 0 0;
   background-repeat: no-repeat;
@@ -674,22 +674,26 @@ textarea {
     font-size: 0.75em;
     text-transform: uppercase; }
 
-.dropdown--news {
-  padding-left: 155px; }
-
 .dropdown__title {
   display: block;
   padding-bottom: 0.5em;
   margin-right: 0.5em;
   margin-bottom: 0.5em;
+  color: #363636;
   font-size: 0.875em;
+  font-family: GothamBold, Arial, serif;
+  font-weight: normal;
   border-bottom: 1px solid #d4d5d6; }
+
+.dropdown__title--plain {
+  padding-bottom: 0;
+  border-bottom: 0;
+  color: #121212; }
 
 .news-summary__image {
   display: block;
-  border: 5px solid #d6d6d6;
-  margin-left: 1em;
-  margin-bottom: 2em;
+  border: 2px solid #d6d6d6;
+  margin-bottom: 1em;
   -webkit-box-shadow: 0px 10px 20px rgba(51, 51, 51, 0.75);
   -moz-box-shadow: 0px 10px 20px rgba(51, 51, 51, 0.75);
   box-shadow: 0px 10px 20px rgba(51, 51, 51, 0.75); }
@@ -773,6 +777,9 @@ textarea {
       height: auto; } }
   .carousel--match h1 {
     font-size: 5.3125em; }
+    @media (max-width: 770px) {
+      .carousel--match h1 {
+        font-size: 4em; } }
 
 .panel__image {
   display: block;
@@ -898,7 +905,7 @@ textarea {
   background-image: url(../images/stickers/winners.png); }
 
 .sticker.next {
-  background-color: #a41c40; }
+  background-color: #b00533; }
 
 .panel__title {
   color: #fff;
