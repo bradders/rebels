@@ -17,7 +17,7 @@
 
  * Site Header
  * Page Header
- * Extra Nav
+ * Dropdown Menus
  * Carousel
  * Carousel Panel
  * News
@@ -50,16 +50,17 @@ $GothamBoldStack: GothamBold, Arial, serif;
 $GothamMediumStack: GothamMedium, Arial, serif;
 $GothamBookStack: GothamBook, Arial, serif;
 
-$sixteen: 1em;              /* 16px */
-$twelve: 0.750em;           /* 12px: 1 / (16x12) = 0.750 */
+$eleven: 0.6875;            /* 11px: 1 / (16x11) = 0.6875   */
+$twelve: 0.750em;           /* 12px: 1 / (16x12) = 0.750    */
 $thirteen: 0.8125em;        /* 13px: 1 / (16x13) = 0.8125em */
-$fourteen: 0.875em;         /* 14px: 1 / (16x14) = 0.875 */
-$twenty: 1.5em;             /* 20px: 1 / (16x24) = 1.500 */
-$twenty-six: 1.625em;       /* 26px: 1 / (16x26) = 1.625 */
-$thirty-four: 2.125em;      /* 34px: 1 / (16x34) = 2.215 */
-$fifty-seven: 3.375em;      /* 57px: 1 / (16x57) = 3.375 */
-$seventy: 4.375em;          /* 70px: 1 / (16x70) = 4.375 */
-$eightyfive: 5.3125em;      /* 85px: 1 / (16x85) =  5.3125 */
+$fourteen: 0.875em;         /* 14px: 1 / (16x14) = 0.875    */
+$sixteen: 1em;              /* 16px                         */
+$twenty: 1.5em;             /* 20px: 1 / (16x24) = 1.500    */
+$twenty-six: 1.625em;       /* 26px: 1 / (16x26) = 1.625    */
+$thirty-four: 2.125em;      /* 34px: 1 / (16x34) = 2.215    */
+$fifty-seven: 3.375em;      /* 57px: 1 / (16x57) = 3.375    */
+$seventy: 4.375em;          /* 70px: 1 / (16x70) = 4.375    */
+$eightyfive: 5.3125em;      /* 85px: 1 / (16x85) =  5.3125  */
 
 
 
@@ -867,10 +868,9 @@ textarea {
 
 
 /*------------------------------------*\
-    $Extra Nav
+    $Dropdown Menus
 \*------------------------------------*/
 .extra-nav {
-
 
     @include breakpoint(small) {
         display: none;
@@ -907,9 +907,6 @@ textarea {
 
 }
 
-.dropdown--news {
-}
-
 .dropdown__title {
     display: block;
     padding-bottom: 0.5em;
@@ -928,6 +925,10 @@ textarea {
     color: #121212;
 }
 
+
+/*
+* News Dropdown
+*/
 .news-summary {
     @extend .third;
 }
@@ -957,6 +958,10 @@ textarea {
 
 }
 
+
+/*
+* Team Dropdown
+*/
 .arrow-list {
     margin-left: 0 !important;
     list-style: none !important;
@@ -1020,6 +1025,117 @@ textarea {
     }
 
 }
+
+
+/*
+* Matches Dropdown
+*/
+.next-match {
+
+    .teams {
+        overflow: hidden;
+        margin-right: 0.5em;
+        text-align: center;
+        border-bottom: 1px solid #d4d5d6;
+
+        p {
+            font-size: $twelve;
+        }
+
+    }
+
+    .button {
+        width: 40%;
+        padding: 1em;
+    }
+
+}
+
+.lineup {
+    margin-bottom: 10px;
+    min-height: 30px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-image: url(../images/white-vs.png);
+}
+
+.fixtures {
+    padding-right: 0.5em;
+    margin-right: 0;
+
+    .dropdown__title {
+        margin-right: 0;
+    }
+
+}
+
+.ladder {
+
+    .dropdown__title {
+        margin-right: 0;
+    }
+
+}
+
+.fixtures-ladder {
+
+    .dropdown__title {
+        margin-bottom: 0;
+    }
+
+    table {
+        width: 100%;
+        font-size: 11px;
+        font-family: $GothamBookStack;
+
+        tr {
+            border-bottom: 1px solid #c8cbd0;
+        }
+
+        th {
+            text-transform: uppercase;
+            padding: 9px 5px;
+            text-align: left;
+        }
+
+        td {
+            padding: 10px 7px;
+        }
+
+        .date {
+            text-transform: uppercase;
+            width: 60px;
+        }
+
+        .result {
+            text-align: right;
+        }
+
+        .points {
+            width: 45px;
+            text-align: right;
+        }
+
+        .highlight td {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+    }
+    
+    .table-header {
+        border-bottom: 0;
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .button {
+        width: 100%;
+        padding: 1em;
+        border-top: 1px solid #d4d5d6;
+    }
+
+}
+
+
 
 
 
