@@ -66,46 +66,6 @@ $eightyfive: 5.3125em;      /* 85px: 1 / (16x85) =  5.3125  */
 
 
 
-/*------------------------------------*\
-    $Fonts
-\*------------------------------------*/
-@font-face {
-    font-family: GothamBold;
-    src: url("../fonts/gotham-bold-webfont.eot");
-    src: local("?"),
-        url("../fonts/gotham-bold-webfont.woff") format("woff"),
-        url("../fonts/gotham-bold-webfont.ttf") format("truetype"),
-        url("../fonts/gotham-bold-webfont.svg#webfont") format("svg");
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: GothamMedium;
-    src: url("../fonts/gotham-medium-webfont.eot");
-    src: local("?"),
-        url("../fonts/gotham-medium-webfont.woff") format("woff"),
-        url("../fonts/gotham-medium-webfont.ttf") format("truetype"),
-        url("../fonts/gotham-medium-webfont.svg#webfont") format("svg");
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: GothamBook;
-    src: url("../fonts/gotham-book-webfont.eot");
-    src: local("?"),
-        url("../fonts/gotham-book-webfont.woff") format("woff"),
-        url("../fonts/gotham-book-webfont.ttf") format("truetype"),
-        url("../fonts/gotham-book-webfont.svg#webfont") format("svg");
-    font-weight: normal;
-    font-style: normal;
-}
-
-
-
-
-
 
 /*------------------------------------*\
     $Mixins
@@ -143,6 +103,24 @@ $eightyfive: 5.3125em;      /* 85px: 1 / (16x85) =  5.3125  */
     background-image: url($image);
     background-size: $width $height;
     }
+}
+
+@mixin gotham-bold() {
+    font-family: "Gotham SSm A", "Gotham SSm B";
+    font-weight: 700;
+    font-style: normal;
+}
+
+@mixin gotham-medium() {
+    font-family: "Gotham SSm A", "Gotham SSm B";
+    font-weight: 500;
+    font-style: normal;
+}
+
+@mixin gotham-book() {
+    font-family: "Gotham SSm A", "Gotham SSm B";
+    font-weight: 400;
+    font-style: normal;
 }
 
 
@@ -191,7 +169,7 @@ html {
 }
 
 body {
-    font-family: $GothamMediumStack;
+    @include gotham-medium;
     font-weight: 100;
     font-size: 100%;
 	line-height: 1.5;
@@ -243,7 +221,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: $GothamBoldStack;
+    @include gotham-bold;
     font-weight: normal;
     margin: 0;
 }
@@ -300,7 +278,7 @@ p {
     font-size: 1em;
     margin-bottom: 1em;
     line-height: 1.5;
-    font-family: $GothamBookStack;
+    @include gotham-book;
 }
 
 b, strong {
@@ -914,7 +892,7 @@ textarea {
     margin-bottom: 0.5em;
     color: #363636;
     font-size: $fourteen;
-    font-family: $GothamBoldStack;
+    
     font-weight: normal;
     border-bottom: 1px solid #d4d5d6;
 }
@@ -1086,7 +1064,7 @@ textarea {
     table {
         width: 100%;
         font-size: 11px;
-        font-family: $GothamBookStack;
+        @include gotham-book;
 
         tr {
             border-bottom: 1px solid #c8cbd0;
@@ -1624,8 +1602,7 @@ textarea {
     height: 45px;
     padding: 0.2em;
     color: #fff;
-    font-family: $GothamBoldStack;
-    font-weight: normal;
+    @include gotham-bold;
     line-height: 1.2;
     text-align: center;
     text-decoration: none;
@@ -1688,7 +1665,7 @@ textarea {
     padding: 0.5em;
     color: #A7A7A7;
     font-size: $thirty-four;
-    font-family: $GothamBoldStack;
+    @include gotham-bold;
     text-transform: uppercase;
     text-decoration: none;
     background-color: #fff;
@@ -1727,7 +1704,7 @@ textarea {
     padding: 1em 0.5em;
     border-bottom: 1px solid #d6d6d6;
     color: #a7a7a7;
-    font-family: $GothamMediumStack;
+    @include gotham-medium;
     font-size: $twenty;
     text-decoration: none;
     text-transform: uppercase;
@@ -1873,7 +1850,7 @@ textarea {
     color: #626262;
     padding: 0.2em;
     line-height: 1;
-    font-family: $GothamBoldStack;
+    @include gotham-bold;
     font-size: $thirty-four;
     text-transform: uppercase;
     text-decoration: none;
@@ -1920,8 +1897,7 @@ textarea {
 .jersey__number {
     float: right;
     margin-right: 0.1em;
-    font-family: $GothamBoldStack;
-    font-weight: bold;
+    @include gotham-bold;
     font-size: 8.5em;
 }
 
@@ -2040,8 +2016,7 @@ textarea {
 .tile__title {
     color: #fff;
     font-size: $twenty-six;
-    font-family: $GothamMediumStack;
-    font-weight: normal;
+    @include gotham-medium;
     text-decoration: none;
     text-transform: uppercase;
 
@@ -2186,7 +2161,7 @@ textarea {
     padding: 0.2em;
     margin-bottom: 0;
     border-bottom: 1px solid #c8c8c8;
-    font-family: $GothamMediumStack;
+    @include gotham-medium;
     font-size: $thirty-four;
     color: #fff;
     text-transform: uppercase;
@@ -2332,7 +2307,7 @@ textarea {
 .social__quote {
     line-height: 1;
     letter-spacing: -3px;
-    font-family: $GothamMediumStack;
+    @include gotham-medium;
     font-size: $thirty-four;
 }
 
