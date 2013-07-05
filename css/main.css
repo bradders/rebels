@@ -1720,9 +1720,6 @@ textarea {
     color: #666;
     font-size: 0.75em;
     text-transform: uppercase; }
-    @media (max-width: 770px) {
-      .footer h3 {
-        text-align: center; } }
   .footer h4 {
     font-size: 1em;
     margin-bottom: 0.5em;
@@ -1776,7 +1773,18 @@ textarea {
   @media (max-width: 770px) {
     .sponsor-logo {
       float: none;
-      margin: 0 auto; } }
+      margin: 0 auto 2em auto; } }
+
+@media (max-width: 770px) {
+  .gold-sponsors {
+    text-align: center; }
+    .gold-sponsors .sponsor-logo {
+      display: inline; }
+
+  .footer-list {
+    width: 50%; } }
+.sponsor-logo--gold {
+  float: left; }
 
 .made-by-eastwood {
   float: right; }

@@ -2389,7 +2389,7 @@ textarea {
         text-transform: uppercase;
 
         @include breakpoint(small) {
-            text-align: center;
+            
         }
     }
 
@@ -2467,9 +2467,29 @@ textarea {
 
     @include breakpoint(small) {
         float: none;
-        margin: 0 auto;
+        margin: 0 auto 2em auto;
     }
 
+ }
+
+@include breakpoint(small) {
+
+    .gold-sponsors {
+        text-align: center;
+
+        .sponsor-logo {
+            display: inline;
+        }
+        
+    }
+
+    .footer-list {
+        width: 50%;
+    }
+}
+
+ .sponsor-logo--gold {
+    float: left;
  }
 
 .made-by-eastwood {
