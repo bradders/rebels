@@ -32,54 +32,146 @@
 			<nav class="header__nav nav js-header__nav">
 				<a href="/" class="close-menu js-close-menu">Menu</a>
 				<ul>
-					<li>
-						<a href="./" class="header__link" data-name="home">Home</a>
-					</li>
-					<li>
-						<a href="./" class="header__link" data-name="matches">Matches</a>
-					</li>
-					<li>
-						<a href="./" class="header__link" data-name="news">News</a>
-					</li>
-					<li>
-						<a href="./" class="header__link" data-name="team">Team</a>
-					</li>
-					<li>
-						<a href="./" class="header__link" data-name="club">Club</a>
-					</li>
-					<li>
-						<a href="./" class="header__link" data-name="shop">Shop</a>
-					</li>
-					<li>
-						<a href="./" class="header__link" data-name="tickets">Tickets</a>
-					</li>
-					<li>
-						<a href="./" class="header__link" data-name="membership">Membership</a>
-					</li>
-					<li>
-						<a href="./" class="header__link right">Rabo Direct</a>
-					</li>
+					<li><a href="./" class="header__link" data-name="home">Home</a></li>
+					<li><a href="./" class="header__link" data-name="matches">Matches</a></li>
+					<li><a href="./" class="header__link" data-name="news">News</a></li>
+					<li><a href="./" class="header__link" data-name="team">Team</a></li>
+					<li><a href="./" class="header__link" data-name="club">Club</a></li>
+					<li><a href="./" class="header__link" data-name="shop">Shop</a></li>
+					<li><a href="./" class="header__link" data-name="tickets">Tickets</a></li>
+					<li><a href="./" class="header__link" data-name="membership">Membership</a></li>
+					<li><a href="./" class="header__link right" data-name="rabo">Rabo Direct</a></li>
 				</ul>
 			</nav>
 
 			<div class="extra-nav">
 
-				<div class="dropdown dropdown--home" data-name="home">
-					Home
-				</div>
-				<!-- /.dropdown -->
-
 				<div class="dropdown" data-name="matches">
-					<h2>Matches</h2>
+
+					<div class="half next-match">
+						
+						<strong class="dropdown__title">Next Match</strong>
+
+						<div class="teams">
+							
+							<div class="half">
+								<img src="http://placehold.it/155x145" alt="" title="" />
+							</div>
+
+							<div class="half">
+								<img src="http://placehold.it/155x145" alt="" title="" />
+							</div>
+
+							<div class="full lineup">
+								<span class="half">Rebels</span>
+								<span class="half">Brumbies</span>
+							</div>
+							<!-- /.lineup -->
+
+							<div class="full">
+								<p>Sat, Apr 20. 7:20PM , AAMI Park</p>
+							</div>
+							<!-- /.lineup -->
+
+						</div>
+						<!-- /.next-match -->
+						<a href="./" class="button button--arrow button--blue">Match Details</a>
+
+					</div>
+
+					<div class="half fixtures-ladder">
+
+						<div class="half fixtures">
+
+							<strong class="dropdown__title">Fixtures</strong>
+							<table>
+								<tr class="table-header">
+									<th class="date">Date</th>
+									<th class="vs-team">Vs</th>
+									<th class="result">Result</th>
+								</tr>
+								<tr>
+									<td class="date">Apr 15</td>
+									<td class="vs-team">Reds</td>
+									<td class="result">W</td>
+								</tr>
+								<tr>
+									<td class="date">Apr 27</td>
+									<td class="vs-team">Crusaders</td>
+									<td class="result">W</td>
+								</tr>
+								<tr class="highlight">
+									<td class="date">May 05</td>
+									<td class="vs-team">Brumbies</td>
+									<td class="result">L</td>
+								</tr>
+								<tr>
+									<td class="date">May 12</td>
+									<td class="vs-team">Hurricanes</td>
+									<td class="result"></td>
+								</tr>
+								<tr>
+									<td class="date">May 23</td>
+									<td class="vs-team">Warratahs</td>
+									<td class="result"></td>
+								</tr>
+							</table>
+
+							<a href="./" class="button button--arrow button--blue">All Fixtures</a>
+
+						</div>
+						<!-- /.fixtures -->
+
+						<div class="half ladder">
+
+							<strong class="dropdown__title">Ladder</strong>
+							<table>
+								<tr class="table-header">
+									<th class="pos">Pos</th>
+									<th class="points">Points</th>
+								</tr>
+								<tr>
+									<td class="pos">6 Reds</td>
+									<td class="points">26</td>
+								</tr>
+								<tr>
+									<td class="pos">7 Warratahs</td>
+									<td class="points">26</td>
+								</tr>
+								<tr class="highlight">
+									<td class="pos">8 Rebels</td>
+									<td class="points">22</td>
+								</tr>
+								<tr>
+									<td class="pos">9 Brumbies</td>
+									<td class="points">18</td>
+								</tr>
+								<tr>
+									<td class="pos">10 Hurricanes</td>
+									<td class="points">14</td>
+								</tr>
+							</table>
+							
+
+							<a href="./" class="button button--arrow button--blue">Full Ladder</a>
+
+						</div>
+						<!-- /.ladder -->
+
+					</div>
+					<!-- /. -->
+					
 				</div>
 				<!-- /.matches -->
 
 				<div class="dropdown dropdown--news" data-name="news">
 					
 					<div class="news-list two-thirds">
+
+						<strong class="dropdown__title dropdown__title dropdown__title--plain">Latest News</strong>
 						
 						<div class="news-summary">
-							<img src="http://placehold.it/130x130/" alt="" title="" class="news-summary__image" />
+							<img src="./images/placeholder/1.png" alt="" title="" class="news-summary__image" />
 							<strong class="dropdown__title">May 20</strong>
 							<p>News headline goes in this place lorem ipsum dolart amet</p>
 							<a href="./" class="pink-arrow">Read On</a>
@@ -87,7 +179,7 @@
 						<!-- /.news-summary -->
 
 						<div class="news-summary">
-							<img src="http://placehold.it/130x130/" alt="" title="" class="news-summary__image" />
+							<img src="./images/placeholder/1.png" alt="" title="" class="news-summary__image" />
 							<strong class="dropdown__title">May 20</strong>
 							<p>News headline goes in this place lorem ipsum dolart amet</p>
 							<a href="./" class="pink-arrow">Read On</a>
@@ -95,7 +187,7 @@
 						<!-- /.news-summary -->
 
 						<div class="news-summary">
-							<img src="http://placehold.it/130x130/" alt="" title="" class="news-summary__image" />
+							<img src="./images/placeholder/1.png" alt="" title="" class="news-summary__image" />
 							<strong class="dropdown__title">May 20</strong>
 							<p>News headline goes in this place lorem ipsum dolart amet</p>
 							<a href="./" class="pink-arrow">Read On</a>
@@ -245,6 +337,11 @@
 					<h2>Membership</h2>
 				</div>
 				<!-- /.membership -->
+
+				<div class="dropdown" data-name="rabo">
+					<h2>Rabo Direct</h2>
+				</div>
+				<!-- /.matches -->
 
 			</div>
 			<!-- /.extra-nav -->
@@ -462,6 +559,113 @@
 
 	</section>
 	<!-- /.features -->
+
+	<footer class="footer full">
+
+		<div class="inner">
+
+			<div class="half">
+
+				<h3>Principal Sponsor</h3>
+				<a href="./">
+					<img src="./images/logos/rabo-direct.gif" alt="Rabo Direct" title="Rabo Direct" class="sponsor-logo" />
+				</a>
+
+			</div>
+			<!-- /.principal -->
+
+			<div class="half gold-sponsors">
+
+				<h3>Gold Sponsor</h3>
+
+				<a href="./">
+					<img src="./images/logos/massey-ferguson.gif" alt="Massey Ferguson" title="Massey Ferguson" class="sponsor-logo" />
+				</a>
+
+				<a href="./">
+					<img src="./images/logos/michelin-tyreplus.gif" alt="Michelin Tyre Plus" title="Michelin Tyre Plus" class="sponsor-logo" />
+				</a>
+
+				<a href="./">
+					<img src="./images/logos/michelin-tyreplus.gif" alt="Michelin Tyre Plus" title="Michelin Tyre Plus" class="sponsor-logo" />
+				</a>
+
+			</div>
+			<!-- /.principal -->
+
+			<hr />
+
+			<div class="three-fifths">
+				
+				<div class="quarter footer-list">
+					<h4>Matches</h4>
+					<ul>
+						<li><a href="./">Link</a></li>
+						<li><a href="./">Link</a></li>
+						<li><a href="./">Link</a></li>
+						<li><a href="./">Link</a></li>
+						<li><a href="./">Link</a></li>
+					</ul>
+				</div>
+
+				<div class="quarter footer-list">
+					<h4>Team</h4>
+					<ul>
+						<li><a href="./">Link</a></li>
+						<li><a href="./">Link</a></li>
+						<li><a href="./">Link</a></li>
+						<li><a href="./">Link</a></li>
+						<li><a href="./">Link</a></li>
+					</ul>
+				</div>
+
+				<div class="quarter footer-list">
+					<h4>Team</h4>
+					<ul>
+						<li><a href="./">Link</a></li>
+						<li><a href="./">Link</a></li>
+						<li><a href="./">Link</a></li>
+						<li><a href="./">Link</a></li>
+						<li><a href="./">Link</a></li>
+					</ul>
+				</div>
+
+				<div class="quarter footer-list">
+					<h4>Club</h4>
+					<ul>
+						<li><a href="./">Link</a></li>
+						<li><a href="./">Link</a></li>
+						<li><a href="./">Link</a></li>
+						<li><a href="./">Link</a></li>
+						<li><a href="./">Link</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- /.links -->
+
+			<div class="two-fifths corporate-links">
+
+				<ul>
+					<li><a href="./">Buy Tickets</a></li>
+					<li><a href="./">Be a Rebels Member</a></li>
+					<li><a href="./">Shop For Gear</a></li>
+					<li><a href="./">Corporate Lorem</a></li>
+				</ul>
+
+			</div>
+			<!-- /.made-by-eastwood -->
+
+			<div class="made-by-eastwood">
+				<a href="./">
+					<p class="made-by">Made By</p>
+					<img src="./images/logos/eastwood.gif" alt="Made by Eastwood" title="Made by Eastwood" class="eastwood-logo" />
+				</a>
+			</div>
+			<!-- /.made-by-eastwood -->
+
+		</div>
+
+	</footer>
 
 </div>
 <!-- /.container -->
