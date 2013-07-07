@@ -1624,6 +1624,13 @@ textarea {
 .section--showcase {
   background-color: #0d1723; }
 
+.landing .panel-overlay {
+  width: 600px; }
+.landing .button {
+  padding: 10px 15px;
+  font-size: 0.75em;
+  text-transform: uppercase; }
+
 .section--blue {
   background-color: #293243; }
 
