@@ -144,7 +144,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 h1, .h1 {
   margin-bottom: 0;
   color: #fff;
-  font-size: 4.375em;
+  font-size: 5.3125em;
   line-height: 1;
   text-transform: uppercase;
   letter-spacing: -5px; }
@@ -1370,8 +1370,9 @@ textarea {
   .jersey .label {
     display: block;
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 1em;
+    text-transform: uppercase;
     /* Safari */
     -webkit-transform: rotate(-90deg);
     /* Firefox */
