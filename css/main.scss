@@ -875,6 +875,7 @@ textarea {
     }
 
     .button {
+        padding: 1em;
         font-size: $twelve;
         text-transform: uppercase;
     }
@@ -886,7 +887,7 @@ textarea {
     padding-bottom: 0.5em;
     margin-right: 0.5em;
     margin-bottom: 0.5em;
-    color: #363636;
+    color: #121212;
     font-size: $fourteen;
     
     font-weight: normal;
@@ -927,7 +928,6 @@ textarea {
 
     .button {
         @extend .full;
-        padding: 1em;
     }
 
 }
@@ -936,6 +936,10 @@ textarea {
 /*
 * Team Dropdown
 */
+.dropdown--team {
+    padding: 2em 2em 2em 50px;
+}
+
 .arrow-list {
     margin-left: 0 !important;
     margin-bottom: 2em;
@@ -1113,6 +1117,37 @@ textarea {
 
 }
 
+
+/**
+* Club Dropdown
+*/
+.dropdown--club {
+    padding: 2em 2em 2em 50px;
+
+    .button {
+        width: 97%;
+    }
+}
+
+
+/**
+* Shop Dropdown
+*/
+.dropdown--shop, 
+.dropdown--tickets, 
+.dropdown--membership, 
+.dropdown--rabo {
+
+    .button {
+        width: 35%;
+    }
+
+}
+
+.dropdown__image {
+    float: left;
+    margin-right: 1em;
+}
 
 
 
