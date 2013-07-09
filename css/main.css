@@ -629,25 +629,27 @@ textarea {
 /*------------------------------------*\
     $Dropdown Menus
 \*------------------------------------*/
-@media (max-width: 770px) {
-  .extra-nav {
-    display: none; } }
-
-.dropdown {
+.extra-nav {
   display: none;
   position: absolute;
-  z-index: 5;
-  top: 100%;
   left: 0;
+  top: 100%;
   width: 100%;
   max-width: 1020px;
   height: 430px;
-  margin: 0 auto;
-  padding: 2em 2em 2em 155px;
+  z-index: 5;
   background-color: transparent;
   background-position: 0 0;
   background-repeat: no-repeat;
   background-image: url(../images/carousel/dropdown-bg.png); }
+  @media (max-width: 770px) {
+    .extra-nav {
+      display: none; } }
+
+.dropdown {
+  display: none;
+  margin: 0 auto;
+  padding: 2em 2em 2em 155px; }
   .dropdown p {
     margin-bottom: 0.5em;
     padding-right: 1em;

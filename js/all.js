@@ -66,7 +66,7 @@ var UI = {
         });
 
         /**
-        * Click handler for main nav
+        * Event handler for main nav
         */
         $(".header__link").bind("mouseover", function() {
             var link = $(this), 
@@ -76,15 +76,18 @@ var UI = {
             $(".header__link").removeClass("active");
             link.addClass("active");
 
-            $(".dropdown").hide();
-            div.slideToggle();
+            if(div.length > 0) {
+                $(".dropdown").hide();
+                $(".extra-nav").slideDown();
+                div.toggle();
+            } else {
+                $(".extra-nav").slideUp();
+            }
             return false;
         });
 
-        $(".dropdown").bind("mouseleave", function() {
-            var links = $(".header__link");
-            links.removeClass("active");
-            $(".dropdown").slideUp();
+        $(".site-header").bind("mouseleave", function() {
+            $(".extra-nav").slideUp();
             return false;
         });
 
