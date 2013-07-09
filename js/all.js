@@ -81,7 +81,9 @@ var UI = {
                 $(".extra-nav").slideDown();
                 div.toggle();
             } else {
-                $(".extra-nav").slideUp();
+                setTimeout(function(){
+                    $(".extra-nav").slideUp();
+                }, 300);
             }
             return false;
         });
