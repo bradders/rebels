@@ -726,20 +726,11 @@ textarea {
         background: url("../images/pink-arrow.png") no-repeat;
         @include image-2x("../images/pink-arrow@2.png", 25px, 28px);
         background-position: 98% 50%;
-        /*
-        background-color: transparent;
-        background-repeat: no-repeat;
-        background-image: url(../images/pink-arrow-mobile.png);
-        */
 
         &:hover {
             background: url("../images/pink-arrow.png") no-repeat;
             @include image-2x("../images/pink-arrow@2.png", 25px, 28px);
             background-position: 98% 50%;
-            /*background-color: transparent;
-            background-position: 98% 50%;
-            background-repeat: no-repeat;
-            background-image: url(../images/pink-arrow-mobile.png);*/
         }
     }
 
