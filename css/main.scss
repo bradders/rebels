@@ -1744,7 +1744,7 @@ textarea {
     &:hover {
         background-position: 98% 50%;
     }
-    
+
 }
 
 .sort-by {
@@ -1760,7 +1760,7 @@ textarea {
     text-transform: uppercase;
     background-color: #fff;
     background-repeat: no-repeat;
-    background-position: 98% 50%;
+    background-position: 98% -35%;
     background-image: url(../images/grey-arrow.gif);
 
         @include breakpoint(small) {
@@ -1772,7 +1772,9 @@ textarea {
     }
 
     &:hover {
+        color: #333;
         text-decoration: none;
+        background-position: 98% 132%;
     }
 }
 

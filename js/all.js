@@ -115,7 +115,10 @@ var UI = {
         */
         $(".load-more").bind("click", function() {
 
-            var link = $(this);
+            var link = $(this), 
+            default_link_text = link.text();
+
+            link.html("Loading");
 
             link.removeClass("load-more--plus").addClass("load-more--loading");
             $.ajax({
@@ -127,7 +130,10 @@ var UI = {
                     //
                 }, 
                 complete: function() {
-                    link.removeClass("load-more--loading").addClass("load-more--plus");
+                    setTimeout(function() {
+                        link.removeClass("load-more--loading").addClass("load-more--plus");
+                        link.html(default_link_text);
+                    }, 2000);
                 }
             });
 

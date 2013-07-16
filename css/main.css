@@ -1287,7 +1287,7 @@ textarea {
   text-transform: uppercase;
   background-color: #fff;
   background-repeat: no-repeat;
-  background-position: 98% 50%;
+  background-position: 98% -35%;
   background-image: url(../images/grey-arrow.gif); }
   @media (max-width: 770px) {
     .sort-by {
@@ -1295,7 +1295,9 @@ textarea {
   .sort-by:first-of-type {
     border-right: 1px solid #d6d6d6; }
   .sort-by:hover {
-    text-decoration: none; }
+    color: #333;
+    text-decoration: none;
+    background-position: 98% 132%; }
 
 /*------------------------------------*\
     $Advert
