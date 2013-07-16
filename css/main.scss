@@ -44,6 +44,7 @@
 $pink: #cf1344;
 $pink_hover: #ff1c4b;
 $blue: #646c7a;
+$blue_hover: #495161;
 $grey: #424242;
 $burgandy: #611529;
 
@@ -446,6 +447,13 @@ table {
 .button--blue {
     color: #fff;
     background-color: $blue;
+
+    &:hover {
+        color: #fff;
+        text-decoration: none;
+        background-color: $blue_hover;
+    }
+
 }
 
 .button--grey {
@@ -954,6 +962,11 @@ textarea {
         background-repeat: no-repeat;
         background-position: 97% 50%;
         background-image: url(../images/buttons/pink-arrow-small.png);
+
+        &:hover {
+            color: #a61a1a;
+        }
+
     }
 
 }
@@ -1738,6 +1751,7 @@ textarea {
 }
 
 .load-more--loading {
+    color: #333;
     background-position: 98% 50%;
     background-image: url(../images/ajax-loader.gif);
 
@@ -1972,26 +1986,31 @@ textarea {
         background-color: transparent;
         background-position: 0 0;
         background-repeat: no-repeat;
-        background-image: url(../images/buttons/blue-arrows.gif);
+        background-image: url(../images/buttons/blue-arrows.png);
+
+        &:hover {
+            background-color: #4767a1;
+        }
+
     }
 
     .switch {
         padding: 0.9em 1em 0.5em 40px;
-        background-position: 0 0;
+        background-position: 0 -120px;
     }
 
     .previous {
         width: 40px;
         border-left: 1px solid #8a99b5;
         text-indent: -9999px;
-        background-position: 0 -40px;
+        background-position: 0 -120px;
     }
 
     .next {
         width: 40px;
         border-left: 1px solid #8a99b5;
         text-indent: -9999px;
-        background-position: 0 -80px;
+        background-position: 0 -40px;
     }
 
 }
@@ -2466,7 +2485,6 @@ textarea {
     h4 {
         font-size: 1em;
         margin-bottom: 0.5em;
-        font-weight: normal;
         color: #272727;
     }
 
@@ -2482,10 +2500,12 @@ textarea {
     }
 
     a {
+        color: #272727;
         text-decoration: none;
 
         &:hover {
-            text-decoration: underline;
+            color: #870212;
+            text-decoration: none;
         }
 
     }
@@ -2513,7 +2533,7 @@ textarea {
         float: left;
         width: 50%;
         display: block;
-        padding: 0.5em;
+        padding: 1em 0.8em;
         float: left;
         border-right: 1px solid #bebebe;
         border-bottom: 1px solid #bebebe;
@@ -2521,6 +2541,11 @@ textarea {
         color: #272727;
         text-transform: uppercase;
         background-color: #fff;
+
+        &:hover {
+            color: #414040;
+            background-color: #e3e3e3;
+        }
 
         @include breakpoint(small) {
             width: 100%;

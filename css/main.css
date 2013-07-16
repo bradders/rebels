@@ -302,6 +302,10 @@ table {
 .button--blue {
   color: #fff;
   background-color: #646c7a; }
+  .button--blue:hover {
+    color: #fff;
+    text-decoration: none;
+    background-color: #495161; }
 
 .button--grey {
   color: #ffffff;
@@ -706,6 +710,8 @@ textarea {
     background-repeat: no-repeat;
     background-position: 97% 50%;
     background-image: url(../images/buttons/pink-arrow-small.png); }
+    .arrow-list a:hover {
+      color: #a61a1a; }
 
 .arrow-list--plain li {
   float: left;
@@ -1267,6 +1273,7 @@ textarea {
   background-image: url(../images/list.gif); }
 
 .load-more--loading {
+  color: #333;
   background-position: 98% 50%;
   background-image: url(../images/ajax-loader.gif); }
   .load-more--loading:hover {
@@ -1443,20 +1450,22 @@ textarea {
     background-color: transparent;
     background-position: 0 0;
     background-repeat: no-repeat;
-    background-image: url(../images/buttons/blue-arrows.gif); }
+    background-image: url(../images/buttons/blue-arrows.png); }
+    .content-switcher a:hover {
+      background-color: #4767a1; }
   .content-switcher .switch {
     padding: 0.9em 1em 0.5em 40px;
-    background-position: 0 0; }
+    background-position: 0 -120px; }
   .content-switcher .previous {
     width: 40px;
     border-left: 1px solid #8a99b5;
     text-indent: -9999px;
-    background-position: 0 -40px; }
+    background-position: 0 -120px; }
   .content-switcher .next {
     width: 40px;
     border-left: 1px solid #8a99b5;
     text-indent: -9999px;
-    background-position: 0 -80px; }
+    background-position: 0 -40px; }
 
 .content-switcher--news .switch {
   background-image: url(../images/buttons/blue-menu.gif); }
@@ -1767,7 +1776,6 @@ textarea {
   .footer h4 {
     font-size: 1em;
     margin-bottom: 0.5em;
-    font-weight: normal;
     color: #272727; }
   .footer hr {
     float: left;
@@ -1779,9 +1787,11 @@ textarea {
     margin: 1em 0;
     background-color: #a5a5a5; }
   .footer a {
+    color: #272727;
     text-decoration: none; }
     .footer a:hover {
-      text-decoration: underline; }
+      color: #870212;
+      text-decoration: none; }
 
 @media (max-width: 770px) {
   .footer-links {
@@ -1798,7 +1808,7 @@ textarea {
   float: left;
   width: 50%;
   display: block;
-  padding: 0.5em;
+  padding: 1em 0.8em;
   float: left;
   border-right: 1px solid #bebebe;
   border-bottom: 1px solid #bebebe;
@@ -1806,6 +1816,9 @@ textarea {
   color: #272727;
   text-transform: uppercase;
   background-color: #fff; }
+  .corporate-links a:hover {
+    color: #414040;
+    background-color: #e3e3e3; }
   @media (max-width: 770px) {
     .corporate-links a {
       width: 100%;
