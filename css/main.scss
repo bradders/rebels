@@ -41,7 +41,8 @@
 /*------------------------------------*\
     $Variables
 \*------------------------------------*/
-$pink: #b00533;
+$pink: #cf1344;
+$pink_hover: #ff1c4b;
 $blue: #646c7a;
 $grey: #424242;
 $burgandy: #611529;
@@ -433,6 +434,13 @@ table {
 .button--pink {
     color: #fff;
     background-color: $pink;
+
+    &:hover {
+        color: #fff;
+        text-decoration: none;
+        background-color: $pink_hover;
+    }
+
 }
 
 .button--blue {
@@ -1663,7 +1671,7 @@ textarea {
     display: inline-block;
     width: 45px;
     height: 45px;
-    background-color: #cf1344;
+    background-color: $pink;
     background-repeat: no-repeat;
     background-position: 50%;
 
@@ -1703,6 +1711,7 @@ textarea {
 
 
     &:hover {
+        color: #333;
         text-decoration: none;
     }
 
@@ -1710,8 +1719,13 @@ textarea {
 
 .load-more--plus {
     padding-right: 2em;
-    background-position: 98% 50%;
+    background-position: 98% -22%;
     background-image: url(../images/plus.gif);
+
+    &:hover {
+        background-position: 98% 120%;
+    }
+
 }
 
 .load-more--list {
@@ -1721,6 +1735,16 @@ textarea {
     margin-bottom: 0.5em;
     background-position: 2% 50%;
     background-image: url(../images/list.gif);
+}
+
+.load-more--loading {
+    background-position: 98% 50%;
+    background-image: url(../images/ajax-loader.gif);
+
+    &:hover {
+        background-position: 98% 50%;
+    }
+    
 }
 
 .sort-by {

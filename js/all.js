@@ -109,6 +109,30 @@ var UI = {
         });
 
         $(".panel").first().show();
+
+        /**
+        * Click handler for load more buttons
+        */
+        $(".load-more").bind("click", function() {
+
+            var link = $(this);
+
+            link.removeClass("load-more--plus").addClass("load-more--loading");
+            $.ajax({
+                url: "./?json",
+                success: function(data) {
+                    //
+                }, 
+                error: function(a, b, c) {
+                    //
+                }, 
+                complete: function() {
+                    link.removeClass("load-more--loading").addClass("load-more--plus");
+                }
+            });
+
+            return false;
+        });
 		
 	}, 
 
