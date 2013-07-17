@@ -152,7 +152,6 @@ var UI = {
 
                 link.animate({ marginTop: "-30px" });
                 icons.animate({ marginTop: "-30px" });
-                parent.css({ borderTop: "0.5em solid #fff" });
             }, 
             function(e) {
 
@@ -160,7 +159,6 @@ var UI = {
                     link = parent.find("a").first(), 
                     icons = parent.find(".news-item__info");
 
-                parent.css({ borderTop: "0" });
                 link.animate({ marginTop: "0" });
                 icons.animate({ marginTop: "0" });
 
