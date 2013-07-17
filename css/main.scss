@@ -231,9 +231,9 @@ h1, .h1 {
     margin-bottom: 0;
     color: #fff;
     font-size: $eightyfive;
-    line-height: 1;
+    line-height: 0.9;
     text-transform: uppercase;
-    letter-spacing: -5px;
+    letter-spacing: -10px;
 
     @include breakpoint(small) {
         font-size: 2.5em;
@@ -652,7 +652,7 @@ textarea {
 \*------------------------------------*/
 .site-header {
     margin: 0 auto;
-    max-width: 1020px;
+    max-width: 1040px;
     position: relative;
     height: 65px;
     padding-left: 150px;
@@ -856,7 +856,7 @@ textarea {
     left: 0;
     top: 100%;
     width: 100%;
-    max-width: 1020px;
+    max-width: 1040px;
     height: 430px;
     z-index: 5;
     background-color: transparent;
@@ -1382,7 +1382,7 @@ textarea {
 
 .panel__title {
     color: #fff;
-    padding: 1.5em;
+    padding: 15px;
 
     @include breakpoint(small) {
         padding: 0.5em;
@@ -1416,7 +1416,7 @@ textarea {
 
 .stats {
     float: left;
-    padding: 1.5em;
+    padding: 15px 15px 0 15px;
 
     @include breakpoint(small) {
         width: 100%;
@@ -1424,6 +1424,8 @@ textarea {
     }
 
     ul {
+        margin-bottom: 10px;
+        
         @include breakpoint(small) {
             float: left;
         }
@@ -1447,7 +1449,7 @@ textarea {
 
     .stat__title {
         font-size: $twelve;
-        line-height: 1.5;
+        line-height: 1;
         color: #9eb3cb;
         text-transform: uppercase;
 
@@ -1563,6 +1565,7 @@ textarea {
 
 .news-item {
     position: relative;
+    overflow: hidden;
     padding: 0.5em;
     height: 260px;
     border-right: 1px solid #d6d6d6;
@@ -1573,6 +1576,12 @@ textarea {
     @include breakpoint(small) {
         height: auto;
         border-right: 0;
+    }
+
+    a {
+        float: left;
+        overflow: hidden;
+        text-decoration: none;
     }
 
     p {
@@ -1703,6 +1712,18 @@ textarea {
         }
 
     }
+
+.news-item__view {
+    color: $pink;
+    font-size: $twelve;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+}
 
 .load-more {
     display: block;

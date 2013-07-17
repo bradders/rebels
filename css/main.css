@@ -145,9 +145,9 @@ h1, .h1 {
   margin-bottom: 0;
   color: #fff;
   font-size: 5.3125em;
-  line-height: 1;
+  line-height: 0.9;
   text-transform: uppercase;
-  letter-spacing: -5px; }
+  letter-spacing: -10px; }
   @media (max-width: 770px) {
     h1, .h1 {
       font-size: 2.5em; } }
@@ -456,7 +456,7 @@ textarea {
 \*------------------------------------*/
 .site-header {
   margin: 0 auto;
-  max-width: 1020px;
+  max-width: 1040px;
   position: relative;
   height: 65px;
   padding-left: 150px;
@@ -634,7 +634,7 @@ textarea {
   left: 0;
   top: 100%;
   width: 100%;
-  max-width: 1020px;
+  max-width: 1040px;
   height: 430px;
   z-index: 5;
   background-color: transparent;
@@ -989,7 +989,7 @@ textarea {
 
 .panel__title {
   color: #fff;
-  padding: 1.5em; }
+  padding: 15px; }
   @media (max-width: 770px) {
     .panel__title {
       padding: 0.5em; } }
@@ -1017,14 +1017,16 @@ textarea {
 
 .stats {
   float: left;
-  padding: 1.5em; }
+  padding: 15px 15px 0 15px; }
   @media (max-width: 770px) {
     .stats {
       width: 100%;
       padding: 0 0.5em; } }
-  @media (max-width: 770px) {
-    .stats ul {
-      float: left; } }
+  .stats ul {
+    margin-bottom: 10px; }
+    @media (max-width: 770px) {
+      .stats ul {
+        float: left; } }
   .stats li, .stats p {
     color: #fff; }
     @media (max-width: 770px) {
@@ -1037,7 +1039,7 @@ textarea {
 
 .stat__title {
   font-size: 0.75em;
-  line-height: 1.5;
+  line-height: 1;
   color: #9eb3cb;
   text-transform: uppercase; }
   @media (max-width: 770px) {
@@ -1119,6 +1121,7 @@ textarea {
 
 .news-item {
   position: relative;
+  overflow: hidden;
   padding: 0.5em;
   height: 260px;
   border-right: 1px solid #d6d6d6;
@@ -1129,6 +1132,10 @@ textarea {
     .news-item {
       height: auto;
       border-right: 0; } }
+  .news-item a {
+    float: left;
+    overflow: hidden;
+    text-decoration: none; }
   .news-item p {
     float: left;
     font-size: 0.75em;
@@ -1234,6 +1241,14 @@ textarea {
   @media (max-width: 770px) {
     .icon.video {
       background-image: url(../images/icons/video-small.gif); } }
+
+.news-item__view {
+  color: #cf1344;
+  font-size: 0.75em;
+  text-decoration: none;
+  text-transform: uppercase; }
+  .news-item__view:hover {
+    text-decoration: none; }
 
 .load-more {
   display: block;
