@@ -359,13 +359,13 @@
 		</div>
 		<!-- /.side-header -->
 
-		<div class="carousel carousel--match">
+		<div class="carousel carousel--match carousel--has-controls">
 
 			<div class="panel" data-panel-name="first">
 
 				<img src="http://placehold.it/1040x585" alt="" title="" class="panel__image" />
 
-				<div class="panel-overlay panel-overlay--has-controls">
+				<div class="panel-overlay">
 
 					<div class="panel__title three-fifths">
 
@@ -446,7 +446,7 @@
 
 				<img src="http://placehold.it/1040x585" alt="" title="" class="panel__image" />
 
-				<div class="panel-overlay panel-overlay--has-controls">
+				<div class="panel-overlay">
 
 					<div class="panel__title three-fifths">
 						<h1>Second Panel</h1>
@@ -632,80 +632,143 @@
 
 		<div class="advert">
 			<img src="./images/advert.gif" alt="" title="" class="advert__image" />
+			<img src="http://placehold.it/600x375" alt="" title="" class="advert__image--mobile" />
 		</div>
 		<!-- /.advert  -->
 
 		<div class="inner">
 
-			<div class="carousel carousel--player">
-				
-				<div class="player-profile">
+			<div class="carousel carousel--player carousel--has-controls">
 
-					<div class="panel">
+				<div class="panel" data-panel-name="player1">
 
-						<img src="./images/players/james-connor.jpg" alt="" title="" class="player-profile__image" />
+					<img src="./images/players/james-connor.jpg" alt="" title="" class="panel__image" />
 
-						<div class="panel-overlay">
+					<div class="panel-overlay">
 							
-							<div class="player-profile__name half">
-								<h1 class="panel-overlay__title">James O'Connor</h1>
+						<div class="player-profile__name half">
+							<h1 class="panel-overlay__title">James O'Connor</h1>
+						</div>
+						<!-- /.player-name -->
+
+						<div class="player__stats quarter stats">
+
+							<div class="stat">
+								<h2 class="stat__title">Age:</h2>
+								<p>24</p>
 							</div>
-							<!-- /.player-name -->
+							<!-- /.stat -->
 
-							<div class="player__stats quarter stats">
-
-								<div class="stat">
-									<h2 class="stat__title">Age:</h2>
-									<p>24</p>
-								</div>
-								<!-- /.stat -->
-
-								<div class="stat">
-									<h2 class="stat__title">Tries:</h2>
-									<p>11</p>
-								</div>
-								<!-- /.stat -->
-
-								<div class="stat">
-									<h2 class="stat__title">Weight:</h2>
-									<p>110kg</p>
-								</div>
-								<!-- /.stat -->
-
-								<div class="stat">
-									<h2 class="stat__title">Position:</h2>
-									<p>Fly-half</p>
-								</div>
-								<!-- /.stat -->
-
-
-								<a class="button full button--pink button--arrow" href="./">View Full Profile</a>
-
+							<div class="stat">
+								<h2 class="stat__title">Tries:</h2>
+								<p>11</p>
 							</div>
-							<!-- /.player__stats -->
+							<!-- /.stat -->
 
-							<div class="player__squad quarter">
-								
-								<a href="./" class="view-squad">The 2013 Rebels Squad</a>
-
-								<a class="button full button--pink button--arrow" href="./">View All Players</a>
-
+							<div class="stat">
+								<h2 class="stat__title">Weight:</h2>
+								<p>110kg</p>
 							</div>
-							<!-- /.player__squad -->
+							<!-- /.stat -->
+
+							<div class="stat">
+								<h2 class="stat__title">Position:</h2>
+								<p>Fly-half</p>
+							</div>
+							<!-- /.stat -->
+
+
+							<a class="button full button--pink button--arrow" href="./">View Full Profile</a>
 
 						</div>
-						<!-- /.panel-overlay-->
+						<!-- /.player__stats -->
+
+						<div class="player__squad quarter">
+							
+							<a href="./" class="view-squad">The 2013 Rebels Squad</a>
+
+							<a class="button full button--pink button--arrow" href="./">View All Players</a>
+
+						</div>
+						<!-- /.player__squad -->
 
 					</div>
-					<!-- /.panel -->
-
-					<div class="panel">
-						<img src="http://placehold.it/940x450/ff0000/000000" alt="" title="" class="player-profile__image" />
-					</div>
-					<!-- /.panel -->
+					<!-- /.panel-overlay-->
 
 				</div>
-				<!-- /.player-profile -->
+				<!-- /.panel -->
+
+				<div class="panel" data-panel-name="player2">
+
+					<img src="http://placehold.it/950x450" alt="" title="" class="panel__image" />
+
+					<div class="panel-overlay">
+							
+						<div class="player-profile__name half">
+							<h1 class="panel-overlay__title">Another Player</h1>
+						</div>
+						<!-- /.player-name -->
+
+						<div class="player__stats quarter stats">
+
+							<div class="stat">
+								<h2 class="stat__title">Age:</h2>
+								<p>99</p>
+							</div>
+							<!-- /.stat -->
+
+							<div class="stat">
+								<h2 class="stat__title">Tries:</h2>
+								<p>88</p>
+							</div>
+							<!-- /.stat -->
+
+							<div class="stat">
+								<h2 class="stat__title">Weight:</h2>
+								<p>90kg</p>
+							</div>
+							<!-- /.stat -->
+
+							<div class="stat">
+								<h2 class="stat__title">Position:</h2>
+								<p>Wing</p>
+							</div>
+							<!-- /.stat -->
+
+
+							<a class="button full button--pink button--arrow" href="./">View Full Profile</a>
+
+						</div>
+						<!-- /.player__stats -->
+
+						<div class="player__squad quarter">
+							
+							<a href="./" class="view-squad">The 2013 Rebels Squad</a>
+
+							<a class="button full button--pink button--arrow" href="./">View All Players</a>
+
+						</div>
+						<!-- /.player__squad -->
+
+					</div>
+					<!-- /.panel-overlay-->
+
+				</div>
+				<!-- /.panel -->
+
+				<ul class="carousel__controls">
+					<li class="carousel__thumbnail carousel__thumbnail--active js-carousel__control" data-panel-name="player1">
+						<a href="./">
+							<img src="http://placehold.it/70x50" alt="" title="" />
+						</a>
+					</li>
+					<li class="carousel__thumbnail js-carousel__control" data-panel-name="player2">
+						<a href="./">
+							<img src="http://placehold.it/70x50" alt="" title="" />
+						</a>
+					</li>
+				</ul>
+				<!-- /.carousel__controls -->
 
 			</div>
 			<!-- /.carousel -->
@@ -720,7 +783,7 @@
 		
 		<div class="inner">
 
-			<div class="quarter tile js-tile-hover">
+			<div class="tile js-tile-hover">
 				<img src="./images/tile-img.jpg" alt="" title="" class="tile__image" />
 				<div class="tile__overlay">
 					<a href="./" class="h3 tile__title">The Rebels Vision</a>
@@ -732,7 +795,7 @@
 			</div>
 			<!-- /.feature -->
 
-			<div class="quarter tile js-tile-hover">
+			<div class="tile js-tile-hover">
 				<img src="./images/tile-img.jpg" alt="" title="" class="tile__image" />
 				<div class="tile__overlay">
 					<a href="./" class="h3 tile__title">The Rebels Vision</a>
@@ -744,7 +807,7 @@
 			</div>
 			<!-- /.feature -->
 
-			<div class="quarter tile js-tile-hover">
+			<div class="tile js-tile-hover">
 				<img src="./images/tile-img.jpg" alt="" title="" class="tile__image" />
 				<div class="tile__overlay">
 					<a href="./" class="h3 tile__title">The Rebels Vision</a>
@@ -756,7 +819,7 @@
 			</div>
 			<!-- /.feature -->
 
-			<div class="quarter tile js-tile-hover">
+			<div class="tile js-tile-hover">
 				<img src="./images/tile-img.jpg" alt="" title="" class="tile__image" />
 				<div class="tile__overlay">
 					<a href="./" class="h3 tile__title">The Rebels Vision</a>

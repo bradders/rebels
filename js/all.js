@@ -11,12 +11,13 @@ var UI = {
         */
         $(window).on("resize", function() {
             UI.site.width = document.documentElement.clientWidth;
-            UI.getSiteMode();
+            UI.triggerChange(UI.site.width);
         });
-        UI.getSiteMode();
+        UI.triggerChange(UI.site.width);
+
 
         /**
-        * Click functionality to deal with small screen nav
+        * Click functionality to deal with mobile screen nav
         */
 		$(".js-toggle-menu").bind("click", function(e) {
             var menu = $(".js-header__nav");
@@ -38,77 +39,131 @@ var UI = {
             return false;
         });
 
+
         /**
         * Tile mouseover functionality
         */
-        $(".js-tile-hover").bind("mouseover", function(e) {
-            var tile = $(this), 
-                overlay = $(this).find(".tile__overlay");
+        if(!UI.isMobile()) {
 
-            overlay.animate({ height: "100%" }, function() {
-                tile.find(".tile__content").show();
+            $(".js-tile-hover").bind("mouseover", function(e) {
+                var tile = $(this), 
+                    overlay = $(this).find(".tile__overlay");
+
+                /*
+                overlay.animate({ height: "100%" }, function() {
+                    tile.find(".tile__content").show();
+                });
+
+                tile.bind("click", function(event) {
+                    event.stopPropagation();
+                    
+                    return false;
+                });
+                */
             });
 
-            tile.bind("click", function(event) {
-                event.stopPropagation();
-                
-                return false;
-            });
-        });
+            $(".js-tile-hover").bind("mouseleave", function(e) {
+                var tile = $(this), 
+                    overlay = tile.find(".tile__overlay");
 
-        $(".js-tile-hover").bind("mouseleave", function(e) {
-            var tile = $(this), 
-                overlay = tile.find(".tile__overlay");
-
-            overlay.animate({ height: "4.5em", minHeight: "4.5em" }, function(){
-                tile.find(".tile__content").hide();
+                /*
+                overlay.animate({ height: "4.5em", minHeight: "4.5em" }, function(){
+                    tile.find(".tile__content").hide();
+                });
+                */
             });
-        });
+
+        }
+
 
         /**
         * Event handler for main nav
+        */        
+        if(!UI.isMobile()) {
+
+            $(".header__link").bind("mouseover", function() {
+                var link = $(this), 
+                    name = link.attr("data-name"), 
+                    div = $(".dropdown[data-name='" + name + "']");
+
+                $(".header__link").removeClass("active");
+                link.addClass("active");
+
+                if(div.length > 0) {
+                    $(".dropdown").hide();
+                    $(".extra-nav").slideDown();
+                    div.toggle();
+                } else {
+                    setTimeout(function(){
+                        $(".extra-nav").slideUp();
+                    }, 300);
+                }
+                return false;
+            });
+
+            $(".site-header").bind("mouseleave", function() {
+                $(".extra-nav").slideUp();
+                return false;
+            });
+
+        }
+
+
+        /**
+        * News Item Hover
         */
-        $(".header__link").bind("mouseover", function() {
-            var link = $(this), 
-                name = link.attr("data-name"), 
-                div = $(".dropdown[data-name='" + name + "']");
+        if(!UI.isMobile()) {
 
-            $(".header__link").removeClass("active");
-            link.addClass("active");
+            $(".news-item").bind("mouseover", function(e) {
 
-            if(div.length > 0) {
-                $(".dropdown").hide();
-                $(".extra-nav").slideDown();
-                div.toggle();
-            } else {
-                setTimeout(function(){
-                    $(".extra-nav").slideUp();
-                }, 300);
-            }
-            return false;
-        });
+                var parent = $(this), 
+                    link = parent.find("a").first(), 
+                    icons = parent.find(".news-item__info");
 
-        $(".site-header").bind("mouseleave", function() {
-            $(".extra-nav").slideUp();
-            return false;
+                link.animate({ marginTop: "-30px" });
+                icons.animate({ marginTop: "-30px" });
+
+            });
+            
+            $(".news-item").bind("mouseleave", function(e) {
+
+                var parent = $(this), 
+                    link = parent.find("a").first(), 
+                    icons = parent.find(".news-item__info");
+
+                link.animate({ marginTop: "0" });
+                icons.animate({ marginTop: "0" });
+
+            });
+
+        }
+
+
+        /**
+        * Carousel
+        */
+        $(".carousel").each(function() {
+            $(this).find(".panel").first().show();
         });
 
         $(".js-carousel__control").bind("click", function() {
 
             var li = $(this), 
-                next_panel = li.attr("data-panel-name");
+                carousel = li.parents(".carousel"), 
+                controls = carousel.find(".js-carousel__control"), 
+                allPanels = carousel.find(".panel"), 
+                nextPanel = li.attr("data-panel-name");
 
-            $(".js-carousel__control").removeClass("carousel__thumbnail--active");
+            controls.removeClass("carousel__thumbnail--active");
             li.addClass("carousel__thumbnail--active");
 
-            $(".panel").fadeOut(function() {
-                $(".panel[data-panel-name='" + next_panel + "']").fadeIn();
+            allPanels.fadeOut(function() {
+                carousel.find(".panel[data-panel-name='" + nextPanel + "']").fadeIn();
             });
 
             return false;
         });
 
-        $(".panel").first().show();
 
         /**
         * Click handler for load more buttons
@@ -139,33 +194,29 @@ var UI = {
 
             return false;
         });
-
-        /**
-        * News Item Hover
-        */
-        $(".news-item").hover( 
-            function(e) {
-
-                var parent = $(this), 
-                    link = parent.find("a").first(), 
-                    icons = parent.find(".news-item__info");
-
-                link.animate({ marginTop: "-30px" });
-                icons.animate({ marginTop: "-30px" });
-            }, 
-            function(e) {
-
-                var parent = $(this), 
-                    link = parent.find("a").first(), 
-                    icons = parent.find(".news-item__info");
-
-                link.animate({ marginTop: "0" });
-                icons.animate({ marginTop: "0" });
-
-            }
-        );
 		
 	}, 
+
+    resetDesktop: function() {
+
+        $(".js-header__nav").show();
+
+    }, 
+
+    resetTablet: function() {
+        
+        $(".js-header__nav").show();
+
+    }, 
+
+    resetMobile: function() {
+
+        /**
+        * Remove hover effect for news items
+        */
+        $(".news-item").unbind();
+
+    }, 
 
     showMenu: function(menu){
         var container = $(".container"), 
@@ -189,8 +240,9 @@ var UI = {
 		"width": document.documentElement.clientWidth, 
         "height": $(".container").height(), 
 		"breakpoints": [
-			{ "name": "medium", "min": 615 }, 
-			{ "name": "small", "min": 0 }
+			{ "name": "desktop", "min": 1020 }, 
+            { "name": "tablet", "min": 770 }, 
+			{ "name": "mobile", "min": 0 }
 		], 
 		"mode": {}
 	}, 
@@ -205,10 +257,37 @@ var UI = {
         }
     }, 
 
-    setupMenu: function() {
-        if(UI.site.mode == "small") {
-            $(".header__nav").height(UI.site.height);
+    triggerChange: function(screenWidth) {
+        var previousSiteMode = UI.site.mode;
+        UI.getSiteMode();
+        if(UI.site.mode != previousSiteMode) {
+            
+            switch(UI.site.mode) {
+                case "desktop":
+                    UI.resetDesktop();
+                    break;
+                case "tablet":
+                    UI.resetTablet();
+                    break;
+                case "mobile":
+                    UI.resetMobile();
+                    break;
+            }
+
         }
+
+    }, 
+
+    isDesktop: function() {
+        return (UI.site.mode == "desktop") ? true : false;
+    }, 
+
+    isTablet: function() {
+        return (UI.site.mode == "tablet") ? true : false;
+    }, 
+
+    isMobile: function() {
+        return (UI.site.mode == "mobile") ? true : false;
     }
 
 };
