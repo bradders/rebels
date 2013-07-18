@@ -50,10 +50,9 @@ var UI = {
                     image = $(this).find(".tile__image"), 
                     overlay = $(this).find(".tile__overlay");
 
-                image.animate({ marginTop: "-90px" });
-                overlay.animate({ height: "50%" }, function() {
-                    tile.find(".tile__content").show();
-                });
+                image.stop().animate({ marginTop: "-90px" }, 300);
+                overlay.stop().animate({ height: "200px" }, 300);
+                tile.find(".tile__content").show();
                 
                 tile.bind("click", function(event) {
                     event.stopPropagation();
@@ -68,10 +67,9 @@ var UI = {
                     image = $(this).find(".tile__image"), 
                     overlay = tile.find(".tile__overlay");
 
-                image.animate({ marginTop: "0" });
-                overlay.animate({ height: "100px", minHeight: "110px" }, function(){
-                    tile.find(".tile__content").hide();
-                });
+                image.stop().animate({ marginTop: "0" }, 300);
+                overlay.stop().animate({ height: "100px", minHeight: "110px" });
+                tile.find(".tile__content").hide();
             });
 
         }
@@ -121,8 +119,8 @@ var UI = {
                     link = parent.find("a").first(), 
                     icons = parent.find(".news-item__info");
 
-                link.animate({ marginTop: "-30px" });
-                icons.animate({ marginTop: "-30px" });
+                link.stop().animate({ marginTop: "-30px" }, 300);
+                icons.stop().animate({ marginTop: "-30px" }, 300);
 
             });
             
@@ -132,8 +130,8 @@ var UI = {
                     link = parent.find("a").first(), 
                     icons = parent.find(".news-item__info");
 
-                link.animate({ marginTop: "0" });
-                icons.animate({ marginTop: "0" });
+                link.stop().animate({ marginTop: "0" }, 300);
+                icons.stop().animate({ marginTop: "0" }, 300);
 
             });
 
@@ -229,7 +227,7 @@ var UI = {
             menu_width = (container.width() / 100) * 40;
         
         menu.attr("data-showing", true).show();
-        container.animate({ marginLeft: "-90%"});
+        container.stop().animate({ marginLeft: "-90%"});
 
     }, 
 
@@ -238,7 +236,7 @@ var UI = {
             menu_width = (container.width() / 100) * 40;
 
         menu.removeAttr("data-showing").hide();
-        container.animate({ width: "100%", marginLeft: "0"});
+        container.stop().animate({ width: "100%", marginLeft: "0"});
 
     }, 
 

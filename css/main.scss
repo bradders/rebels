@@ -52,6 +52,7 @@ $eleven: 0.6875;            /* 11px: 1 / (16x11) = 0.6875   */
 $twelve: 0.750em;           /* 12px: 1 / (16x12) = 0.750    */
 $thirteen: 0.8125em;        /* 13px: 1 / (16x13) = 0.8125em */
 $fourteen: 0.875em;         /* 14px: 1 / (16x14) = 0.875    */
+$fifteen: 0.9375em;         /* 15px: 1 / (16x15) = 0.9375   */
 $sixteen: 1em;              /* 16px                         */
 $twenty: 1.5em;             /* 20px: 1 / (16x24) = 1.500    */
 $twenty-six: 1.625em;       /* 26px: 1 / (16x26) = 1.625    */
@@ -1768,6 +1769,10 @@ textarea {
     background-position: 98% -15%;
     background-image: url(../images/plus.gif);
 
+    @include breakpoint(small) {
+        background-position: 98% -5%;
+    }
+
     &:hover {
         background-position: 98% 115%;
     }
@@ -2159,6 +2164,7 @@ textarea {
 
     &:nth-child(4n+4) {
         margin-right: 0;
+        margin-bottom: 0;
     }
 
 }
@@ -2196,10 +2202,11 @@ textarea {
 
 .tile__title {
     color: #fff;
-    font-size: $twenty-six;
+    font-size: $thirty-four;
     @include gotham-medium;
     text-decoration: none;
     text-transform: uppercase;
+    letter-spacing: -4px;
 
     &:hover {
         text-decoration: none;
@@ -2210,9 +2217,11 @@ textarea {
 .tile__content {
     display: none;
     color: #b2b2b2;
+    line-height: 1.3;
 
     span {
         display: block;
+        margin-top: 10px;
         color: #fff;
         font-size: $twelve;
         text-transform: uppercase;
@@ -2467,8 +2476,7 @@ textarea {
     background-image: url(../images/social-bg.png);
 
     @include breakpoint(small) {
-        border-right: 10px solid #D6D6D6;
-        border-left: 10px solid #D6D6D6;
+        
     }
     //002e48
     .inner {
@@ -2506,18 +2514,28 @@ textarea {
     .social__actions {
         position: absolute;
         left: 1em;
-        bottom: 1em;
+        bottom: 0.5em;
         font-size: $twelve;
         line-height: 2;
+
+        @include breakpoint(small) {
+            a {
+                display: block;
+            }
+        }
     }
 
 }
 
 .social__quote {
-    line-height: 1;
+    line-height: 0.9;
     letter-spacing: -3px;
     @include gotham-medium;
     font-size: $thirty-four;
+
+    @include breakpoint(medium) {
+        font-size: $twenty-six;
+    }
 }
 
 .social__facebook-twitter {
@@ -2547,7 +2565,10 @@ textarea {
 
     .social__text {
         min-height: 240px;
-        height: 240px;
+
+        @include breakpoint(small) {
+            padding-bottom: 6em;
+        }
     }
 
 }
@@ -2563,6 +2584,20 @@ textarea {
 
 .instagram__image--small {
     width: 50%;
+}
+
+.instagram__image--mobile {
+    display: none;
+    width: auto;
+    margin: 0 10px 10px 0;
+
+    @include breakpoint(small){
+        display: block;
+    }
+
+    &:nth-child(4n+1) {
+        clear: both;
+    }
 }
 
 
@@ -2598,8 +2633,10 @@ textarea {
     }
 
     h4 {
-        font-size: 1em;
+        font-size: $fifteen;
+        font-weight: normal;
         margin-bottom: 0.5em;
+        @include gotham-medium;
         color: #272727;
     }
 
@@ -2617,6 +2654,8 @@ textarea {
     a {
         color: #272727;
         text-decoration: none;
+        font-size: $fifteen;
+        @include gotham-book;
 
         &:hover {
             color: #870212;
