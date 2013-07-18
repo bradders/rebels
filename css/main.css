@@ -152,7 +152,7 @@ h1, .h1 {
   letter-spacing: -10px; }
   @media (max-width: 770px) {
     h1, .h1 {
-      font-size: 2.5em; } }
+      font-size: 4em; } }
 
 h2, .h2 {
   font-size: 1.5em;
@@ -1139,6 +1139,9 @@ textarea {
     overflow: hidden;
     text-decoration: none;
     border-top: 0.5em solid #fff; }
+    @media (max-width: 770px) {
+      .news-item a {
+        width: 100%; } }
   .news-item p {
     float: left;
     padding-right: 0.5em;
@@ -1184,6 +1187,7 @@ textarea {
     .news-item__image {
       float: left;
       width: 40%;
+      max-width: 220px;
       margin: 0; } }
 
 .news-item__info {
@@ -1294,6 +1298,16 @@ textarea {
   font-size: 0.75em;
   text-align: center;
   background-color: #243746; }
+  @media (max-width: 770px) {
+    .fixture__info {
+      position: relative;
+      bottom: auto;
+      left: auto;
+      padding-left: 0.5em;
+      color: #8B8B8B;
+      font-size: 1em;
+      text-transform: none;
+      background-color: transparent; } }
 
 .news-item--past .fixture__info {
   opacity: 0.6; }

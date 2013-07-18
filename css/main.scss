@@ -238,7 +238,7 @@ h1, .h1 {
     letter-spacing: -10px;
 
     @include breakpoint(small) {
-        font-size: 2.5em;
+        font-size: 4em;
     }   
 
 }
@@ -1584,6 +1584,11 @@ textarea {
         overflow: hidden;
         text-decoration: none;
         border-top: 0.5em solid #fff;
+
+        @include breakpoint(small) {
+            width: 100%;
+        }
+
     }
 
     p {
@@ -1644,6 +1649,7 @@ textarea {
     @include breakpoint(small) {
         float: left;
         width: 40%;
+        max-width: 220px;
         margin: 0;
     }
 
@@ -1779,6 +1785,18 @@ textarea {
     font-size: $twelve;
     text-align: center;
     background-color: #243746;
+
+    @include breakpoint(small) {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        padding-left: 0.5em;
+        color: #8B8B8B;
+        font-size: $sixteen;
+        text-transform: none;
+        background-color: transparent;
+    }
+
 }
 
     .news-item--past .fixture__info {
