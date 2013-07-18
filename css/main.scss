@@ -30,6 +30,7 @@
  * Pods
  * Section
  * Social
+ * Ladder
  * Footer
 
  */
@@ -2682,6 +2683,72 @@ textarea {
     }
 }
 
+
+
+
+
+
+
+/*------------------------------------*\
+    $Ladder
+\*------------------------------------*/
+.ladder {
+    width: 100%;
+    color: #363636;
+    margin-bottom: 3em;
+    font-size: $fourteen;
+
+    tr {
+        height: 50px;
+        background-color: #fff;
+        border-bottom: 1px solid #d6d6d6;
+
+        &.r-rebels {
+            color: #fff;
+            background-color: #6379a0;
+        }
+    }
+
+    th {
+        color: #fff;
+        text-align: center;
+        line-height: 50px;
+        text-transform: uppercase;
+        background-color: #858989;
+    }
+
+    .plain-header {
+        th {
+            color: #363636;
+            background-color: #fff;
+        }        
+    }
+
+    td {
+        text-align: center;
+        line-height: 50px;
+        padding: 0 15px;
+    }
+
+    .t-left {
+        text-align: left;
+        padding: 0;
+    }
+
+    .t-right {
+        text-align: right;
+        padding-right: 20px;
+    }
+
+}
+
+.table__header {
+    margin-bottom: 0;
+    padding: 0.5em 1em;
+    color: #fff;
+    text-transform: uppercase;
+    background-color: #858989;
+}
 
 
 

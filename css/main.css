@@ -30,6 +30,7 @@
  * Pods
  * Section
  * Social
+ * Ladder
  * Footer
 
  */
@@ -1930,6 +1931,48 @@ textarea {
       display: block; } }
   .instagram__image--mobile:nth-child(4n+1) {
     clear: both; }
+
+/*------------------------------------*\
+    $Ladder
+\*------------------------------------*/
+.ladder {
+  width: 100%;
+  color: #363636;
+  margin-bottom: 3em;
+  font-size: 0.875em; }
+  .ladder tr {
+    height: 50px;
+    background-color: #fff;
+    border-bottom: 1px solid #d6d6d6; }
+    .ladder tr.r-rebels {
+      color: #fff;
+      background-color: #6379a0; }
+  .ladder th {
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    text-transform: uppercase;
+    background-color: #858989; }
+  .ladder .plain-header th {
+    color: #363636;
+    background-color: #fff; }
+  .ladder td {
+    text-align: center;
+    line-height: 50px;
+    padding: 0 15px; }
+  .ladder .t-left {
+    text-align: left;
+    padding: 0; }
+  .ladder .t-right {
+    text-align: right;
+    padding-right: 20px; }
+
+.table__header {
+  margin-bottom: 0;
+  padding: 0.5em 1em;
+  color: #fff;
+  text-transform: uppercase;
+  background-color: #858989; }
 
 /*------------------------------------*\
     $Footer
