@@ -1150,6 +1150,11 @@ textarea {
         width: 60%;
         padding-left: 0.5em; } }
 
+.news-item--past {
+  background-color: #eaeaea; }
+  .news-item--past a {
+    border-top: 0.5em solid #eaeaea; }
+
 .news-item.last {
   border-right: 0; }
 
@@ -1173,6 +1178,7 @@ textarea {
       background-color: transparent; } }
 
 .news-item__image {
+  display: block;
   width: 100%; }
   @media (max-width: 770px) {
     .news-item__image {
@@ -1218,7 +1224,7 @@ textarea {
       color: #8b8b8b;
       background-color: transparent; } }
   .news-item__date .month {
-    font-size: 0.7em; }
+    font-size: 0.75em; }
 
 .news-item__icon {
   position: absolute;
@@ -1248,6 +1254,20 @@ textarea {
     .icon.video {
       background-image: url(../images/icons/video-small.gif); } }
 
+.icon.win {
+  color: #fff;
+  font-family: "Gotham SSm A", "Gotham SSm B";
+  font-weight: 700;
+  font-style: normal;
+  font-size: 0.75em;
+  line-height: 45px;
+  text-align: center;
+  background-color: #5D7B01; }
+  @media (max-width: 770px) {
+    .icon.win {
+      float: left;
+      line-height: 1.7; } }
+
 .news-item__view {
   color: #cf1344;
   font-size: 0.75em;
@@ -1258,6 +1278,37 @@ textarea {
       margin-left: 0.5em; } }
   .news-item__view:hover {
     text-decoration: none; }
+
+.fixture-item {
+  position: relative; }
+
+.fixture__info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.75em;
+  text-align: center;
+  background-color: #243746; }
+
+.news-item--past .fixture__info {
+  opacity: 0.6; }
+
+.fixture-teams {
+  width: 100%;
+  text-align: center;
+  padding-right: 0;
+  padding-top: 0.5em;
+  text-transform: uppercase; }
+  @media (max-width: 770px) {
+    .fixture-teams {
+      text-align: left; } }
+  .fixture-teams span {
+    display: block; }
 
 .load-more {
   display: block;
@@ -1571,9 +1622,6 @@ textarea {
   padding-bottom: 4.5em;
   border: 8px solid #fff;
   cursor: pointer; }
-  @media (max-width: 990px) {
-    .tile {
-      width: 49.8%; } }
   @media (max-width: 770px) {
     .tile {
       width: 100%;

@@ -1602,6 +1602,15 @@ textarea {
 
 }
 
+.news-item--past {
+    background-color: #eaeaea;
+
+    a {
+        border-top: 0.5em solid #eaeaea;
+    }
+
+}
+
 .news-item.last {
     border-right: 0;
 }
@@ -1629,6 +1638,7 @@ textarea {
 }
 
 .news-item__image {
+    display: block;
     width: 100%;
 
     @include breakpoint(small) {
@@ -1680,7 +1690,7 @@ textarea {
     }
 
     .month {
-        font-size: 0.7em;
+        font-size: $twelve;
     }
 
 }
@@ -1721,6 +1731,21 @@ textarea {
 
     }
 
+    .icon.win {
+        color: #fff;
+        @include gotham-bold;
+        font-size: $twelve;
+        line-height: 45px;
+        text-align: center;
+        background-color: #5D7B01;
+
+        @include breakpoint(small) {
+            float: left;
+            line-height: 1.7;
+        }
+
+    }
+
 .news-item__view {
     color: $pink;
     font-size: $twelve;
@@ -1734,6 +1759,45 @@ textarea {
 
     &:hover {
         text-decoration: none;
+    }
+
+}
+
+.fixture-item {
+    position: relative;
+}
+
+.fixture__info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: $twelve;
+    text-align: center;
+    background-color: #243746;
+}
+
+    .news-item--past .fixture__info {
+        opacity: 0.6;
+    }
+
+.fixture-teams {
+    width: 100%;
+    text-align: center;
+    padding-right: 0;
+    padding-top: 0.5em;
+    text-transform: uppercase;
+
+    @include breakpoint(small) {
+        text-align: left;
+    } 
+
+    span {
+        display: block;
     }
 
 }
@@ -2153,7 +2217,7 @@ textarea {
     cursor: pointer;
 
     @include breakpoint(medium) {
-        width: 49.8%;
+        //width: 49.8%;
     }
 
     @include breakpoint(small) {

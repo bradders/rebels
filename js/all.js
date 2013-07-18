@@ -113,7 +113,7 @@ var UI = {
         */
         if(!UI.isMobile()) {
 
-            $(".news-item").bind("mouseover", function(e) {
+            $(".js-item-hover").bind("mouseover", function(e) {
 
                 var parent = $(this), 
                     link = parent.find("a").first(), 
@@ -124,7 +124,7 @@ var UI = {
 
             });
             
-            $(".news-item").bind("mouseleave", function(e) {
+            $(".js-item-hover").bind("mouseleave", function(e) {
 
                 var parent = $(this), 
                     link = parent.find("a").first(), 
@@ -213,7 +213,7 @@ var UI = {
         /**
         * Remove hover effect for news items
         */
-        $(".news-item").unbind();
+        $(".js-item-hover").unbind();
 
         /**
         * Remove hover effect for tiles
