@@ -1366,14 +1366,11 @@ textarea {
     $Player Profile
 \*------------------------------------*/
 .carousel--player {
-  margin: 0 auto;
-  max-width: 940px;
-  /*height: 440px;
-  min-height: 440px;*/
   overflow: hidden;
   border: 8px solid #fff; }
   .carousel--player h1 {
     line-height: 1;
+    letter-spacing: -7px;
     font-size: 4.375em; }
     @media (max-width: 990px) {
       .carousel--player h1 {
@@ -1563,9 +1560,16 @@ textarea {
 .tile {
   position: relative;
   float: left;
-  width: 239px;
+  overflow: hidden;
+  width: 24.9%;
+  height: 380px;
   margin-right: 1px;
-  border: 8px solid #fff; }
+  padding-bottom: 4.5em;
+  border: 8px solid #fff;
+  cursor: pointer; }
+  @media (max-width: 990px) {
+    .tile {
+      width: 49.8%; } }
   @media (max-width: 770px) {
     .tile {
       width: 100%;
@@ -1579,14 +1583,19 @@ textarea {
 
 .tile__image {
   display: block;
-  width: 100%; }
+  float: left;
+  width: 100%;
+  height: 380px;
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  background-color: transparent; }
 
 .tile__overlay {
   position: absolute;
-  bottom: 0;
   left: 0;
+  bottom: 0;
   width: 100%;
-  min-height: 4.5em;
+  min-height: 110px;
   margin-bottom: 0;
   padding: 0.5em;
   background-color: #8b8c8e;
@@ -1770,8 +1779,15 @@ textarea {
   background-position: 0 0;
   background-repeat: no-repeat;
   background-image: url(../images/social-bg.png); }
+  @media (max-width: 770px) {
+    .social {
+      border-right: 10px solid #D6D6D6;
+      border-left: 10px solid #D6D6D6; } }
   .social .inner {
     padding-bottom: 1em; }
+    @media (max-width: 770px) {
+      .social .inner {
+        margin: 0 10px; } }
 
 .social__channel {
   margin-bottom: 1.5em; }
@@ -1826,13 +1842,10 @@ textarea {
   display: block; }
   @media (max-width: 770px) {
     .instagram__image {
-      width: 50%; } }
+      display: none; } }
 
 .instagram__image--small {
   width: 50%; }
-  @media (max-width: 770px) {
-    .instagram__image--small {
-      width: 25%; } }
 
 /*------------------------------------*\
     $Footer

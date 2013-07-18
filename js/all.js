@@ -47,30 +47,31 @@ var UI = {
 
             $(".js-tile-hover").bind("mouseover", function(e) {
                 var tile = $(this), 
+                    image = $(this).find(".tile__image"), 
                     overlay = $(this).find(".tile__overlay");
 
-                /*
-                overlay.animate({ height: "100%" }, function() {
+                image.animate({ marginTop: "-90px" });
+                overlay.animate({ height: "50%" }, function() {
                     tile.find(".tile__content").show();
                 });
-
+                
                 tile.bind("click", function(event) {
                     event.stopPropagation();
                     
                     return false;
                 });
-                */
+                
             });
 
             $(".js-tile-hover").bind("mouseleave", function(e) {
                 var tile = $(this), 
+                    image = $(this).find(".tile__image"), 
                     overlay = tile.find(".tile__overlay");
 
-                /*
-                overlay.animate({ height: "4.5em", minHeight: "4.5em" }, function(){
+                image.animate({ marginTop: "0" });
+                overlay.animate({ height: "100px", minHeight: "110px" }, function(){
                     tile.find(".tile__content").hide();
                 });
-                */
             });
 
         }
@@ -215,6 +216,11 @@ var UI = {
         * Remove hover effect for news items
         */
         $(".news-item").unbind();
+
+        /**
+        * Remove hover effect for tiles
+        */
+        $(".js-tile-hover").unbind();
 
     }, 
 
