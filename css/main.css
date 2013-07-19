@@ -313,7 +313,7 @@ table {
 
 .button--grey {
   color: #ffffff;
-  background-color: #424242; }
+  background-color: #434343; }
 
 .button--red {
   color: #ffffff;
@@ -1274,6 +1274,8 @@ textarea {
       line-height: 1.7; } }
 
 .news-item__view {
+  display: inline-block;
+  margin-top: 10px;
   color: #cf1344;
   font-size: 0.75em;
   text-decoration: none;
@@ -1823,11 +1825,18 @@ textarea {
   background-color: #0d1723; }
 
 .landing .panel-overlay {
-  width: 600px; }
+  width: 585px;
+  height: 240px; }
 .landing .button {
+  width: 240px;
   padding: 10px 15px;
   font-size: 0.75em;
   text-transform: uppercase; }
+.landing h1 {
+  margin-bottom: 10px; }
+.landing p {
+  width: 350px;
+  font-size: 0.875em; }
 
 .section--blue {
   background-color: #293243; }
@@ -1836,11 +1845,17 @@ textarea {
   background-color: #a0a0a0; }
   .section--grey .panel-overlay {
     background-color: rgba(160, 160, 160, 0.7); }
+  .section--grey p {
+    color: #090909; }
+  .section--grey .image-effect {
+    background-image: url(../images/carousel-image-effect-grey.png); }
 
 .section--red {
   background-color: #451b26; }
   .section--red .panel-overlay {
     background-color: rgba(69, 27, 38, 0.7); }
+  .section--red .image-effect {
+    background-image: url(../images/carousel-image-effect-red.png); }
 
 /*------------------------------------*\
     $Social

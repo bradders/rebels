@@ -46,7 +46,7 @@ $pink: #cf1344;
 $pink_hover: #ff1c4b;
 $blue: #646c7a;
 $blue_hover: #495161;
-$grey: #424242;
+$grey: #434343;
 $burgandy: #611529;
 
 $eleven: 0.6875;            /* 11px: 1 / (16x11) = 0.6875   */
@@ -1754,6 +1754,8 @@ textarea {
     }
 
 .news-item__view {
+    display: inline-block;
+    margin-top: 10px;
     color: $pink;
     font-size: $twelve;
     text-decoration: none;
@@ -2510,13 +2512,24 @@ textarea {
 .landing {
 
     .panel-overlay {
-        width: 600px;
+        width: 585px;
+        height: 240px;
     }
     
     .button {
+        width: 240px;
         padding: 10px 15px;
         font-size: $twelve;
         text-transform: uppercase;
+    }
+
+    h1 {
+        margin-bottom: 10px;
+    }
+
+    p {
+        width: 350px;
+        font-size: $fourteen;
     }
 
 }
@@ -2532,6 +2545,14 @@ textarea {
         background-color: rgba(160, 160, 160, 0.7);
     }
 
+    p {
+        color: #090909;
+    }
+
+    .image-effect {
+        background-image: url(../images/carousel-image-effect-grey.png);
+    }
+
 
 }
 
@@ -2540,6 +2561,10 @@ textarea {
 
     .panel-overlay {
         background-color: rgba(69, 27, 38, 0.7);
+    }
+
+    .image-effect {
+        background-image: url(../images/carousel-image-effect-red.png);
     }
 
 }
