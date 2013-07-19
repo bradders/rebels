@@ -199,12 +199,14 @@ var UI = {
     resetDesktop: function() {
 
         $(".js-header__nav").show();
+        $(".container").attr("style", "");
 
     }, 
 
     resetTablet: function() {
         
         $(".js-header__nav").show();
+        $(".container").attr("style", "");
 
     }, 
 
