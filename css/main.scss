@@ -31,6 +31,7 @@
  * Section
  * Social
  * Ladder
+ * Macth Day
  * Footer
 
  */
@@ -2774,6 +2775,81 @@ textarea {
     text-transform: uppercase;
     background-color: #858989;
 }
+
+
+
+
+
+
+/*------------------------------------*\
+    $Match Day
+\*------------------------------------*/
+.season-bar {
+    background-color: #2b3440;
+
+    .inner {
+        padding: 15px 15px 15px 150px;
+    }
+
+    h3 {
+        float: left;
+        height: 35px;
+        line-height: 35px;
+        margin: 0 20px 0 10px;
+        color: #8fa1b5;
+        font-size: $twelve;
+        @include gotham-bold;
+        text-transform: uppercase;
+    }
+
+    .matches {
+        float: left;
+        margin-bottom: 0;
+    }
+
+    li {
+        float: left;
+        position: relative;
+        margin-right: 2px;
+    }
+
+}
+
+.matches__thumb {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    font-size: $twelve;
+    text-decoration: none;
+    background-color: #535e6d;
+
+    &:hover {
+        text-decoration: none;
+        background-color: #fff;
+    }
+
+}
+
+.match__info {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 300px;
+    padding: 5px;
+    background-color: #fff;
+}
+
+.match__info--active {
+    display: block;
+}
+
+.match__info-image {
+    float: left;
+}
+
 
 
 

@@ -31,6 +31,7 @@
  * Section
  * Social
  * Ladder
+ * Macth Day
  * Footer
 
  */
@@ -1988,6 +1989,60 @@ textarea {
   color: #fff;
   text-transform: uppercase;
   background-color: #858989; }
+
+/*------------------------------------*\
+    $Match Day
+\*------------------------------------*/
+.season-bar {
+  background-color: #2b3440; }
+  .season-bar .inner {
+    padding: 15px 15px 15px 150px; }
+  .season-bar h3 {
+    float: left;
+    height: 35px;
+    line-height: 35px;
+    margin: 0 20px 0 10px;
+    color: #8fa1b5;
+    font-size: 0.75em;
+    font-family: "Gotham SSm A", "Gotham SSm B";
+    font-weight: 700;
+    font-style: normal;
+    text-transform: uppercase; }
+  .season-bar .matches {
+    float: left;
+    margin-bottom: 0; }
+  .season-bar li {
+    float: left;
+    position: relative;
+    margin-right: 2px; }
+
+.matches__thumb {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  font-size: 0.75em;
+  text-decoration: none;
+  background-color: #535e6d; }
+  .matches__thumb:hover {
+    text-decoration: none;
+    background-color: #fff; }
+
+.match__info {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 300px;
+  padding: 5px;
+  background-color: #fff; }
+
+.match__info--active {
+  display: block; }
+
+.match__info-image {
+  float: left; }
 
 /*------------------------------------*\
     $Footer

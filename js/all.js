@@ -137,6 +137,22 @@ var UI = {
 
         }
 
+        /**
+        * Match Info Hover
+        */
+        if(!UI.isMobile()) {
+
+            $(".matches li").bind("mouseover", function(e) {
+                var panel = $(this).find(".match__info");
+                panel.show();
+            });
+
+            $(".matches li").bind("mouseleave", function(e) {
+                var panel = $(this).find(".match__info");
+                panel.hide();
+            });
+        }
+
 
         /**
         * Carousel
