@@ -1994,14 +1994,14 @@ textarea {
     $Match Day
 \*------------------------------------*/
 .season-bar {
+  margin-bottom: 10px;
+  padding: 10px 10px 10px 150px;
   background-color: #2b3440; }
-  .season-bar .inner {
-    padding: 15px 15px 15px 150px; }
   .season-bar h3 {
     float: left;
     height: 35px;
     line-height: 35px;
-    margin: 0 20px 0 10px;
+    margin: 5px 20px 0 10px;
     color: #8fa1b5;
     font-size: 0.75em;
     font-family: "Gotham SSm A", "Gotham SSm B";
@@ -2010,7 +2010,8 @@ textarea {
     text-transform: uppercase; }
   .season-bar .matches {
     float: left;
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    margin-top: 5px; }
   .season-bar li {
     float: left;
     position: relative;
@@ -2034,15 +2035,121 @@ textarea {
   position: absolute;
   top: 100%;
   left: 0;
+  z-index: 3;
   width: 300px;
   padding: 5px;
   background-color: #fff; }
+  .match__info span {
+    display: block; }
+  .match__info p {
+    line-height: 1; }
 
 .match__info--active {
   display: block; }
 
 .match__info-image {
-  float: left; }
+  float: left;
+  margin-right: 5px; }
+
+.match__info-date {
+  margin-bottom: 5px;
+  color: #6d6d6d; }
+
+.arrow {
+  display: inline-block;
+  width: 30px;
+  height: 45px;
+  text-indent: -9999px;
+  background-color: transparent;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-image: url(../images/arrows.png); }
+  .arrow.arrow--right {
+    background-position: -32px 0; }
+
+.match--showcase {
+  padding: 0; }
+
+.match-pitch {
+  float: left;
+  position: relative;
+  width: 100%;
+  height: 490px;
+  background-color: transparent;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-image: url(../images/match-pitch.jpg); }
+
+.match__line {
+  position: absolute;
+  left: 260px;
+  bottom: 65px;
+  width: 550px;
+  height: 40px;
+  margin-bottom: 0;
+  color: #fff;
+  line-height: 40px;
+  text-align: center; }
+
+.match__panel {
+  margin-bottom: 5px;
+  padding: 10px;
+  line-height: 1.1;
+  background-color: #303640; }
+
+.match__time {
+  min-height: 40px;
+  font-family: "Gotham SSm A", "Gotham SSm B";
+  font-weight: 700;
+  font-style: normal;
+  background-repeat: no-repeat;
+  background-position: 100% 50%;
+  background-image: url(../images/stop-watch.gif); }
+
+.match__time--half {
+  display: block;
+  color: #fff;
+  font-size: 0.75em;
+  text-transform: uppercase; }
+
+.match__time--clock {
+  display: block;
+  color: #6e7c8f;
+  font-size: 1.625em; }
+
+.shirt {
+  position: absolute;
+  top: 45px;
+  width: 160px;
+  height: 160px; }
+
+.shirt--home {
+  left: 315px; }
+
+.shirt--away {
+  right: 285px; }
+
+.score {
+  position: absolute;
+  top: 215px;
+  width: 160px;
+  color: #fff;
+  font-family: "Gotham SSm A", "Gotham SSm B";
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.625em;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: -2px; }
+  .score .score--points {
+    line-height: 0.8;
+    font-size: 110px; }
+
+.score--home {
+  left: 315px; }
+
+.score--away {
+  right: 285px; }
 
 /*------------------------------------*\
     $Footer
