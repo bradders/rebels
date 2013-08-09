@@ -153,6 +153,12 @@ var UI = {
             });
         }
 
+        $(".js-expand-report").bind("click", function() {
+            $(".match__content p").show();
+            $(this).hide();
+            return false;
+        });
+
 
         /**
         * Carousel

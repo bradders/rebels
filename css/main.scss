@@ -1756,10 +1756,18 @@ textarea {
 
     .icon.plus {
         background-image: url(../images/icons/plus.gif);
+
+        @include breakpoint(small){
+            background-image: url(../images/icons/plus-small.gif);
+        }
     }
 
     .icon.comment {
         background-image: url(../images/icons/comment.gif);
+
+        @include breakpoint(small){
+            display: none;
+        }
     }
 
 .news-item__view {
@@ -2806,18 +2814,42 @@ textarea {
         font-size: $twelve;
         @include gotham-bold;
         text-transform: uppercase;
+
+        @include breakpoint(small){
+            display: none;
+        }
+
     }
 
     .matches {
         float: left;
         margin-bottom: 0;
         margin-top: 5px;
+
+        @include breakpoint(small){
+            display: none;
+        }
     }
 
     li {
         float: left;
         position: relative;
         margin-right: 2px;
+    }
+
+    .fixtures-link {
+        display: none;
+
+        @include breakpoint(small){
+            display: block;
+            float: left;
+            margin-right: 10px;
+            color: #fff;
+            font-size: $fourteen;
+            text-decoration: none;
+            text-transform: uppercase;
+            line-height: 50px;
+        }        
     }
 
 }
@@ -2885,6 +2917,10 @@ textarea {
 
     &.arrow--left {
 
+        @include breakpoint(small) {
+            display: none;
+        }
+
     }
 
     &.arrow--right {
@@ -2903,21 +2939,46 @@ textarea {
     width: 100%;
     height: 490px;
     background-color: transparent;
-    background-position: 0 0;
+    background-position: 50% 0;
     background-repeat: no-repeat;
     background-image: url(../images/match-pitch.jpg);
+
+    @include breakpoint(small){
+        background-image: none;
+        height: auto;
+    }
+
+    .right {
+        @include breakpoint(small){
+            float: left;
+            width: 100%;
+        }        
+    }
+
 }
 
 .match__line {
     position: absolute;
-    left: 260px;
+    left: 25%;
     bottom: 65px;
-    width: 550px;
+    width: 55%;
     height: 40px;
     margin-bottom: 0;
     color: #fff;
     line-height: 40px;
     text-align: center;
+
+    @include breakpoint(small){
+        position: relative;
+        left: auto;
+        bottom: auto;
+        width: 60%;
+        height: auto;
+        padding: 10px;
+        line-height: inherit;
+        text-align: left;
+    }
+
 }
 
 .match__panel {
@@ -2925,7 +2986,22 @@ textarea {
     padding: 10px;
     line-height: 1.1;
     background-color: #303640;
+
+    @include breakpoint(small){
+    }
 }
+
+    .match__panel--sponsor {
+        @include breakpoint(small){
+            display: none;
+        }
+    }
+
+    .match__panel--timing {
+        @include breakpoint(small){
+            width: 100%;
+        }
+    }
 
 .match__time {
     min-height: 40px;
@@ -2933,6 +3009,10 @@ textarea {
     background-repeat: no-repeat;
     background-position: 100% 50%;
     background-image: url(../images/stop-watch.gif);
+
+    @include breakpoint(small){
+        line-height: 40px;
+    }
 }
 
 .match__time--half {
@@ -2940,12 +3020,24 @@ textarea {
     color: #fff;
     font-size: $twelve;
     text-transform: uppercase;
+
+    @include breakpoint(small){
+        float: left;
+        margin-right: 10px;
+        font-size: $twenty-six;
+    }
+
 }
 
 .match__time--clock {
     display: block;
     color: #6e7c8f;
     font-size: $twenty-six;
+
+    @include breakpoint(small){
+        float: left;
+    }
+
 }
 
 .shirt {
@@ -2953,15 +3045,40 @@ textarea {
     top: 45px;
     width: 160px;
     height: 160px;
+
+    @include breakpoint(small){
+        position: relative;
+        top: auto;
+        float: left;
+        width: 50%;
+        margin-top: 20px;
+        text-align: center;
+    }
 }
 
     .shirt--home {
-        left: 315px;
+        left: 30%;
+
+        @include breakpoint(small){
+            left: auto;
+        }
     }
 
     .shirt--away {
-        right: 285px;
+        right: 28%;
+
+        @include breakpoint(small){
+            right: auto;
+        }
     }
+
+.scores {
+    float: left;
+    width: 100%;
+    margin: 20px 0 10px 0;
+    border-top: 3px solid #5a6169;
+    border-bottom: 3px solid #5a6169;
+}
 
 .score {
     position: absolute;
@@ -2974,19 +3091,41 @@ textarea {
     text-align: center;
     letter-spacing: -2px;
 
+    @include breakpoint(small){
+        position: relative;
+        float: left;
+        top: auto;
+        width: 100%;
+        padding-left: 10px;
+        text-align: left;
+        font-size: $thirty-four;
+    }
+
     .score--points {
         line-height: 0.8;
         font-size: 110px;
+
+        @include breakpoint(small){
+            font-size: inherit;
+        }
     }
 
 }
 
     .score--home {
-        left: 315px;
+        left: 30%;
+
+        @include breakpoint(small){
+            left: auto;
+        }
     }
 
     .score--away {
-        right: 285px;
+        right: 28%;
+
+        @include breakpoint(small){
+            right: auto;
+        }
     }
 
 .match__report {
@@ -3009,8 +3148,32 @@ textarea {
     p {
         color: #424242;
         font-size: $fifteen;
+
+        @include breakpoint(small){
+            display: none;
+        }
     }
 
+}
+
+.expand-report {
+    display: none;
+
+    @include breakpoint(small) {
+        display: block;
+        border-top: 1px solid #a8a8a8;
+        padding: 10px 0;
+        margin-bottom: 20px;
+        height: 50px;
+        line-height: 50px;
+        color: #8e8e8e;
+        font-size: 1em;
+        text-decoration: none;
+        background-color: transparent;
+        background-repeat: no-repeat;
+        background-position: 95% 10px;
+        background-image: url(../images/grey-arrow.gif);
+    }
 }
 
 .match__numbers {

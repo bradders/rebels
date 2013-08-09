@@ -1276,9 +1276,15 @@ textarea {
 
 .icon.plus {
   background-image: url(../images/icons/plus.gif); }
+  @media (max-width: 770px) {
+    .icon.plus {
+      background-image: url(../images/icons/plus-small.gif); } }
 
 .icon.comment {
   background-image: url(../images/icons/comment.gif); }
+  @media (max-width: 770px) {
+    .icon.comment {
+      display: none; } }
 
 .news-item__view {
   display: inline-block;
@@ -2014,14 +2020,32 @@ textarea {
     font-weight: 700;
     font-style: normal;
     text-transform: uppercase; }
+    @media (max-width: 770px) {
+      .season-bar h3 {
+        display: none; } }
   .season-bar .matches {
     float: left;
     margin-bottom: 0;
     margin-top: 5px; }
+    @media (max-width: 770px) {
+      .season-bar .matches {
+        display: none; } }
   .season-bar li {
     float: left;
     position: relative;
     margin-right: 2px; }
+  .season-bar .fixtures-link {
+    display: none; }
+    @media (max-width: 770px) {
+      .season-bar .fixtures-link {
+        display: block;
+        float: left;
+        margin-right: 10px;
+        color: #fff;
+        font-size: 0.875em;
+        text-decoration: none;
+        text-transform: uppercase;
+        line-height: 50px; } }
 
 .matches__thumb {
   display: inline-block;
@@ -2070,6 +2094,9 @@ textarea {
   background-position: 0 0;
   background-repeat: no-repeat;
   background-image: url(../images/arrows.png); }
+  @media (max-width: 770px) {
+    .arrow.arrow--left {
+      display: none; } }
   .arrow.arrow--right {
     background-position: -32px 0; }
 
@@ -2082,26 +2109,52 @@ textarea {
   width: 100%;
   height: 490px;
   background-color: transparent;
-  background-position: 0 0;
+  background-position: 50% 0;
   background-repeat: no-repeat;
   background-image: url(../images/match-pitch.jpg); }
+  @media (max-width: 770px) {
+    .match-pitch {
+      background-image: none;
+      height: auto; } }
+  @media (max-width: 770px) {
+    .match-pitch .right {
+      float: left;
+      width: 100%; } }
 
 .match__line {
   position: absolute;
-  left: 260px;
+  left: 25%;
   bottom: 65px;
-  width: 550px;
+  width: 55%;
   height: 40px;
   margin-bottom: 0;
   color: #fff;
   line-height: 40px;
   text-align: center; }
+  @media (max-width: 770px) {
+    .match__line {
+      position: relative;
+      left: auto;
+      bottom: auto;
+      width: 60%;
+      height: auto;
+      padding: 10px;
+      line-height: inherit;
+      text-align: left; } }
 
 .match__panel {
   margin-bottom: 5px;
   padding: 10px;
   line-height: 1.1;
   background-color: #303640; }
+
+@media (max-width: 770px) {
+  .match__panel--sponsor {
+    display: none; } }
+
+@media (max-width: 770px) {
+  .match__panel--timing {
+    width: 100%; } }
 
 .match__time {
   min-height: 40px;
@@ -2111,29 +2164,61 @@ textarea {
   background-repeat: no-repeat;
   background-position: 100% 50%;
   background-image: url(../images/stop-watch.gif); }
+  @media (max-width: 770px) {
+    .match__time {
+      line-height: 40px; } }
 
 .match__time--half {
   display: block;
   color: #fff;
   font-size: 0.75em;
   text-transform: uppercase; }
+  @media (max-width: 770px) {
+    .match__time--half {
+      float: left;
+      margin-right: 10px;
+      font-size: 1.625em; } }
 
 .match__time--clock {
   display: block;
   color: #6e7c8f;
   font-size: 1.625em; }
+  @media (max-width: 770px) {
+    .match__time--clock {
+      float: left; } }
 
 .shirt {
   position: absolute;
   top: 45px;
   width: 160px;
   height: 160px; }
+  @media (max-width: 770px) {
+    .shirt {
+      position: relative;
+      top: auto;
+      float: left;
+      width: 50%;
+      margin-top: 20px;
+      text-align: center; } }
 
 .shirt--home {
-  left: 315px; }
+  left: 30%; }
+  @media (max-width: 770px) {
+    .shirt--home {
+      left: auto; } }
 
 .shirt--away {
-  right: 285px; }
+  right: 28%; }
+  @media (max-width: 770px) {
+    .shirt--away {
+      right: auto; } }
+
+.scores {
+  float: left;
+  width: 100%;
+  margin: 20px 0 10px 0;
+  border-top: 3px solid #5a6169;
+  border-bottom: 3px solid #5a6169; }
 
 .score {
   position: absolute;
@@ -2147,15 +2232,33 @@ textarea {
   text-transform: uppercase;
   text-align: center;
   letter-spacing: -2px; }
+  @media (max-width: 770px) {
+    .score {
+      position: relative;
+      float: left;
+      top: auto;
+      width: 100%;
+      padding-left: 10px;
+      text-align: left;
+      font-size: 2.125em; } }
   .score .score--points {
     line-height: 0.8;
     font-size: 110px; }
+    @media (max-width: 770px) {
+      .score .score--points {
+        font-size: inherit; } }
 
 .score--home {
-  left: 315px; }
+  left: 30%; }
+  @media (max-width: 770px) {
+    .score--home {
+      left: auto; } }
 
 .score--away {
-  right: 285px; }
+  right: 28%; }
+  @media (max-width: 770px) {
+    .score--away {
+      right: auto; } }
 
 .match__report {
   border-bottom: 2px solid #d6d6d6;
@@ -2171,6 +2274,27 @@ textarea {
   .match__content p {
     color: #424242;
     font-size: 0.9375em; }
+    @media (max-width: 770px) {
+      .match__content p {
+        display: none; } }
+
+.expand-report {
+  display: none; }
+  @media (max-width: 770px) {
+    .expand-report {
+      display: block;
+      border-top: 1px solid #a8a8a8;
+      padding: 10px 0;
+      margin-bottom: 20px;
+      height: 50px;
+      line-height: 50px;
+      color: #8e8e8e;
+      font-size: 1em;
+      text-decoration: none;
+      background-color: transparent;
+      background-repeat: no-repeat;
+      background-position: 95% 10px;
+      background-image: url(../images/grey-arrow.gif); } }
 
 .match__numbers {
   width: 100%;
