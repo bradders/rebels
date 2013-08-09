@@ -1387,32 +1387,53 @@ textarea {
   .load-more--loading:hover {
     background-position: 98% 50%; }
 
+.filter-sort {
+  position: relative;
+  float: left; }
+  .filter-sort .filter__options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    border-top: 1px solid #dedede;
+    background-color: #fff; }
+    .filter-sort .filter__options li {
+      border-bottom: 1px solid #dedede; }
+    .filter-sort .filter__options a {
+      display: block;
+      padding: 10px 5px;
+      color: #a7a7a7;
+      text-decoration: none; }
+      .filter-sort .filter__options a:hover, .filter-sort .filter__options a:active {
+        color: #333; }
+
 .sort-by {
-  float: left;
   display: block;
-  width: 50%;
+  width: 100%;
   padding: 1em 0.5em;
   border-bottom: 1px solid #d6d6d6;
   color: #a7a7a7;
   font-family: "Gotham SSm A", "Gotham SSm B";
   font-weight: 500;
   font-style: normal;
-  font-size: 1.5em;
+  font-size: 20px;
   text-decoration: none;
   text-transform: uppercase;
   background-color: #fff;
   background-repeat: no-repeat;
-  background-position: 98% -35%;
+  background-position: 98% -17%;
   background-image: url(../images/grey-arrow.gif); }
   @media (max-width: 770px) {
     .sort-by {
       font-size: 1em; } }
   .sort-by:first-of-type {
     border-right: 1px solid #d6d6d6; }
-  .sort-by:hover {
+  .sort-by:hover, .sort-by.sort-by--active {
     color: #333;
     text-decoration: none;
-    background-position: 98% 132%; }
+    background-position: 98% 120%; }
 
 /*------------------------------------*\
     $Advert

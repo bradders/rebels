@@ -153,9 +153,24 @@ var UI = {
             });
         }
 
+        /**
+        * Expand Match Report
+        */
         $(".js-expand-report").bind("click", function() {
             $(".match__content p").show();
             $(this).hide();
+            return false;
+        });
+
+        /**
+        * Show Filter Options
+        */
+        $(".js-sort-by").bind("click", function() {
+            var link = $(this), 
+                parent = $(this).parent();
+
+            parent.find(".filter__options").toggle();
+            link.toggleClass("sort-by--active");
             return false;
         });
 
