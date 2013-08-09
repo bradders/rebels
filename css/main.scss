@@ -1877,6 +1877,11 @@ textarea {
 
     &:hover {
         background-position: 98% 115%;
+
+        @include breakpoint(small) {
+            background-position: 98% -5%;
+        }
+
     }
 
 }
@@ -1950,6 +1955,7 @@ textarea {
     background-image: url(../images/grey-arrow.gif);
 
         @include breakpoint(small) {
+            background-position: 98% -10%;
             font-size: $sixteen;
         }
 
@@ -1961,6 +1967,11 @@ textarea {
         color: #333;
         text-decoration: none;
         background-position: 98% 120%;
+
+        @include breakpoint(small) {
+            background-position: 98% -10%;
+        }
+
     }
 }
 

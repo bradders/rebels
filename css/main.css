@@ -1371,6 +1371,9 @@ textarea {
       background-position: 98% -5%; } }
   .load-more--plus:hover {
     background-position: 98% 115%; }
+    @media (max-width: 770px) {
+      .load-more--plus:hover {
+        background-position: 98% -5%; } }
 
 .load-more--list {
   width: 74%;
@@ -1427,6 +1430,7 @@ textarea {
   background-image: url(../images/grey-arrow.gif); }
   @media (max-width: 770px) {
     .sort-by {
+      background-position: 98% -10%;
       font-size: 1em; } }
   .sort-by:first-of-type {
     border-right: 1px solid #d6d6d6; }
@@ -1434,6 +1438,9 @@ textarea {
     color: #333;
     text-decoration: none;
     background-position: 98% 120%; }
+    @media (max-width: 770px) {
+      .sort-by:hover, .sort-by.sort-by--active {
+        background-position: 98% -10%; } }
 
 /*------------------------------------*\
     $Advert
