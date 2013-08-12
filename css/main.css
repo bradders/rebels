@@ -1503,35 +1503,11 @@ textarea {
         float: left;
         width: 50%; } }
 
-/*.player-profile {
-    margin: 0 auto;
-    max-width: 940px;
-    min-height: 450px;
-    border: 8px solid #fff;
-
-    .quarter {
-        position: relative;
-
-        @include breakpoint(small) {
-            height: 50px;
-            min-height: auto;
-        }
-    }
-
-    .button {
-        height: 3em;
-        line-height: 2.5em;
-        font-size: $twelve;
-
-        @include breakpoint(small) {
-            float: left;
-            width: 50%;
-        }
-    }
-
-}*/
 .player-profile__name {
   padding: 1em; }
+
+.player__name {
+  padding-right: 50px; }
 
 .player__stats {
   height: 190px;
@@ -1540,9 +1516,13 @@ textarea {
   padding-top: 1em; }
   @media (max-width: 770px) {
     .player__stats {
-      width: 50%;
+      width: 100%;
+      padding: 0.5em;
       height: auto;
       min-height: inherit; } }
+  @media (max-width: 770px) {
+    .player__stats .half {
+      width: 50%; } }
   @media (max-width: 770px) {
     .player__stats .stat {
       display: none; } }
@@ -1552,6 +1532,21 @@ textarea {
     bottom: 0;
     margin-bottom: 0;
     width: 99%; }
+  .player__stats h2 {
+    color: #fff;
+    line-height: 0.9;
+    font-size: 2.125em;
+    text-transform: uppercase; }
+    .player__stats h2 span {
+      display: block;
+      color: #61779f; }
+  .player__stats .map-marker {
+    display: block;
+    margin: 0 auto; }
+    @media (max-width: 770px) {
+      .player__stats .map-marker {
+        float: right;
+        margin: 0; } }
 
 .player__squad {
   height: 190px;
@@ -1591,35 +1586,6 @@ textarea {
     .view-squad {
       display: none; } }
 
-.jersey {
-  position: relative;
-  color: #fff;
-  font-size: 0.75em; }
-  .jersey .label {
-    display: block;
-    position: absolute;
-    top: 45%;
-    left: 1em;
-    text-transform: uppercase;
-    /* Safari */
-    -webkit-transform: rotate(-90deg);
-    /* Firefox */
-    -moz-transform: rotate(-90deg);
-    /* IE */
-    -ms-transform: rotate(-90deg);
-    /* Opera */
-    -o-transform: rotate(-90deg);
-    /* Internet Explorer */
-    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3); }
-
-.jersey__number {
-  float: right;
-  margin-right: 0.1em;
-  font-family: "Gotham SSm A", "Gotham SSm B";
-  font-weight: 700;
-  font-style: normal;
-  font-size: 8.5em; }
-
 .content-switcher {
   position: absolute;
   top: 2em;
@@ -1656,6 +1622,48 @@ textarea {
 
 .content-switcher--news .switch {
   background-image: url(../images/buttons/blue-menu.gif); }
+
+.pod {
+  padding: 0.5em;
+  margin-bottom: 1px;
+  color: #fff;
+  font-family: "Gotham SSm A", "Gotham SSm B";
+  font-weight: 700;
+  font-style: normal;
+  text-transform: uppercase; }
+  .pod h3 {
+    padding-bottom: 0.5em;
+    margin-bottom: 5px;
+    font-size: 1.625em; }
+  .pod dl {
+    padding-bottom: 5px;
+    margin-bottom: 5px; }
+  .pod dd {
+    color: #fff;
+    line-height: 1;
+    font-size: 1.625em; }
+  .pod dt {
+    font-size: 0.875em; }
+
+.player-match-stats {
+  background-color: #61779f; }
+  .player-match-stats h3 {
+    color: #a6b9db;
+    border-bottom: 1px solid #7890bd; }
+  .player-match-stats dl {
+    border-bottom: 1px solid #7890bd; }
+  .player-match-stats dt {
+    color: #b1c1df; }
+
+.player-personal-stats {
+  background-color: #a31c3f; }
+  .player-personal-stats h3 {
+    color: #dc708c;
+    border-bottom: 1px solid #b62c50; }
+  .player-personal-stats dl {
+    border-bottom: 1px solid #b62c50; }
+  .player-personal-stats dt {
+    color: #dc708c; }
 
 /*------------------------------------*\
     $Features
@@ -1845,16 +1853,6 @@ textarea {
     color: #6e6e6e;
     background-color: #fff;
     text-decoration: none; }
-
-/*------------------------------------*\
-    $Pods
-\*------------------------------------*/
-.pod {
-  padding: 0.5em;
-  margin-bottom: 1px;
-  color: #fff;
-  text-transform: uppercase;
-  background-color: #a9a9a9; }
 
 /*------------------------------------*\
     $Sections

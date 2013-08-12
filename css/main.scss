@@ -2067,37 +2067,14 @@ textarea {
 
 }
 
-/*.player-profile {
-    margin: 0 auto;
-    max-width: 940px;
-    min-height: 450px;
-    border: 8px solid #fff;
-
-    .quarter {
-        position: relative;
-
-        @include breakpoint(small) {
-            height: 50px;
-            min-height: auto;
-        }
-    }
-
-    .button {
-        height: 3em;
-        line-height: 2.5em;
-        font-size: $twelve;
-
-        @include breakpoint(small) {
-            float: left;
-            width: 50%;
-        }
-    }
-
-}*/
-
 .player-profile__name {
     padding: 1em;
 }
+
+
+  .player__name {
+    padding-right: 50px;
+  }
 
  .player__stats {
     height: 190px;
@@ -2106,10 +2083,17 @@ textarea {
     padding-top: 1em;
 
         @include breakpoint(small) {
-            width: 50%;
+            width: 100%;
+            padding: 0.5em;
             height: auto;
             min-height: inherit;
         }
+
+    .half {
+        @include breakpoint(small) {
+            width: 50%;
+        }
+    }
 
     .stat {
         @include breakpoint(small) {
@@ -2123,6 +2107,29 @@ textarea {
         bottom: 0;
         margin-bottom: 0;
         width: 99%;
+    }
+
+    h2 {
+        color: #fff;
+        line-height: 0.9;
+        font-size: $thirty-four;
+        text-transform: uppercase;
+
+        span {
+            display: block;
+            color: #61779f;
+        }
+
+    }
+
+    .map-marker {
+        display: block;
+        margin: 0 auto;
+
+        @include breakpoint(small) {
+            float: right;
+            margin: 0;
+        }
     }
 
  }
@@ -2174,42 +2181,6 @@ textarea {
 
  }
 
-.jersey {
-    position: relative;
-    color: #fff;
-    font-size: $twelve;
-
-    .label {
-        display: block;
-        position: absolute;
-        top: 45%;
-        left: 1em;
-        text-transform: uppercase;
-
-        /* Safari */
-        -webkit-transform: rotate(-90deg);
-
-        /* Firefox */
-        -moz-transform: rotate(-90deg);
-
-        /* IE */
-        -ms-transform: rotate(-90deg);
-
-        /* Opera */
-        -o-transform: rotate(-90deg);
-
-        /* Internet Explorer */
-        filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-    }
-}
-
-.jersey__number {
-    float: right;
-    margin-right: 0.1em;
-    @include gotham-bold;
-    font-size: 8.5em;
-}
-
 .content-switcher {
     position: absolute;
     top: 2em;
@@ -2257,9 +2228,75 @@ textarea {
 
 }
 
-.content-switcher--news .switch {
-    background-image: url(../images/buttons/blue-menu.gif);
+    .content-switcher--news .switch {
+        background-image: url(../images/buttons/blue-menu.gif);
+    }
+
+.pod {
+    padding: 0.5em;
+    margin-bottom: 1px;
+    color: #fff;
+    @include gotham-bold;
+    text-transform: uppercase;
+
+    h3 {
+        padding-bottom: 0.5em;
+        margin-bottom: 5px;
+        font-size: $twenty-six;
+    }
+
+    dl {
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+    }
+
+        dd {
+            color: #fff;
+            line-height: 1;
+            font-size: $twenty-six;
+        }
+
+        dt {
+            font-size: $fourteen;
+        }
+
 }
+
+    .player-match-stats {
+        background-color: #61779f;
+
+        h3 {
+            color: #a6b9db;
+            border-bottom: 1px solid #7890bd;
+        }
+
+        dl {
+            border-bottom: 1px solid #7890bd;  
+        }
+
+        dt {
+            color: #b1c1df;
+        }
+
+    }
+
+    .player-personal-stats {
+        background-color: #a31c3f;
+
+        h3 {
+            color: #dc708c;
+            border-bottom: 1px solid #b62c50;
+        }
+
+        dl {
+            border-bottom: 1px solid #b62c50;
+        }
+
+        dt {
+            color: #dc708c;
+        }
+
+    }
 
 
 
@@ -2532,21 +2569,6 @@ textarea {
     }
 
  }
-
-
-
-
-
-/*------------------------------------*\
-    $Pods
-\*------------------------------------*/
-.pod {
-    padding: 0.5em;
-    margin-bottom: 1px;
-    color: #fff;
-    text-transform: uppercase;
-    background-color: #a9a9a9;
-}
 
 
 
