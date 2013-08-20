@@ -954,6 +954,10 @@ textarea {
       background-color: #002e48; } }
   .panel-overlay .button {
     margin-bottom: 0; }
+  .panel-overlay .player__stats {
+    margin-left: 0; }
+  .panel-overlay .stat__title {
+    font-size: 0.75em; }
 
 @media (max-width: 770px) {
   .carousel--has-controls .panel-overlay {
