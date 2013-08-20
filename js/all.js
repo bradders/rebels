@@ -188,13 +188,15 @@ var UI = {
                 carousel = li.parents(".carousel"), 
                 controls = carousel.find(".js-carousel__control"), 
                 allPanels = carousel.find(".panel"), 
-                nextPanel = li.attr("data-panel-name");
+                nextPanel = li.attr("data-panel-name"), 
+                currentPanel = carousel.find(".panel[data-panel-current='true']");
 
             controls.removeClass("carousel__thumbnail--active");
             li.addClass("carousel__thumbnail--active");
 
-            allPanels.fadeOut(function() {
-                carousel.find(".panel[data-panel-name='" + nextPanel + "']").fadeIn();
+            currentPanel.removeAttr("data-panel-current");
+            currentPanel.fadeOut(function() {
+                carousel.find(".panel[data-panel-name='" + nextPanel + "']").fadeIn().attr("data-panel-current", "true");
             });
 
             return false;
