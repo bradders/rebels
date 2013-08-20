@@ -2124,14 +2124,15 @@ textarea {
 
 
   .player__name {
-    padding-right: 50px;
+    padding: 20px 40px;
   }
 
  .player__stats {
     height: 190px;
     min-height: 190px;
     padding: 0;
-    padding-top: 1em;
+    padding-top: 20px;
+    margin-left: -15px;
 
         @include breakpoint(small) {
             width: 100%;
@@ -2284,7 +2285,7 @@ textarea {
     }
 
 .pod {
-    padding: 0.5em;
+    padding: 20px 10px;
     margin-bottom: 1px;
     color: #fff;
     @include gotham-bold;
@@ -2293,7 +2294,8 @@ textarea {
     h3 {
         padding-bottom: 0.5em;
         margin-bottom: 5px;
-        font-size: $twenty-six;
+        letter-spacing: -4px;
+        font-size: $thirty-four;
     }
 
     dl {
@@ -2304,7 +2306,8 @@ textarea {
         dd {
             color: #fff;
             line-height: 1;
-            font-size: $twenty-six;
+            letter-spacing: -2px;
+            font-size: $thirty-four;
         }
 
         dt {
@@ -2318,11 +2321,11 @@ textarea {
 
         h3 {
             color: #a6b9db;
-            border-bottom: 1px solid #7890bd;
+            border-bottom: 2px solid #7890bd;
         }
 
         dl {
-            border-bottom: 1px solid #7890bd;  
+            border-bottom: 2px solid #7890bd;  
         }
 
         dt {
@@ -2336,11 +2339,11 @@ textarea {
 
         h3 {
             color: #dc708c;
-            border-bottom: 1px solid #b62c50;
+            border-bottom: 2px solid #b62c50;
         }
 
         dl {
-            border-bottom: 1px solid #b62c50;
+            border-bottom: 2px solid #b62c50;
         }
 
         dt {
@@ -2476,7 +2479,7 @@ textarea {
     position: relative;
     float: left;
     width: 74%;
-    padding: 0.5em 0.5em 2em 0.5em;
+    padding: 20px;
     margin-right: 1%;
     background-color: #fff;
 
@@ -2486,10 +2489,12 @@ textarea {
 
     .text {
         width: 75%;
+        padding-right: 70px;
     }
 
     p {
         color: #424242;
+        font-size: $fifteen;
     }
 
     img {
@@ -2500,7 +2505,8 @@ textarea {
         margin-bottom: 0.5em;
         color: #a31c3f;
         font-weight: bold;
-        line-height: 1;
+        line-height: 0.8;
+        letter-spacing: -3px;
         text-transform: uppercase;
         font-size: $thirty-four;
     }
@@ -2539,6 +2545,7 @@ textarea {
 .content__title {
     color: #8e8e8e;
     line-height: 1;
+    letter-spacing: -3px;
     text-transform: uppercase;
     font-size: $thirty-four;
 }

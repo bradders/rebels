@@ -1541,13 +1541,14 @@ textarea {
   padding: 1em; }
 
 .player__name {
-  padding-right: 50px; }
+  padding: 20px 40px; }
 
 .player__stats {
   height: 190px;
   min-height: 190px;
   padding: 0;
-  padding-top: 1em; }
+  padding-top: 20px;
+  margin-left: -15px; }
   @media (max-width: 770px) {
     .player__stats {
       width: 100%;
@@ -1658,7 +1659,7 @@ textarea {
   background-image: url(../images/buttons/blue-menu.gif); }
 
 .pod {
-  padding: 0.5em;
+  padding: 20px 10px;
   margin-bottom: 1px;
   color: #fff;
   font-family: "Gotham SSm A", "Gotham SSm B";
@@ -1668,14 +1669,16 @@ textarea {
   .pod h3 {
     padding-bottom: 0.5em;
     margin-bottom: 5px;
-    font-size: 1.625em; }
+    letter-spacing: -4px;
+    font-size: 2.125em; }
   .pod dl {
     padding-bottom: 5px;
     margin-bottom: 5px; }
   .pod dd {
     color: #fff;
     line-height: 1;
-    font-size: 1.625em; }
+    letter-spacing: -2px;
+    font-size: 2.125em; }
   .pod dt {
     font-size: 0.875em; }
 
@@ -1683,9 +1686,9 @@ textarea {
   background-color: #61779f; }
   .player-match-stats h3 {
     color: #a6b9db;
-    border-bottom: 1px solid #7890bd; }
+    border-bottom: 2px solid #7890bd; }
   .player-match-stats dl {
-    border-bottom: 1px solid #7890bd; }
+    border-bottom: 2px solid #7890bd; }
   .player-match-stats dt {
     color: #b1c1df; }
 
@@ -1693,9 +1696,9 @@ textarea {
   background-color: #a31c3f; }
   .player-personal-stats h3 {
     color: #dc708c;
-    border-bottom: 1px solid #b62c50; }
+    border-bottom: 2px solid #b62c50; }
   .player-personal-stats dl {
-    border-bottom: 1px solid #b62c50; }
+    border-bottom: 2px solid #b62c50; }
   .player-personal-stats dt {
     color: #dc708c; }
 
@@ -1791,23 +1794,26 @@ textarea {
   position: relative;
   float: left;
   width: 74%;
-  padding: 0.5em 0.5em 2em 0.5em;
+  padding: 20px;
   margin-right: 1%;
   background-color: #fff; }
   @media (max-width: 770px) {
     .content {
       width: 100%; } }
   .content .text {
-    width: 75%; }
+    width: 75%;
+    padding-right: 70px; }
   .content p {
-    color: #424242; }
+    color: #424242;
+    font-size: 0.9375em; }
   .content img {
     margin-bottom: 1em; }
   .content blockquote {
     margin-bottom: 0.5em;
     color: #a31c3f;
     font-weight: bold;
-    line-height: 1;
+    line-height: 0.8;
+    letter-spacing: -3px;
     text-transform: uppercase;
     font-size: 2.125em; }
   .content h3 {
@@ -1833,6 +1839,7 @@ textarea {
 .content__title {
   color: #8e8e8e;
   line-height: 1;
+  letter-spacing: -3px;
   text-transform: uppercase;
   font-size: 2.125em; }
 
