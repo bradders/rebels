@@ -305,7 +305,7 @@ table {
     background-color: #ff1c4b; }
 
 .button--blue {
-  color: #fff;
+  color: #c2c2c2;
   background-color: #646c7a; }
   .button--blue:hover {
     color: #fff;
@@ -653,11 +653,11 @@ textarea {
 .dropdown {
   display: none;
   margin: 0 auto;
-  padding: 2em 2em 2em 155px; }
+  padding: 2em 2em 2em 160px; }
   .dropdown p {
     margin-bottom: 0.5em;
     padding-right: 1em;
-    font-size: 0.875em; }
+    font-size: 0.75em; }
   .dropdown .button {
     padding: 1em;
     font-size: 0.75em;
@@ -671,7 +671,7 @@ textarea {
   color: #121212;
   font-size: 0.875em;
   font-weight: normal;
-  border-bottom: 1px solid #d4d5d6; }
+  border-bottom: 2px solid #d4d5d6; }
 
 .dropdown__title--plain {
   padding-bottom: 0;
@@ -685,15 +685,17 @@ textarea {
   display: block;
   border: 2px solid #d6d6d6;
   margin-bottom: 1em;
-  -webkit-box-shadow: 0px 10px 20px rgba(51, 51, 51, 0.75);
-  -moz-box-shadow: 0px 10px 20px rgba(51, 51, 51, 0.75);
-  box-shadow: 0px 10px 20px rgba(51, 51, 51, 0.75); }
+  -webkit-box-shadow: 0px 5px 5px rgba(51, 51, 51, 0.5);
+  -moz-box-shadow: 0px 5px 5px rgba(51, 51, 51, 0.5);
+  box-shadow: 0px 5px 5px rgba(51, 51, 51, 0.5); }
 
 .also-news .dropdown__title {
   padding-bottom: 0.5em;
   margin-bottom: 0;
   font-size: 0.875em;
   color: #121212; }
+.also-news .arrow-list {
+  margin-right: 0.5em; }
 
 /*
 * Team Dropdown
@@ -707,10 +709,10 @@ textarea {
   list-style: none !important; }
   .arrow-list a {
     display: block;
-    padding: 0.2em 2em 0.2em 0;
+    padding: 5px 5px 5px 0;
     text-decoration: none;
-    font-size: 0.875em;
-    border-bottom: 1px solid #d4d5d6;
+    font-size: 0.75em;
+    border-bottom: 2px solid #d4d5d6;
     background-color: transparent;
     background-repeat: no-repeat;
     background-position: 97% 50%;
@@ -762,6 +764,7 @@ textarea {
 .lineup {
   margin-bottom: 10px;
   min-height: 30px;
+  font-size: 1.1em;
   background-repeat: no-repeat;
   background-position: 50%;
   background-image: url(../images/white-vs.png); }
@@ -784,10 +787,10 @@ textarea {
   font-weight: 400;
   font-style: normal; }
   .fixtures-ladder table tr {
-    border-bottom: 1px solid #c8cbd0; }
+    border-bottom: 2px solid #c8cbd0; }
   .fixtures-ladder table th {
     text-transform: uppercase;
-    padding: 9px 5px;
+    padding: 5px;
     text-align: left; }
   .fixtures-ladder table td {
     padding: 10px 7px; }
@@ -807,7 +810,7 @@ textarea {
 .fixtures-ladder .button {
   width: 100%;
   padding: 1em;
-  border-top: 1px solid #d4d5d6; }
+  border-top: 2px solid #d4d5d6; }
 
 /**
 * Club Dropdown
@@ -1207,8 +1210,8 @@ textarea {
 
 .news-item__date {
   display: block;
-  width: 45px;
-  height: 45px;
+  width: 48px;
+  height: 43px;
   padding: 0.2em;
   color: #fff;
   font-family: "Gotham SSm A", "Gotham SSm B";
@@ -1234,7 +1237,7 @@ textarea {
 
 .news-item__icon {
   position: absolute;
-  top: 45px;
+  top: 43px;
   left: 0; }
   @media (max-width: 770px) {
     .news-item__icon {
@@ -1244,20 +1247,63 @@ textarea {
 
 .icon {
   display: inline-block;
-  width: 45px;
-  height: 45px;
+  width: 48px;
+  height: 43px;
   background-color: #cf1344;
   background-repeat: no-repeat;
-  background-position: 50%; }
+  background-position: 0 0;
+  background-image: url(../images/icons/match-icons.gif); }
   @media (max-width: 770px) {
     .icon {
       width: 30px;
       height: 20px; } }
 
+.icon.report {
+  background-position: 0 0; }
+  @media (max-width: 770px) {
+    .icon.report {
+      display: none; } }
+
+.icon.preview {
+  background-position: 0 -45px; }
+  @media (max-width: 770px) {
+    .icon.preview {
+      display: none; } }
+
+.icon.injury {
+  background-position: 0 -90px; }
+  @media (max-width: 770px) {
+    .icon.injury {
+      background-image: url(../images/icons/plus-small.gif); } }
+
+.icon.player {
+  background-position: 0 -135px; }
+  @media (max-width: 770px) {
+    .icon.player {
+      display: none; } }
+
+.icon.comment {
+  background-position: 0 -180px; }
+  @media (max-width: 770px) {
+    .icon.comment {
+      display: none; } }
+
+.icon.article {
+  background-position: 0 -225px; }
+  @media (max-width: 770px) {
+    .icon.article {
+      display: none; } }
+
 .icon.video {
-  background-image: url(../images/icons/video.gif); }
+  background-position: 0 -270px; }
   @media (max-width: 770px) {
     .icon.video {
+      background-image: url(../images/icons/video-small.gif); } }
+
+.icon.gallery {
+  background-position: 0 -315px; }
+  @media (max-width: 770px) {
+    .icon.gallery {
       background-image: url(../images/icons/video-small.gif); } }
 
 .icon.win {
@@ -1273,18 +1319,6 @@ textarea {
     .icon.win {
       float: left;
       line-height: 1.7; } }
-
-.icon.plus {
-  background-image: url(../images/icons/plus.gif); }
-  @media (max-width: 770px) {
-    .icon.plus {
-      background-image: url(../images/icons/plus-small.gif); } }
-
-.icon.comment {
-  background-image: url(../images/icons/comment.gif); }
-  @media (max-width: 770px) {
-    .icon.comment {
-      display: none; } }
 
 .news-item__view {
   display: inline-block;

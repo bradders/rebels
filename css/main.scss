@@ -450,7 +450,7 @@ table {
 }
 
 .button--blue {
-    color: #fff;
+    color: #c2c2c2;
     background-color: $blue;
 
     &:hover {
@@ -878,12 +878,12 @@ textarea {
 .dropdown {
     display: none;
     margin: 0 auto;
-    padding: 2em 2em 2em 155px;
+    padding: 2em 2em 2em 160px;
 
     p {
         margin-bottom: 0.5em;
         padding-right: 1em;
-        font-size: $fourteen;
+        font-size: $twelve;
     }
 
     .button {
@@ -901,9 +901,8 @@ textarea {
     margin-bottom: 0.5em;
     color: #121212;
     font-size: $fourteen;
-    
     font-weight: normal;
-    border-bottom: 1px solid #d4d5d6;
+    border-bottom: 2px solid #d4d5d6;
 }
 
 .dropdown__title--plain {
@@ -924,9 +923,9 @@ textarea {
         display: block;
         border: 2px solid #d6d6d6;
         margin-bottom: 1em;
-        -webkit-box-shadow: 0px 10px 20px rgba(51, 51, 51, 0.75);
-        -moz-box-shadow:    0px 10px 20px rgba(51, 51, 51, 0.75);
-        box-shadow:         0px 10px 20px rgba(51, 51, 51, 0.75);
+        -webkit-box-shadow: 0px 5px 5px rgba(51, 51, 51, 0.5);
+        -moz-box-shadow:    0px 5px 5px rgba(51, 51, 51, 0.5);
+        box-shadow:         0px 5px 5px rgba(51, 51, 51, 0.5);
     }
 
 .also-news {
@@ -936,6 +935,10 @@ textarea {
         margin-bottom: 0;
         font-size: $fourteen;
         color: #121212;
+    }
+
+    .arrow-list {
+        margin-right: 0.5em;
     }
 
     .button {
@@ -959,10 +962,10 @@ textarea {
 
     a {
         display: block;
-        padding: 0.2em 2em 0.2em 0;
+        padding: 5px 5px 5px 0;
         text-decoration: none;
-        font-size: $fourteen;
-        border-bottom: 1px solid #d4d5d6;
+        font-size: $twelve;
+        border-bottom: 2px solid #d4d5d6;
         background-color: transparent;
         background-repeat: no-repeat;
         background-position: 97% 50%;
@@ -1053,6 +1056,7 @@ textarea {
 .lineup {
     margin-bottom: 10px;
     min-height: 30px;
+    font-size: 1.1em;
     background-repeat: no-repeat;
     background-position: 50%;
     background-image: url(../images/white-vs.png);
@@ -1088,12 +1092,12 @@ textarea {
         @include gotham-book;
 
         tr {
-            border-bottom: 1px solid #c8cbd0;
+            border-bottom: 2px solid #c8cbd0;
         }
 
         th {
             text-transform: uppercase;
-            padding: 9px 5px;
+            padding: 5px;
             text-align: left;
         }
 
@@ -1129,7 +1133,7 @@ textarea {
     .button {
         width: 100%;
         padding: 1em;
-        border-top: 1px solid #d4d5d6;
+        border-top: 2px solid #d4d5d6;
     }
 
 }
@@ -1675,8 +1679,8 @@ textarea {
 
 .news-item__date {
     display: block;
-    width: 45px;
-    height: 45px;
+    width: 48px;
+    height: 43px;
     padding: 0.2em;
     color: #fff;
     @include gotham-bold;
@@ -1705,7 +1709,7 @@ textarea {
 
 .news-item__icon {
     position: absolute;
-    top: 45px;
+    top: 43px;
     left: 0;
 
     @include breakpoint(small) {
@@ -1717,11 +1721,12 @@ textarea {
 
 .icon {
     display: inline-block;
-    width: 45px;
-    height: 45px;
+    width: 48px;
+    height: 43px;
     background-color: $pink;
     background-repeat: no-repeat;
-    background-position: 50%;
+    background-position: 0 0;
+    background-image: url(../images/icons/match-icons.gif);
 
     @include breakpoint(small) {
         width: 30px;
@@ -1730,14 +1735,74 @@ textarea {
 
 }
 
+    .icon.report {
+        background-position: 0 0;
+
+        @include breakpoint(small){
+            display: none;
+        }
+    }
+
+    .icon.preview {
+        background-position: 0 -45px;
+
+        @include breakpoint(small){
+            display: none;
+        }
+    }
+
+    .icon.injury {
+        background-position: 0 -90px;
+
+        @include breakpoint(small){
+            background-image: url(../images/icons/plus-small.gif);
+        }
+    }
+
+    .icon.player {
+        background-position: 0 -135px;
+
+        @include breakpoint(small){
+            display: none;
+        }
+    }
+
+    .icon.comment {
+        background-position: 0 -180px;
+
+        @include breakpoint(small){
+            display: none;
+        }
+    }
+
+    .icon.article {
+        background-position: 0 -225px;
+
+        @include breakpoint(small){
+            display: none;
+        }
+    }    
+
+
     .icon.video {
-        background-image: url(../images/icons/video.gif);
+        background-position: 0 -270px;
 
         @include breakpoint(small) {
             background-image: url(../images/icons/video-small.gif);
         }
 
     }
+
+    .icon.gallery {
+        background-position: 0 -315px;
+
+        @include breakpoint(small) {
+            background-image: url(../images/icons/video-small.gif);
+        }
+
+    }
+
+    
 
     .icon.win {
         color: #fff;
@@ -1754,21 +1819,7 @@ textarea {
 
     }
 
-    .icon.plus {
-        background-image: url(../images/icons/plus.gif);
-
-        @include breakpoint(small){
-            background-image: url(../images/icons/plus-small.gif);
-        }
-    }
-
-    .icon.comment {
-        background-image: url(../images/icons/comment.gif);
-
-        @include breakpoint(small){
-            display: none;
-        }
-    }
+    
 
 .news-item__view {
     display: inline-block;

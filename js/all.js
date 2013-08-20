@@ -90,11 +90,11 @@ var UI = {
 
                 if(div.length > 0) {
                     $(".dropdown").hide();
-                    $(".extra-nav").slideDown();
+                    $(".extra-nav").fadeIn();
                     div.toggle();
                 } else {
                     setTimeout(function(){
-                        $(".extra-nav").slideUp();
+                        $(".extra-nav").fadeOut();
                     }, 300);
                 }
                 return false;
