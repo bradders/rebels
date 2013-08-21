@@ -752,11 +752,18 @@ textarea {
 */
 .next-match .teams {
   overflow: hidden;
+  margin-top: 30px;
   margin-right: 0.5em;
   text-align: center;
-  border-bottom: 1px solid #d4d5d6; }
+  border-bottom: 1px solid #d4d5d6;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: 50% 50px;
+  background-image: url(../images/team-shirt-shadow.png); }
   .next-match .teams p {
     font-size: 0.75em; }
+  .next-match .teams .home-team {
+    padding-left: 25px; }
 .next-match .button {
   width: 40%;
   padding: 1em; }

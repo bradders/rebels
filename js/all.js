@@ -101,7 +101,7 @@ var UI = {
             });
 
             $(".site-header").bind("mouseleave", function() {
-                $(".extra-nav").slideUp();
+                //$(".extra-nav").slideUp();
                 return false;
             });
 
